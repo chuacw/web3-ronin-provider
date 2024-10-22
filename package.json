@@ -1,0 +1,44 @@
+{
+  "name": "web3-ronin-provider",
+  "version": "1.0.4",
+  "types": "./dist/index.d.ts",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "exports": {
+    ".": "./dist/",
+    "./web3-ronin-consts": "./dist/web3-ronin-consts.js",
+    "./web3-RoninJsonRpcProvider": "./dist/web3-RoninJsonRpcProvider.js",
+    "./web3-RoninSkynetProvider": "./dist/web3-RoninSkynetProvider.js"
+  },
+  "keywords": [
+    "Ronin",
+    "Web3",
+    "Provider",
+    "SkyNet",
+    "API"
+  ],
+  "author": "chuacw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuacw/web3-ronin-provider/issues"
+  },
+  "homepage": "https://github.com/chuacw/web3-ronin-provider#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.13",
+    "delphirtl": "^1.1.19",
+    "dotenv": "^16.4.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
