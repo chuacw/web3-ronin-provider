@@ -102,8 +102,8 @@ class RoninSkynetWeb3Provider {
     let _config = {
       headers: this.connection.headers
     }
-    const response = await axios.post(url, data, _config);
-    return response;
+    const result = await axios.post(url, data, _config);
+    return result;
   }
 
   /**

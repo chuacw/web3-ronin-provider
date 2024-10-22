@@ -1,6 +1,10 @@
 # Utilities for Ronin blockchain
+This package provides 2 Web3 providers for the Ronin blockchain.
+The 2 Web3 providers are:
+* Ronin JSON RPC provider
+* Ronin SkyNet provider
 
-## Ronin JSON RPC Provider
+## Ronin JSON RPC provider
 A JSON RPC Provider for Ronin.  
 
 Use this like so:

@@ -9,7 +9,7 @@ import { resolveProperties } from "ethers/lib/utils";
  * hardfork when sending transaction for Ronin.
  */
 export class RoninJsonRpcProvider extends JsonRpcProvider {
-  #FIFTEEN: BigNumber;
+  readonly #FIFTEEN: BigNumber;
 
   constructor(url?: ethers.utils.ConnectionInfo | string, network?: ethers.providers.Networkish) {
     super(url, network);

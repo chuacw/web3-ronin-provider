@@ -25,7 +25,7 @@
     "url": "https://github.com/chuacw/web3-ronin-provider/issues"
   },
   "homepage": "https://github.com/chuacw/web3-ronin-provider#readme",
-  "description": "",
+  "description": "A Ronin JSON RPC and SkyNet Web3 provider",
   "dependencies": {
     "axios": "^1.7.7"
   },
@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "@types/jest": "^29.5.13",
-    "delphirtl": "^1.1.19",
+    "delphirtl": "^1.1.20",
     "dotenv": "^16.4.5",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
