@@ -3,7 +3,8 @@
 import { internal_txs_detail_Response, internal_txs_Response, multiple_txs_details_Response } from "./web3-ronin-types-txs";
 import axios, {
   AxiosResponse, AxiosRequestConfig,
-  AxiosProxyConfig
+  AxiosProxyConfig,
+  AxiosHeaders
 } from 'axios';
 import { contract_detail_Response, multiple_contracts_details_Response } from "./web3-ronin-types-contracts";
 import {
@@ -23,8 +24,13 @@ import {
   token_tranfers_of_address_Response
 } from "./web3-ronin-types-accounts";
 import { block_by_hash_timestamp_block_number_range_Response, block_by_number_Response, finalized_block_number_Response, latest_block_number_Response, transactions_by_block_number_Response } from "./web3-ronin-types-blocks";
+import { URL_RONIN_SKYNET_RPC } from "./web3-ronin-consts";
+import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders } from "./web3-ronin-types-errors";
 
 export type ConnectionInfo = {
+  /**
+   * Typically, this is RONIN_SKYNET_RPC
+   */
   url: string,
   headers?: { [key: string]: string | number },
   proxy?: AxiosProxyConfig
@@ -32,14 +38,37 @@ export type ConnectionInfo = {
 
 /**
  * This class implements the 
- * [Skynet Web3 API](https://docs.skymavis.com/api/web3/skynet-web-3-api)
+ * [Skynet Web3 API](https://docs.skymavis.com/api/web3/skynet-web-3-api).  
+ * To create a RoninSkynetWeb3Provider quickly, call createSkyNetProvider with the API key.  
+ * To customize headers, call the RoninSkynetWeb3Provider constructor with a tailored ConnectionInfo parameter.
  */
 class RoninSkynetWeb3Provider {
 
   readonly connection: ConnectionInfo;
 
+  /**
+   * Creates an instance of RoninSkynetWeb3Provider, see documentation at the 
+   *
+   * @constructor
+   * @param {ConnectionInfo} connection { url: RONIN_SKYNET_RPC, "X-API-KEY": process.env.X_API_KEY }
+   */
   constructor(connection: ConnectionInfo) {
     this.connection = connection;
+    if (connection.url === "") {
+      throw new EEmptyUrl();
+    }
+    if (!connection["headers"]) {
+      throw new ENoHeaders();
+    }
+    if (Object.keys(connection.headers).length === 0) {
+      throw new EEmptyHeaders();
+    }
+    if (connection.headers["X-API-KEY"] === undefined || connection.headers["X-API-KEY"] === "") {
+      throw new ENoApiKey();
+    };
+    this.connection.headers!["Connection"] = "Keep-Alive";
+    this.connection.headers!["Keep-Alive"] = "timeout=5, max=1000";
+    this.connection.headers!["Access-Control-Allow-Origin"] = "*";
   }
 
   protected concatUrl(url: string, urlSuffix: string): string {
@@ -91,8 +120,7 @@ class RoninSkynetWeb3Provider {
     let _config = {
       ...config,
       headers: this.connection.headers
-    }
-    _config.headers!["Access-Control-Allow-Origin"] = "*";
+    };
     const result = await axios.get(url, _config);
     return result;
   }
@@ -559,8 +587,22 @@ class RoninSkynetWeb3Provider {
 
 }
 
+/**
+ * Shortcut to creating a RoninSkynetWeb3Provider given the API key
+ *
+ * @param {string} X_API_KEY API key
+ * @param {?string} [url] The URL to use for the provider. If not given, uses RONIN_SKYNET_RPC
+ * @returns {RoninSkynetWeb3Provider}
+ */
+function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3Provider {
+  const connection = { url: url || URL_RONIN_SKYNET_RPC, headers: { "X-API-KEY": X_API_KEY } };
+  const result = new RoninSkynetWeb3Provider(connection);
+  return result;
+}
+
 export {
   RoninSkynetWeb3Provider,
   RoninSkynetWeb3Provider as SkynetProvider,
-  RoninSkynetWeb3Provider as SkynetWeb3Provider
+  RoninSkynetWeb3Provider as SkynetWeb3Provider,
+  createSkyNetProvider
 }

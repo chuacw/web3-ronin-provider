@@ -6,5 +6,6 @@ export * from './web3-ronin-types-accounts';
 export * from './web3-ronin-types-blocks';
 export * from './web3-ronin-types-collections';
 export * from './web3-ronin-types-contracts';
+export * from './web3-ronin-types-errors';
 export * from './web3-ronin-types-global';
 export * from './web3-ronin-types-txs';

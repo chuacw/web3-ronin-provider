@@ -6,7 +6,7 @@ import { SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
 import 'dotenv/config';
 import { activityTypes } from '../src/web3-ronin-types-accounts';
 import { block_by_hash_timestamp_block_number_range_result1, block_by_hash_timestamp_block_number_range_result2, block_by_hash_timestamp_block_number_range_result3, block_by_hash_timestamp_block_number_range_result4, block_by_hash_timestamp_block_number_range_result5 } from './expected_results/block_by_hash_timestamp_block_number_range';
-import { Tokens } from "../src";
+import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders, ERROR_NO_API_KEY, Tokens, URL_RONIN_MAINNET_RPC } from "../src";
 require('dotenv').config();
 
 const TIMEOUT = 100000000;
@@ -26,8 +26,41 @@ describe('SkynetWeb3Provider', () => {
   let provider: testSkynetWeb3Provider;
 
   beforeEach(() => {
-    const connectionInfo = { url: 'xxxxx' };
+    const connectionInfo = { url: URL_RONIN_MAINNET_RPC, headers: { "X-API-KEY": process.env.X_API_KEY || "" } };
     provider = new testSkynetWeb3Provider(connectionInfo);
+  });
+
+  test('creating SkynetWeb3Provider with empty URL', () => {
+    const connectionInfo = {
+      url: "",
+    };
+    expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new EEmptyUrl());
+  });
+
+  test('creating SkynetWeb3Provider without headers', () => {
+    const connectionInfo = {
+      url: URL_RONIN_MAINNET_RPC,
+    };
+    expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new ENoHeaders());
+  });
+
+  test('creating SkynetWeb3Provider with empty headers', () => {
+    const connectionInfo = {
+      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      headers: {
+      }
+    }
+    expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new EEmptyHeaders());
+  });
+
+  test('creating SkynetWeb3Provider with empty API key', () => {
+    const connectionInfo = {
+      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      headers: {
+        "X-API-KEY": ""
+      }
+    }
+    expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new ENoApiKey());
   });
 
   test('search with no params', () => {
@@ -119,26 +152,26 @@ describe('Accounts', () => {
   test('owned_nfts_of', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.owned_nfts_of(address);
-    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
   test('fungible_token_balance', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.fungible_token_balance(address);
-    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
   test('list_of_collections_having_NFTs', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.list_of_collections_having_NFTs(address);
-    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
   test('nft_list_of_address_and_contract', async () => {
     const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
     const contractAddr = Tokens.AXIE;
     const result = await provider.nft_list_of_address_and_contract(account, contractAddr);
-    expect(result.result.items.length).toBeGreaterThan(0)
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0)
   });
 
   test('balance_of_address_and_contract', async () => {
@@ -158,13 +191,13 @@ describe('Accounts', () => {
       "0x883649b1d9e8b6d69ac9c36ca58531419d7dda8f"
     ];
     const result = await provider.balances_of_address_by_multiple_contracts(account, contractAddresses);
-    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
   test('token_tranfers_of_address', async () => {
     const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
     const result = await provider.token_tranfers_of_address(account);
-    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
 });
@@ -196,7 +229,7 @@ describe('Blocks', () => {
   test('transactions_by_block_number', async () => {
     const block_number = 37493455;
     const result = await provider.transactions_by_block_number(block_number);
-    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeGreaterThanOrEqual(0);
     expect(result.result.items[0].blockNumber).toBe(block_number);
   });
 

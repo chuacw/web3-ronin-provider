@@ -1,17 +1,29 @@
-import { SkynetWeb3Provider } from "../src/web3-RoninSkynetProvider";
+import { createSkyNetProvider, SkynetWeb3Provider } from "../src/web3-RoninSkynetProvider";
 import 'dotenv/config';
 import { Tokens } from '../src/web3-ronin-consts-tokens';
 
 require('dotenv').config();
 
+function assert(x: any, msg: string) {
+  if (!x) {
+    throw new Error(msg);
+  }
+}
+
 async function main() {
-  const connectionInfo = {
-    url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
-    headers: {
-      "X-API-KEY": process.env.X_API_KEY || ""
-    }
-  };
-  const provider = new SkynetWeb3Provider(connectionInfo);
+  assert(process.env.X_API_KEY, "X_API_KEY not defined!");
+
+  // customizing the connectionInfo
+  // const connectionInfo = {
+  //   url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+  //   headers: {
+  //     "X-API-KEY": process.env.X_API_KEY || ""
+  //   }
+  // };
+  // const provider = new SkynetWeb3Provider(connectionInfo);
+  
+  // alternative way
+  const provider = createSkyNetProvider(process.env.X_API_KEY!);
 
   const accounts = [
     // #region Long list of account addresses
