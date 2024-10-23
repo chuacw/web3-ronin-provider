@@ -159,6 +159,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Places a call to the service, with optional limits and cursor
    *
+   * @async
    * @param {string} url
    * @param {?number} [limit] The number of items to get
    * @param {?string} [cursor] The page from which to get the requested items
@@ -292,6 +293,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get token transfers of an address with a contract
    *
+   * @async
    * @param {string} account
    * @param {?number} [limit] The number of items to get
    * @param {?string} [cursor] The page from which to get the requested items
@@ -330,6 +332,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get transactions by block number
    *
+   * @async
    * @param {number} block_number
    * @returns {Promise<transactions_by_block_number_Response>}
    */
@@ -344,6 +347,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get block by number
    *
+   * @async
    * @param {number} block_number
    * @returns {Promise<block_by_number_Response>}
    */
@@ -357,6 +361,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get block by hash, timestamp, block number range
    *
+   * @async
    * @param {number} fromBlock
    * @param {number} toBlock
    * @param {?OptionalParams} [optionalParams] get the block where its life span covers the input timestamp and/or hash
@@ -387,6 +392,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get owners of an NFT
    *
+   * @async
    * @param {string} contractAddress
    * @param {number} tokenId
    * @returns {Promise<owners_of_nft_Response>}
@@ -400,6 +406,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get token transfers of an NFT
    *
+   * @async
    * @param contractAddress The contract address of the NFT
    * @param tokenId The token ID of the NFT
    * @param limit The number of items to get
@@ -414,6 +421,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get detail of an NFT
    *
+   * @async
    * @param contract_addr Contract address of NFT
    * @param tokenId ID of NFT token
    * @returns {Promise<detail_of_nft_Response>}
@@ -428,6 +436,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Refresh NFTs of a collection in synchronous manner
    *
+   * @async
    * @param {string} contractAddress
    * @param {number} maxWait milliseconds, when maxWait exceeds server timeout, then server timeout will be used instead
    * @param {string[]} tokenIds
@@ -446,6 +455,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Refresh NFTs of a collection in asynchronous manner
    *
+   * @async
    * @param {string} contractAddress
    * @param {string[]} tokenIds
    * @returns {Promise<refresh_nfts_of_collection_async_Response>}
@@ -462,6 +472,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get details of multiple NFTs
    *
+   * @async
    * @param {string} contractAddress
    * @param {string[]} tokenIds
    * @returns {Promise<details_of_multiple_nfts_Response>}
@@ -478,6 +489,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get NFTs from a collection 
    *
+   * @async
    * @param contractAddress 
    * @param {?number} [limit] The number of items to get
    * @param {?string} [cursor] The page from which to get the requested items
@@ -491,6 +503,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get the number of collection holdings by address
    *
+   * @async
    * @param {string} contractAddress The address to get the number of collection holders for
    * @param {string} address The account address
    * @param {?number} [limit] The number of items to get
@@ -505,6 +518,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get collection holder list
    *
+   * @async
    * @param {string} contractAddress The address to get collection holder list for
    * @param {?number} [limit] The number of items to get
    * @param {?string} [cursor] The page from which to get the requested items
@@ -518,6 +532,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get collection token transfers
    *
+   * @async
    * @param {string} contractAddress The address to get token transfers for
    * @param {?number} [limit] The number of items to get
    * @param {?string} [cursor] The page from which to get the requested items
@@ -531,6 +546,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get collection detail
    *
+   * @async
    * @param {string} contract_addr The address to get collection detail for
    * @returns {Promise<collection_detail_Response>}
    */
@@ -544,6 +560,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get details of multiple collections
    *
+   * @async
    * @param {string[]} contractAddresses An array of addresses
    * @returns {Promise<details_of_multiple_collections_Response>}
    */
@@ -561,6 +578,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get detail of a contract
    *
+   * @async
    * @param {string} contract_addr address of contract to get detail for
    * @returns {Promise<contract_detail_Response>}
    */
@@ -573,6 +591,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get details of multiple contracts
    *
+   * @async
    * @param {string[]} contractAddresses An array of contract address to get details for
    * @returns {Promise<multiple_contracts_details_Response>}
    */
@@ -589,6 +608,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get internal transaction of a transaction
    *
+   * @async
    * @param {string} txHash hash of the transaction to get
    * @returns {Promise<internal_txs_Response>}
    */
@@ -601,6 +621,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get internal transaction details of a transaction
    *
+   * @async
    * @param {string} txHash hash of the transaction to get
    * @returns {Promise<internal_txs_detail_Response>}
    */
@@ -613,6 +634,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get details of multiple transactions
    *
+   * @async
    * @param {string[]} hashes hashes of transactions
    * @returns {Promise<multiple_txs_details_Response>}
    */
@@ -629,6 +651,7 @@ class RoninSkynetWeb3Provider {
 /**
  * Shortcut to creating a RoninSkynetWeb3Provider given the API key
  *
+ * @async
  * @param {string} X_API_KEY API key
  * @param {?string} [url] The URL to use for the provider. If not given, uses {@link URL_RONIN_SKYNET_RPC}
  * @returns {RoninSkynetWeb3Provider}

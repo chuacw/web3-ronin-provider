@@ -4,7 +4,7 @@
   "types": "./dist/index.d.ts",
   "main": "index.js",
   "scripts": {
-    "prepublishOnly": "tsc -b && typedoc --out docs src",
+    "prepublishOnly": "tsc -b && typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src && typedoc --cleanOutputDir true --out docs/html src",
     "test": "jest"
   },
   "exports": {
@@ -45,6 +45,7 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typedoc": "^0.26.10",
+    "typedoc-plugin-markdown": "^4.2.9",
     "typescript": "^5.6.3"
   }
 }

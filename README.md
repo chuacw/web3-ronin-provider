@@ -37,4 +37,6 @@ Use it like so:
 ```
 
 ## Documentation
-For further documentation, see the [docs directory](./docs/index.html).
+For further documentation, see the 
+* [docs directory](./docs/md/globals.md) on GitHub.
+* [HTML documents](./docs/html/index.html).
