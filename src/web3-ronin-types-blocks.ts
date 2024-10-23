@@ -92,3 +92,5 @@ export interface block_by_hash_timestamp_block_number_range_Result {
   baseFeePerGas: string
   timestamp: number
 }
+
+export type OptionalParams = { hash?: string, timestamp?: number }

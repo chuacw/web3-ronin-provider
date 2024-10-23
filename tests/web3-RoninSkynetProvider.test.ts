@@ -6,7 +6,7 @@ import { SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
 import 'dotenv/config';
 import { activityTypes } from '../src/web3-ronin-types-accounts';
 import { block_by_hash_timestamp_block_number_range_result1, block_by_hash_timestamp_block_number_range_result2, block_by_hash_timestamp_block_number_range_result3, block_by_hash_timestamp_block_number_range_result4, block_by_hash_timestamp_block_number_range_result5 } from './expected_results/block_by_hash_timestamp_block_number_range';
-import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders, ERROR_NO_API_KEY, Tokens, URL_RONIN_MAINNET_RPC } from "../src";
+import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders, ERROR_NO_API_KEY, Tokens, URL_RONIN_MAINNET_RPC, URL_RONIN_SKYNET_RPC } from "../src";
 require('dotenv').config();
 
 const TIMEOUT = 100000000;
@@ -26,7 +26,7 @@ describe('SkynetWeb3Provider', () => {
   let provider: testSkynetWeb3Provider;
 
   beforeEach(() => {
-    const connectionInfo = { url: URL_RONIN_MAINNET_RPC, headers: { "X-API-KEY": process.env.X_API_KEY || "" } };
+    const connectionInfo = { url: URL_RONIN_SKYNET_RPC, headers: { "X-API-KEY": process.env["X-API-KEY"] || "" } };
     provider = new testSkynetWeb3Provider(connectionInfo);
   });
 
@@ -46,7 +46,7 @@ describe('SkynetWeb3Provider', () => {
 
   test('creating SkynetWeb3Provider with empty headers', () => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
       }
     }
@@ -55,7 +55,7 @@ describe('SkynetWeb3Provider', () => {
 
   test('creating SkynetWeb3Provider with empty API key', () => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
         "X-API-KEY": ""
       }
@@ -109,9 +109,9 @@ describe('Accounts', () => {
 
   beforeEach(() => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
-        "X-API-KEY": process.env.X_API_KEY || ""
+        "X-API-KEY": process.env["X-API-KEY"] || ""
       }
     }
     provider = new SkynetWeb3Provider(connectionInfo);
@@ -119,7 +119,7 @@ describe('Accounts', () => {
 
   test('search', async () => {
     const contract_addr: string = '0xf22a97a220392b1311f5ecde3175ec07fa21154b';
-    const result1 = await provider.search(contract_addr, { activityTypes: [] });
+    const result1 = await provider.search(contract_addr);
     expect(result1.result.items.length).toBe(20);
   }, TIMEOUT);
 
@@ -208,9 +208,9 @@ describe('Blocks', () => {
 
   beforeEach(() => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
-        "X-API-KEY": process.env.X_API_KEY || ""
+        "X-API-KEY": process.env["X-API-KEY"] || ""
       }
     }
     provider = new SkynetWeb3Provider(connectionInfo);
@@ -297,9 +297,9 @@ describe('Collections', () => {
 
   beforeEach(() => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
-        "X-API-KEY": process.env.X_API_KEY || ""
+        "X-API-KEY": process.env["X-API-KEY"] || ""
       }
     }
     provider = new SkynetWeb3Provider(connectionInfo);
@@ -432,9 +432,9 @@ describe('Contracts', () => {
 
   beforeEach(() => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
-        "X-API-KEY": process.env.X_API_KEY || ""
+        "X-API-KEY": process.env["X-API-KEY"] || ""
       }
     }
     provider = new SkynetWeb3Provider(connectionInfo);
@@ -463,9 +463,9 @@ describe('Txs', () => {
 
   beforeEach(() => {
     const connectionInfo = {
-      url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+      url: URL_RONIN_SKYNET_RPC,
       headers: {
-        "X-API-KEY": process.env.X_API_KEY || ""
+        "X-API-KEY": process.env["X-API-KEY"] || ""
       }
     }
     provider = new SkynetWeb3Provider(connectionInfo);

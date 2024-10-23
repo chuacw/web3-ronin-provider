@@ -3,8 +3,6 @@ import { ERROR_EMPTY_HEADERS, ERROR_EMPTY_URL, ERROR_NO_API_KEY, ERROR_NO_HEADER
 /**
  * An error indicating no API key is provided
  *
- * @class ENoApiKey
- * @typedef {ENoApiKey}
  * @extends {Error}
  */
 class ENoApiKey extends Error {
@@ -16,8 +14,6 @@ class ENoApiKey extends Error {
 /**
  * An error indicating that the URL is empty
  *
- * @class EEmptyUrl
- * @typedef {EEmptyUrl}
  * @extends {Error}
  */
 class EEmptyUrl extends Error {
@@ -29,8 +25,6 @@ class EEmptyUrl extends Error {
 /**
  * An error indicating headers are not provided
  *
- * @class ENoHeaders
- * @typedef {ENoHeaders}
  * @extends {Error}
  */
 class ENoHeaders extends Error {
@@ -42,8 +36,6 @@ class ENoHeaders extends Error {
 /**
  * An error indicating that headers were provided, but it's empty!
  *
- * @class EEmptyHeaders
- * @typedef {EEmptyHeaders}
  * @extends {Error}
  */
 class EEmptyHeaders extends Error {

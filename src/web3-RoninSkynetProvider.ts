@@ -1,5 +1,3 @@
-// Author: chuacw, Singapore, Singapore
-
 import { internal_txs_detail_Response, internal_txs_Response, multiple_txs_details_Response } from "./web3-ronin-types-txs";
 import axios, {
   AxiosResponse, AxiosRequestConfig,
@@ -23,34 +21,58 @@ import {
   owned_nfts_of_Response, search_Response, SearchCriteria,
   token_tranfers_of_address_Response
 } from "./web3-ronin-types-accounts";
-import { block_by_hash_timestamp_block_number_range_Response, block_by_number_Response, finalized_block_number_Response, latest_block_number_Response, transactions_by_block_number_Response } from "./web3-ronin-types-blocks";
+import { block_by_hash_timestamp_block_number_range_Response, block_by_number_Response, finalized_block_number_Response, latest_block_number_Response, OptionalParams, transactions_by_block_number_Response } from "./web3-ronin-types-blocks";
 import { URL_RONIN_SKYNET_RPC } from "./web3-ronin-consts";
 import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders } from "./web3-ronin-types-errors";
 
-export type ConnectionInfo = {
+
+/**
+ * Provides the URL, headers, and other information to set up a connection to the backend.
+ * @typedef ConnectionInfo
+ * @type {object}
+ * @property {string} url - URL to the service.
+ * @property {object} [headers] - X-API-KEY amongst others.
+ * @property {AxiosProxyConfig} [proxy] - Proxy
+ */
+type ConnectionInfo = {
   /**
-   * Typically, this is RONIN_SKYNET_RPC
+   * The URL for the connection
+   *
+   * @type {string}
    */
   url: string,
+  /**
+   * Optional headers as key-value pairs.
+   *
+   * @type {?({ [key: string]: string | number })}
+   */
   headers?: { [key: string]: string | number },
+  /**
+   * Optional proxy configuration
+   */
   proxy?: AxiosProxyConfig
 }
 
 /**
  * This class implements the 
- * [Skynet Web3 API](https://docs.skymavis.com/api/web3/skynet-web-3-api).  
- * To create a RoninSkynetWeb3Provider quickly, call createSkyNetProvider with the API key.  
- * To customize headers, call the RoninSkynetWeb3Provider constructor with a tailored ConnectionInfo parameter.
+ * {@link https://docs.skymavis.com/api/web3/skynet-web-3-api|Skynet Web3 API}.  
+ * 
+ * To create a RoninSkynetWeb3Provider quickly, call {@link createSkyNetProvider} with the API key.  
+ * To customize headers, call the RoninSkynetWeb3Provider constructor with a tailored {@link ConnectionInfo} parameter.
  */
 class RoninSkynetWeb3Provider {
 
   readonly #connection: ConnectionInfo;
 
   /**
-   * Creates an instance of RoninSkynetWeb3Provider, see documentation at the 
+   * Creates an instance of RoninSkynetWeb3Provider, see documentation in the docs directory. 
    *
-   * @constructor
-   * @param {ConnectionInfo} connection { url: RONIN_SKYNET_RPC, "X-API-KEY": process.env.X_API_KEY }
+   * @throws {@link EEmptyHeaders} when headers are present, but empty
+   * @throws {@link EEmptyUrl} when URL is empty
+   * @throws {@link ENoApiKey} when X-API-KEY is absent
+   * @throws {@link ENoHeaders} when headers are absent
+   *
+   * @param {ConnectionInfo} connection The URL to use, headers, etc
    */
   constructor(connection: ConnectionInfo) {
     this.#connection = connection;
@@ -88,8 +110,8 @@ class RoninSkynetWeb3Provider {
    * Updates the url to include limit and cursors, if they're provided.
    *
    * @param {string} url
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {string} Updated url if limit and cursors provided, otherwise, returns the parameter url.
    */
   protected update_url(url: string, limit?: number, cursor?: string): string {
@@ -138,8 +160,8 @@ class RoninSkynetWeb3Provider {
    * Places a call to the service, with optional limits and cursor
    *
    * @param {string} url
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<any>}
    */
   protected async getRoninLimitCursor(url: string, limit?: number, cursor?: string): Promise<any> {
@@ -154,26 +176,24 @@ class RoninSkynetWeb3Provider {
   /**
    * Search for matched account activities
    *
+   * @async
    * @param account address of the account to query events for.
    * @param searchCriteria When activityTypes is not empty, fromBlock and toBlock needs to be specified.
-   * @returns 
+   * @returns {Promise<search_Response>}
    */
-  async search(account: string, searchCriteria: SearchCriteria): Promise<search_Response> {
+  async search(account: string, searchCriteria?: SearchCriteria): Promise<search_Response> {
     type _SearchCriteria = { activityTypes: string[], limit?: number, cursor?: string, fromBlock?: number, toBlock?: number };
     const url = `accounts/${account}/activities/search`;
     let _searchCriteria: _SearchCriteria = {
-      activityTypes: []
+      activityTypes: searchCriteria?.activityTypes || []
     };
-    if (searchCriteria.activityTypes) {
-      _searchCriteria.activityTypes = searchCriteria.activityTypes; // .map(value => value);
-    }
-    if (searchCriteria.limit) {
+    if (searchCriteria?.limit) {
       _searchCriteria.limit = searchCriteria.limit;
     }
-    if (searchCriteria.cursor) {
+    if (searchCriteria?.cursor) {
       _searchCriteria.cursor = searchCriteria.cursor;
     }
-    if (searchCriteria.fromBlock && searchCriteria.toBlock) {
+    if (searchCriteria?.fromBlock && searchCriteria.toBlock) {
       _searchCriteria.fromBlock = searchCriteria.fromBlock;
       _searchCriteria.toBlock = searchCriteria.toBlock;
     }
@@ -185,9 +205,10 @@ class RoninSkynetWeb3Provider {
   /**
    * Get owned NFTs of an address
    *
+   * @async
    * @param {string} address The address to retrieve owned NFTs for
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<owned_nfts_of_Response>}
    */
   async owned_nfts_of(address: string, limit?: number, cursor?: string): Promise<owned_nfts_of_Response> {
@@ -198,9 +219,10 @@ class RoninSkynetWeb3Provider {
   /**
    * Get fungible token balances of an address, including the native token (RON)
    *
+   * @async
    * @param {string} address
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<fungible_token_balance_Response>}
    */
   async fungible_token_balance(address: string, limit?: number, cursor?: string): Promise<fungible_token_balance_Response> {
@@ -211,10 +233,11 @@ class RoninSkynetWeb3Provider {
   /**
    * Get list of collections having NFTs belonging to an address
    *
+   * @async
    * @param {string} address
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
-   * @returns {Promise<any>}
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
+   * @returns {Promise<list_of_collections_having_NFTs_Response>}
    */
   async list_of_collections_having_NFTs(address: string, limit?: number, cursor?: string): Promise<list_of_collections_having_NFTs_Response> {
     const result = await this.getRoninLimitCursor(`accounts/${address}/collections`, limit, cursor);
@@ -224,10 +247,11 @@ class RoninSkynetWeb3Provider {
   /**
    * Get NFT list of an address and contract
    *
+   * @async
    * @param {string} address
    * @param {string} contractAddress
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<nft_list_of_address_and_contract_Response>}
    */
   async nft_list_of_address_and_contract(address: string, contractAddress: string, limit?: number, cursor?: string): Promise<nft_list_of_address_and_contract_Response> {
@@ -238,6 +262,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get balance of an address and contract
    *
+   * @async
    * @param {string} account
    * @param {string} contractAddress
    * @returns {Promise<balance_of_address_and_contract_Response>}
@@ -252,6 +277,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get balances of an address by multiple contracts
    *
+   * @async
    * @param {string} account
    * @param {string[]} contractAddresses
    * @returns {Promise<balances_of_address_by_multiple_contracts_Response>}
@@ -263,6 +289,14 @@ class RoninSkynetWeb3Provider {
     return result as unknown as balances_of_address_by_multiple_contracts_Response;
   }
 
+  /**
+   * Get token transfers of an address with a contract
+   *
+   * @param {string} account
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
+   * @returns {Promise<token_tranfers_of_address_Response>}
+   */
   async token_tranfers_of_address(account: string, limit?: number, cursor?: string): Promise<token_tranfers_of_address_Response> {
     const url = `accounts/${account}/tokens/transfers`;
     const result = await this.getRoninLimitCursor(url, limit, cursor);
@@ -320,8 +354,16 @@ class RoninSkynetWeb3Provider {
     return result as unknown as block_by_number_Response;
   }
 
+  /**
+   * Get block by hash, timestamp, block number range
+   *
+   * @param {number} fromBlock
+   * @param {number} toBlock
+   * @param {?OptionalParams} [optionalParams] get the block where its life span covers the input timestamp and/or hash
+   * @returns {Promise<block_by_hash_timestamp_block_number_range_Response>}
+   */
   async block_by_hash_timestamp_block_number_range(
-    fromBlock: number, toBlock: number, optionalParams?: { hash?: string, timestamp?: number }
+    fromBlock: number, toBlock: number, optionalParams?: OptionalParams
   ): Promise<block_by_hash_timestamp_block_number_range_Response> {
     let urlParams = new URLSearchParams();
     if (optionalParams) {
@@ -404,10 +446,9 @@ class RoninSkynetWeb3Provider {
   /**
    * Refresh NFTs of a collection in asynchronous manner
    *
-   * @async
    * @param {string} contractAddress
    * @param {string[]} tokenIds
-   * @returns {Promise<any>}
+   * @returns {Promise<refresh_nfts_of_collection_async_Response>}
    */
   async refresh_nfts_of_collection_async(contractAddress: string, tokenIds: string[]): Promise<refresh_nfts_of_collection_async_Response> {
     const url = `collections/${contractAddress}/tokens/metadata/refresh_async`;
@@ -438,8 +479,8 @@ class RoninSkynetWeb3Provider {
    * Get NFTs from a collection 
    *
    * @param contractAddress 
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<nfts_from_collection_Response>}
    */
   async nfts_from_collection(contractAddress: string, limit?: number, cursor?: string): Promise<nfts_from_collection_Response> {
@@ -450,11 +491,11 @@ class RoninSkynetWeb3Provider {
   /**
    * Get the number of collection holdings by address
    *
-   * @param contractAddress
-   * @param address
-   * @param address
-   * @param limit
-   * @param cursor
+   * @param {string} contractAddress The address to get the number of collection holders for
+   * @param {string} address The account address
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
+   * @returns {Promise<number_of_collection_holdings_by_address_Response>}
    */
   async number_of_collection_holdings_by_address(contractAddress: string, address: string, limit?: number, cursor?: string): Promise<number_of_collection_holdings_by_address_Response> {
     const result = await this.getRoninLimitCursor(`collections/${contractAddress}/owners/${address}`, limit, cursor);
@@ -464,9 +505,9 @@ class RoninSkynetWeb3Provider {
   /**
    * Get collection holder list
    *
-   * @param {string} contractAddress
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {string} contractAddress The address to get collection holder list for
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<collection_holder_list_Response>}
    */
   async collection_holder_list(contractAddress: string, limit?: number, cursor?: string): Promise<collection_holder_list_Response> {
@@ -477,9 +518,9 @@ class RoninSkynetWeb3Provider {
   /**
    * Get collection token transfers
    *
-   * @param {string} contractAddress
-   * @param {?number} [limit]
-   * @param {?string} [cursor]
+   * @param {string} contractAddress The address to get token transfers for
+   * @param {?number} [limit] The number of items to get
+   * @param {?string} [cursor] The page from which to get the requested items
    * @returns {Promise<collection_token_transfers_Response>}
    */
   async collection_token_transfers(contractAddress: string, limit?: number, cursor?: string): Promise<collection_token_transfers_Response> {
@@ -490,7 +531,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get collection detail
    *
-   * @param {string} contract_addr
+   * @param {string} contract_addr The address to get collection detail for
    * @returns {Promise<collection_detail_Response>}
    */
   async collection_detail(contract_addr: string): Promise<collection_detail_Response> {
@@ -503,7 +544,7 @@ class RoninSkynetWeb3Provider {
   /**
    * Get details of multiple collections
    *
-   * @param {string[]} contractAddresses
+   * @param {string[]} contractAddresses An array of addresses
    * @returns {Promise<details_of_multiple_collections_Response>}
    */
   async details_of_multiple_collections(contractAddresses: string[]): Promise<details_of_multiple_collections_Response> {
@@ -560,7 +601,6 @@ class RoninSkynetWeb3Provider {
   /**
    * Get internal transaction details of a transaction
    *
-   * @async
    * @param {string} txHash hash of the transaction to get
    * @returns {Promise<internal_txs_detail_Response>}
    */
@@ -573,7 +613,6 @@ class RoninSkynetWeb3Provider {
   /**
    * Get details of multiple transactions
    *
-   * @async
    * @param {string[]} hashes hashes of transactions
    * @returns {Promise<multiple_txs_details_Response>}
    */
@@ -591,7 +630,7 @@ class RoninSkynetWeb3Provider {
  * Shortcut to creating a RoninSkynetWeb3Provider given the API key
  *
  * @param {string} X_API_KEY API key
- * @param {?string} [url] The URL to use for the provider. If not given, uses RONIN_SKYNET_RPC
+ * @param {?string} [url] The URL to use for the provider. If not given, uses {@link URL_RONIN_SKYNET_RPC}
  * @returns {RoninSkynetWeb3Provider}
  */
 function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3Provider {
@@ -601,6 +640,7 @@ function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3P
 }
 
 export {
+  ConnectionInfo,
   RoninSkynetWeb3Provider,
   RoninSkynetWeb3Provider as SkynetProvider,
   RoninSkynetWeb3Provider as SkynetWeb3Provider,

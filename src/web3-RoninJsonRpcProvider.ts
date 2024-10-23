@@ -1,12 +1,10 @@
-// Author: chuacw, Singapore, Singapore
-
 import { JsonRpcProvider } from "@ethersproject/providers";
 import { BigNumber, ethers } from "ethers";
 import { resolveProperties } from "ethers/lib/utils";
 
 /**
  * A wrapper to workaround gasPrice issue in etherjs v5 after London
- * hardfork when sending transaction for Ronin.
+ * hardfork when sending transactions for Ronin.
  */
 export class RoninJsonRpcProvider extends JsonRpcProvider {
   readonly #FIFTEEN: BigNumber;

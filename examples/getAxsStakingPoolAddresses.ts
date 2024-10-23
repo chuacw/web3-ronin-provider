@@ -6,7 +6,7 @@ async function main() {
   const connectionInfo = {
     url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
     headers: {
-      "X-API-KEY": process.env.X_API_KEY || ""
+      "X-API-KEY": process.env["X-API-KEY"] || ""
     }
   };
   const provider = new SkynetWeb3Provider(connectionInfo);
