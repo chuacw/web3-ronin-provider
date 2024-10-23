@@ -44,7 +44,7 @@ export type ConnectionInfo = {
  */
 class RoninSkynetWeb3Provider {
 
-  readonly connection: ConnectionInfo;
+  readonly #connection: ConnectionInfo;
 
   /**
    * Creates an instance of RoninSkynetWeb3Provider, see documentation at the 
@@ -53,7 +53,7 @@ class RoninSkynetWeb3Provider {
    * @param {ConnectionInfo} connection { url: RONIN_SKYNET_RPC, "X-API-KEY": process.env.X_API_KEY }
    */
   constructor(connection: ConnectionInfo) {
-    this.connection = connection;
+    this.#connection = connection;
     if (connection.url === "") {
       throw new EEmptyUrl();
     }
@@ -66,9 +66,9 @@ class RoninSkynetWeb3Provider {
     if (connection.headers["X-API-KEY"] === undefined || connection.headers["X-API-KEY"] === "") {
       throw new ENoApiKey();
     };
-    this.connection.headers!["Connection"] = "Keep-Alive";
-    this.connection.headers!["Keep-Alive"] = "timeout=5, max=1000";
-    this.connection.headers!["Access-Control-Allow-Origin"] = "*";
+    this.#connection.headers!["Connection"] = "Keep-Alive";
+    this.#connection.headers!["Keep-Alive"] = "timeout=5, max=1000";
+    this.#connection.headers!["Access-Control-Allow-Origin"] = "*";
   }
 
   protected concatUrl(url: string, urlSuffix: string): string {
@@ -116,19 +116,19 @@ class RoninSkynetWeb3Provider {
   }
 
   protected async getRonin(urlSuffix: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any, any>> {
-    const url = this.concatUrl(this.connection.url, urlSuffix);
+    const url = this.concatUrl(this.#connection.url, urlSuffix);
     let _config = {
       ...config,
-      headers: this.connection.headers
+      headers: this.#connection.headers
     };
     const result = await axios.get(url, _config);
     return result;
   }
 
   protected async postRonin(urlSuffix: string, data: any): Promise<AxiosResponse<any, any>> {
-    const url = this.concatUrl(this.connection.url, urlSuffix);
+    const url = this.concatUrl(this.#connection.url, urlSuffix);
     let _config = {
-      headers: this.connection.headers
+      headers: this.#connection.headers
     }
     const result = await axios.post(url, data, _config);
     return result;
