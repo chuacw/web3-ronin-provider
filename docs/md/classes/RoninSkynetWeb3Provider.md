@@ -7,7 +7,7 @@
 # Class: RoninSkynetWeb3Provider
 
 This class implements the 
-[Web3 API](https://docs.skymavis.com/api/web3/skynet-web-3-api|Skynet).  
+[Skynet Web3 API](https://docs.skymavis.com/api/web3/skynet-web-3-api).  
 
 To create a RoninSkynetWeb3Provider quickly, call [createSkyNetProvider](../functions/createSkyNetProvider.md) with the API key.  
 To customize headers, call the RoninSkynetWeb3Provider constructor with a tailored [ConnectionInfo](../type-aliases/ConnectionInfo.md) parameter.
@@ -48,13 +48,13 @@ The URL to use, headers, etc
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:77](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L77)
+[src/web3-RoninSkynetProvider.ts:80](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L80)
 
-## Methods
+## Accounts
 
-### balance\_of\_address\_and\_contract()
+### get\_balance\_of\_address\_and\_contract()
 
-> **balance\_of\_address\_and\_contract**(`account`, `contractAddress`): `Promise`\<[`balance_of_address_and_contract_Response`](../interfaces/balance_of_address_and_contract_Response.md)\>
+> **get\_balance\_of\_address\_and\_contract**(`account`, `contractAddress`): `Promise`\<[`get_balance_of_address_and_contract_Response`](../interfaces/get_balance_of_address_and_contract_Response.md)\>
 
 Get balance of an address and contract
 
@@ -66,19 +66,19 @@ Get balance of an address and contract
 
 #### Returns
 
-`Promise`\<[`balance_of_address_and_contract_Response`](../interfaces/balance_of_address_and_contract_Response.md)\>
+`Promise`\<[`get_balance_of_address_and_contract_Response`](../interfaces/get_balance_of_address_and_contract_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:271](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L271)
+[src/web3-RoninSkynetProvider.ts:282](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L282)
 
 ***
 
-### balances\_of\_address\_by\_multiple\_contracts()
+### get\_balances\_of\_address\_by\_multiple\_contracts()
 
-> **balances\_of\_address\_by\_multiple\_contracts**(`account`, `contractAddresses`): `Promise`\<[`balances_of_address_by_multiple_contracts_Response`](../interfaces/balances_of_address_by_multiple_contracts_Response.md)\>
+> **get\_balances\_of\_address\_by\_multiple\_contracts**(`account`, `contractAddresses`): `Promise`\<[`get_balances_of_address_by_multiple_contracts_Response`](../interfaces/get_balances_of_address_by_multiple_contracts_Response.md)\>
 
 Get balances of an address by multiple contracts
 
@@ -90,293 +90,19 @@ Get balances of an address by multiple contracts
 
 #### Returns
 
-`Promise`\<[`balances_of_address_by_multiple_contracts_Response`](../interfaces/balances_of_address_by_multiple_contracts_Response.md)\>
+`Promise`\<[`get_balances_of_address_by_multiple_contracts_Response`](../interfaces/get_balances_of_address_by_multiple_contracts_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:286](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L286)
+[src/web3-RoninSkynetProvider.ts:298](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L298)
 
 ***
 
-### block\_by\_hash\_timestamp\_block\_number\_range()
+### get\_fungible\_token\_balance()
 
-> **block\_by\_hash\_timestamp\_block\_number\_range**(`fromBlock`, `toBlock`, `optionalParams`?): `Promise`\<[`block_by_hash_timestamp_block_number_range_Response`](../interfaces/block_by_hash_timestamp_block_number_range_Response.md)\>
-
-Get block by hash, timestamp, block number range
-
-#### Parameters
-
-• **fromBlock**: `number`
-
-• **toBlock**: `number`
-
-• **optionalParams?**: [`OptionalParams`](../type-aliases/OptionalParams.md)
-
-get the block where its life span covers the input timestamp and/or hash
-
-#### Returns
-
-`Promise`\<[`block_by_hash_timestamp_block_number_range_Response`](../interfaces/block_by_hash_timestamp_block_number_range_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:370](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L370)
-
-***
-
-### block\_by\_number()
-
-> **block\_by\_number**(`block_number`): `Promise`\<[`block_by_number_Response`](../interfaces/block_by_number_Response.md)\>
-
-Get block by number
-
-#### Parameters
-
-• **block\_number**: `number`
-
-#### Returns
-
-`Promise`\<[`block_by_number_Response`](../interfaces/block_by_number_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:354](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L354)
-
-***
-
-### collection\_detail()
-
-> **collection\_detail**(`contract_addr`): `Promise`\<[`collection_detail_Response`](../interfaces/collection_detail_Response.md)\>
-
-Get collection detail
-
-#### Parameters
-
-• **contract\_addr**: `string`
-
-The address to get collection detail for
-
-#### Returns
-
-`Promise`\<[`collection_detail_Response`](../interfaces/collection_detail_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:553](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L553)
-
-***
-
-### collection\_holder\_list()
-
-> **collection\_holder\_list**(`contractAddress`, `limit`?, `cursor`?): `Promise`\<[`collection_holder_list_Response`](../interfaces/collection_holder_list_Response.md)\>
-
-Get collection holder list
-
-#### Parameters
-
-• **contractAddress**: `string`
-
-The address to get collection holder list for
-
-• **limit?**: `number`
-
-The number of items to get
-
-• **cursor?**: `string`
-
-The page from which to get the requested items
-
-#### Returns
-
-`Promise`\<[`collection_holder_list_Response`](../interfaces/collection_holder_list_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:527](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L527)
-
-***
-
-### collection\_token\_transfers()
-
-> **collection\_token\_transfers**(`contractAddress`, `limit`?, `cursor`?): `Promise`\<[`collection_token_transfers_Response`](../interfaces/collection_token_transfers_Response.md)\>
-
-Get collection token transfers
-
-#### Parameters
-
-• **contractAddress**: `string`
-
-The address to get token transfers for
-
-• **limit?**: `number`
-
-The number of items to get
-
-• **cursor?**: `string`
-
-The page from which to get the requested items
-
-#### Returns
-
-`Promise`\<[`collection_token_transfers_Response`](../interfaces/collection_token_transfers_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:541](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L541)
-
-***
-
-### concatUrl()
-
-> `protected` **concatUrl**(`url`, `urlSuffix`): `string`
-
-#### Parameters
-
-• **url**: `string`
-
-• **urlSuffix**: `string`
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:96](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L96)
-
-***
-
-### contract\_detail()
-
-> **contract\_detail**(`contract_addr`): `Promise`\<[`contract_detail_Response`](../interfaces/contract_detail_Response.md)\>
-
-Get detail of a contract
-
-#### Parameters
-
-• **contract\_addr**: `string`
-
-address of contract to get detail for
-
-#### Returns
-
-`Promise`\<[`contract_detail_Response`](../interfaces/contract_detail_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:585](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L585)
-
-***
-
-### detail\_of\_nft()
-
-> **detail\_of\_nft**(`contract_addr`, `tokenId`): `Promise`\<[`detail_of_nft_Response`](../interfaces/detail_of_nft_Response.md)\>
-
-Get detail of an NFT
-
-#### Parameters
-
-• **contract\_addr**: `string`
-
-Contract address of NFT
-
-• **tokenId**: `number`
-
-ID of NFT token
-
-#### Returns
-
-`Promise`\<[`detail_of_nft_Response`](../interfaces/detail_of_nft_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:429](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L429)
-
-***
-
-### details\_of\_multiple\_collections()
-
-> **details\_of\_multiple\_collections**(`contractAddresses`): `Promise`\<[`details_of_multiple_collections_Response`](../interfaces/details_of_multiple_collections_Response.md)\>
-
-Get details of multiple collections
-
-#### Parameters
-
-• **contractAddresses**: `string`[]
-
-An array of addresses
-
-#### Returns
-
-`Promise`\<[`details_of_multiple_collections_Response`](../interfaces/details_of_multiple_collections_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:567](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L567)
-
-***
-
-### details\_of\_multiple\_nfts()
-
-> **details\_of\_multiple\_nfts**(`contractAddress`, `tokenIds`): `Promise`\<[`details_of_multiple_nfts_Response`](../interfaces/details_of_multiple_nfts_Response.md)\>
-
-Get details of multiple NFTs
-
-#### Parameters
-
-• **contractAddress**: `string`
-
-• **tokenIds**: `string`[]
-
-#### Returns
-
-`Promise`\<[`details_of_multiple_nfts_Response`](../interfaces/details_of_multiple_nfts_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:480](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L480)
-
-***
-
-### finalized\_block\_number()
-
-> **finalized\_block\_number**(): `Promise`\<[`finalized_block_number_Response`](../interfaces/finalized_block_number_Response.md)\>
-
-Get finalized block number
-
-#### Returns
-
-`Promise`\<[`finalized_block_number_Response`](../interfaces/finalized_block_number_Response.md)\>
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:315](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L315)
-
-***
-
-### fungible\_token\_balance()
-
-> **fungible\_token\_balance**(`address`, `limit`?, `cursor`?): `Promise`\<[`fungible_token_balance_Response`](../interfaces/fungible_token_balance_Response.md)\>
+> **get\_fungible\_token\_balance**(`address`, `limit`?, `cursor`?): `Promise`\<[`get_fungible_token_balance_Response`](../interfaces/get_fungible_token_balance_Response.md)\>
 
 Get fungible token balances of an address, including the native token (RON)
 
@@ -386,141 +112,65 @@ Get fungible token balances of an address, including the native token (RON)
 
 • **limit?**: `number`
 
-The number of items to get
+how many items can be return in a single response, maximum 200
 
 • **cursor?**: `string`
 
-The page from which to get the requested items
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<[`fungible_token_balance_Response`](../interfaces/fungible_token_balance_Response.md)\>
+`Promise`\<[`get_fungible_token_balance_Response`](../interfaces/get_fungible_token_balance_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:229](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L229)
+[src/web3-RoninSkynetProvider.ts:237](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L237)
 
 ***
 
-### getRonin()
+### get\_internal\_txs\_transfers()
 
-> `protected` **getRonin**(`urlSuffix`, `config`?): `Promise`\<`AxiosResponse`\<`any`, `any`\>\>
+> **get\_internal\_txs\_transfers**(`account`, `limit`?, `cursor`?): `Promise`\<[`get_internal_txs_transfers_Response`](../interfaces/get_internal_txs_transfers_Response.md)\>
 
-#### Parameters
+Get internal tx transfers
 
-• **urlSuffix**: `string`
+Get all RON transfers via internal transactions of a wallet address
 
-• **config?**: `AxiosRequestConfig`\<`any`\>
+This API provides a focused view of internal transactions that may indicate potential money movement associated with a specific wallet. This API exclusively returns internal transactions where the Ethereum Virtual Machine (EVM) OpCode is "CALL" signaling that the transaction likely involves a call to another contract, which may result in a transfer of funds.
 
-#### Returns
+The API filters results to include only those internal transactions where either the from or to field matches the provided wallet address. This allows users to efficiently monitor all relevant internal activity linked to their wallet, helping them track significant interactions, such as fund movements or contract engagements.
 
-`Promise`\<`AxiosResponse`\<`any`, `any`\>\>
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:140](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L140)
-
-***
-
-### getRoninLimitCursor()
-
-> `protected` **getRoninLimitCursor**(`url`, `limit`?, `cursor`?): `Promise`\<`any`\>
-
-Places a call to the service, with optional limits and cursor
+By focusing on potential money movements, this API is invaluable for users looking to gain insights into their on-chain behavior and manage their assets effectively.
 
 #### Parameters
 
-• **url**: `string`
+• **account**: `string`
 
 • **limit?**: `number`
 
-The number of items to get
+how many items can be return in a single response, maximum 200
 
 • **cursor?**: `string`
 
-The page from which to get the requested items
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<`any`\>
+`Promise`\<[`get_internal_txs_transfers_Response`](../interfaces/get_internal_txs_transfers_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:168](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L168)
+[src/web3-RoninSkynetProvider.ts:383](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L383)
 
 ***
 
-### internal\_txs()
+### get\_list\_of\_collections\_having\_NFTs()
 
-> **internal\_txs**(`txHash`): `Promise`\<[`internal_txs_Response`](../interfaces/internal_txs_Response.md)\>
-
-Get internal transaction of a transaction
-
-#### Parameters
-
-• **txHash**: `string`
-
-hash of the transaction to get
-
-#### Returns
-
-`Promise`\<[`internal_txs_Response`](../interfaces/internal_txs_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:615](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L615)
-
-***
-
-### internal\_txs\_detail()
-
-> **internal\_txs\_detail**(`txHash`): `Promise`\<[`internal_txs_detail_Response`](../interfaces/internal_txs_detail_Response.md)\>
-
-Get internal transaction details of a transaction
-
-#### Parameters
-
-• **txHash**: `string`
-
-hash of the transaction to get
-
-#### Returns
-
-`Promise`\<[`internal_txs_detail_Response`](../interfaces/internal_txs_detail_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:628](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L628)
-
-***
-
-### latest\_block\_number()
-
-> **latest\_block\_number**(): `Promise`\<[`finalized_block_number_Response`](../interfaces/finalized_block_number_Response.md)\>
-
-Get latest block number
-
-#### Returns
-
-`Promise`\<[`finalized_block_number_Response`](../interfaces/finalized_block_number_Response.md)\>
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:326](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L326)
-
-***
-
-### list\_of\_collections\_having\_NFTs()
-
-> **list\_of\_collections\_having\_NFTs**(`address`, `limit`?, `cursor`?): `Promise`\<[`list_of_collections_having_NFTs_Response`](../interfaces/list_of_collections_having_NFTs_Response.md)\>
+> **get\_list\_of\_collections\_having\_NFTs**(`address`, `limit`?, `cursor`?): `Promise`\<[`get_list_of_collections_having_NFTs_Response`](../interfaces/get_list_of_collections_having_NFTs_Response.md)\>
 
 Get list of collections having NFTs belonging to an address
 
@@ -530,75 +180,27 @@ Get list of collections having NFTs belonging to an address
 
 • **limit?**: `number`
 
-The number of items to get
+how many items can be return in a single response, maximum 200
 
 • **cursor?**: `string`
 
-The page from which to get the requested items
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<[`list_of_collections_having_NFTs_Response`](../interfaces/list_of_collections_having_NFTs_Response.md)\>
+`Promise`\<[`get_list_of_collections_having_NFTs_Response`](../interfaces/get_list_of_collections_having_NFTs_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:243](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L243)
+[src/web3-RoninSkynetProvider.ts:252](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L252)
 
 ***
 
-### multiple\_contracts\_details()
+### get\_nft\_list\_of\_address\_and\_contract()
 
-> **multiple\_contracts\_details**(`contractAddresses`): `Promise`\<[`multiple_contracts_details_Response`](../interfaces/multiple_contracts_details_Response.md)\>
-
-Get details of multiple contracts
-
-#### Parameters
-
-• **contractAddresses**: `string`[]
-
-An array of contract address to get details for
-
-#### Returns
-
-`Promise`\<[`multiple_contracts_details_Response`](../interfaces/multiple_contracts_details_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:598](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L598)
-
-***
-
-### multiple\_txs\_details()
-
-> **multiple\_txs\_details**(`hashes`): `Promise`\<[`multiple_txs_details_Response`](../interfaces/multiple_txs_details_Response.md)\>
-
-Get details of multiple transactions
-
-#### Parameters
-
-• **hashes**: `string`[]
-
-hashes of transactions
-
-#### Returns
-
-`Promise`\<[`multiple_txs_details_Response`](../interfaces/multiple_txs_details_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:641](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L641)
-
-***
-
-### nft\_list\_of\_address\_and\_contract()
-
-> **nft\_list\_of\_address\_and\_contract**(`address`, `contractAddress`, `limit`?, `cursor`?): `Promise`\<[`nft_list_of_address_and_contract_Response`](../interfaces/nft_list_of_address_and_contract_Response.md)\>
+> **get\_nft\_list\_of\_address\_and\_contract**(`address`, `contractAddress`, `limit`?, `cursor`?): `Promise`\<[`get_nft_list_of_address_and_contract_Response`](../interfaces/get_nft_list_of_address_and_contract_Response.md)\>
 
 Get NFT list of an address and contract
 
@@ -610,215 +212,161 @@ Get NFT list of an address and contract
 
 • **limit?**: `number`
 
-The number of items to get
+how many items can be return in a single response, maximum 200
 
 • **cursor?**: `string`
 
-The page from which to get the requested items
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<[`nft_list_of_address_and_contract_Response`](../interfaces/nft_list_of_address_and_contract_Response.md)\>
+`Promise`\<[`get_nft_list_of_address_and_contract_Response`](../interfaces/get_nft_list_of_address_and_contract_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:258](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L258)
+[src/web3-RoninSkynetProvider.ts:268](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L268)
 
 ***
 
-### nfts\_from\_collection()
+### get\_owned\_nfts\_of()
 
-> **nfts\_from\_collection**(`contractAddress`, `limit`?, `cursor`?): `Promise`\<[`nfts_from_collection_Response`](../interfaces/nfts_from_collection_Response.md)\>
-
-Get NFTs from a collection
-
-#### Parameters
-
-• **contractAddress**: `string`
-
-• **limit?**: `number`
-
-The number of items to get
-
-• **cursor?**: `string`
-
-The page from which to get the requested items
-
-#### Returns
-
-`Promise`\<[`nfts_from_collection_Response`](../interfaces/nfts_from_collection_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:498](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L498)
-
-***
-
-### number\_of\_collection\_holdings\_by\_address()
-
-> **number\_of\_collection\_holdings\_by\_address**(`contractAddress`, `address`, `limit`?, `cursor`?): `Promise`\<[`number_of_collection_holdings_by_address_Response`](../interfaces/number_of_collection_holdings_by_address_Response.md)\>
-
-Get the number of collection holdings by address
-
-#### Parameters
-
-• **contractAddress**: `string`
-
-The address to get the number of collection holders for
-
-• **address**: `string`
-
-The account address
-
-• **limit?**: `number`
-
-The number of items to get
-
-• **cursor?**: `string`
-
-The page from which to get the requested items
-
-#### Returns
-
-`Promise`\<[`number_of_collection_holdings_by_address_Response`](../interfaces/number_of_collection_holdings_by_address_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:513](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L513)
-
-***
-
-### owned\_nfts\_of()
-
-> **owned\_nfts\_of**(`address`, `limit`?, `cursor`?): `Promise`\<[`owned_nfts_of_Response`](../interfaces/owned_nfts_of_Response.md)\>
+> **get\_owned\_nfts\_of**(`address`, `limit`?, `cursor`?): `Promise`\<[`get_owned_nfts_of_address_Response`](../interfaces/get_owned_nfts_of_address_Response.md)\>
 
 Get owned NFTs of an address
 
+This API allows you to retrieve a list of NFTs owned by a wallet address.
+
 #### Parameters
 
 • **address**: `string`
 
-The address to retrieve owned NFTs for
+owner address - The address to retrieve owned NFTs for
 
 • **limit?**: `number`
 
-The number of items to get
+how many items can be return in a single response, maximum 200
 
 • **cursor?**: `string`
 
-The page from which to get the requested items
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<[`owned_nfts_of_Response`](../interfaces/owned_nfts_of_Response.md)\>
+`Promise`\<[`get_owned_nfts_of_address_Response`](../interfaces/get_owned_nfts_of_address_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:215](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L215)
+[src/web3-RoninSkynetProvider.ts:222](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L222)
 
 ***
 
-### owners\_of\_nft()
+### get\_token\_tranfers\_of\_address()
 
-> **owners\_of\_nft**(`contractAddress`, `tokenId`): `Promise`\<[`owners_of_nft_Response`](../interfaces/owners_of_nft_Response.md)\>
+> **get\_token\_tranfers\_of\_address**(`account`, `limit`?, `cursor`?): `Promise`\<[`get_token_tranfers_of_address_Response`](../interfaces/get_token_tranfers_of_address_Response.md)\>
 
-Get owners of an NFT
+Get token transfers of an address
 
 #### Parameters
+
+• **account**: `string`
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<[`get_token_tranfers_of_address_Response`](../interfaces/get_token_tranfers_of_address_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:315](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L315)
+
+***
+
+### get\_token\_tranfers\_of\_address\_with\_contract()
+
+> **get\_token\_tranfers\_of\_address\_with\_contract**(`account`, `contractAddress`, `limit`?, `cursor`?): `Promise`\<[`get_token_tranfers_of_address_with_contract_Response`](../interfaces/get_token_tranfers_of_address_with_contract_Response.md)\>
+
+Get token transfers of an address with a contract
+
+Get all token transfers of a wallet address and a contract
+
+This API offers a more targeted way to track token movements between a specific wallet and a particular smart contract. It is ideal for platforms, traders, and developers who need detailed insights into how tokens are being transferred between a wallet and a specific contract, such as in staking, liquidity pools, or token sale contracts. For NFT and token holders, it allows precise tracking of interactions with a contract, ensuring transparency and control over assets. DeFi projects and investors can use this API to analyze contract-specific transactions like token swaps, staking, or rewards distributed from the contract to the wallet. By narrowing the focus to a single wallet-contract relationship, this API simplifies auditing and enhances security checks, helping users spot patterns or irregularities in token flows. I t’s an essential tool for those who need contract-specific token transfer data without wading through the noise of all wallet transactions
+
+#### Parameters
+
+• **account**: `string`
+
+wallet address
 
 • **contractAddress**: `string`
 
-• **tokenId**: `number`
+contract address
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<[`owners_of_nft_Response`](../interfaces/owners_of_nft_Response.md)\>
+`Promise`\<[`get_token_tranfers_of_address_with_contract_Response`](../interfaces/get_token_tranfers_of_address_with_contract_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:400](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L400)
+[src/web3-RoninSkynetProvider.ts:336](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L336)
 
 ***
 
-### postRonin()
+### get\_transactions\_of\_address()
 
-> `protected` **postRonin**(`urlSuffix`, `data`): `Promise`\<`AxiosResponse`\<`any`, `any`\>\>
+> **get\_transactions\_of\_address**(`account`, `limit`?, `cursor`?): `Promise`\<[`get_transactions_of_address_Response`](../interfaces/get_transactions_of_address_Response.md)\>
 
-#### Parameters
+Get transactions of an address
 
-• **urlSuffix**: `string`
+Get all transactions of a wallet address
 
-• **data**: `any`
+This API provides comprehensive access to every blockchain transaction associated with a specific wallet address. Unlike token transfers, which are derived from event logs, this API returns raw blockchain transactions, including contract interactions, token approvals, and transfers. This is invaluable for developers, investors, and platforms needing a full overview of a wallet's blockchain activity. For DeFi users, it offers transparency into all on-chain actions, whether interacting with smart contracts or moving assets between wallets. NFT collectors and creators can use this API to track every significant transaction related to their assets, such as minting or contract deployments. By providing a complete history of blockchain transactions, this API is essential for auditing, monitoring, and managing wallets, helping users maintain full visibility into their on-chain behavior, including interactions that don't necessarily involve token transfers.
 
-#### Returns
-
-`Promise`\<`AxiosResponse`\<`any`, `any`\>\>
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:150](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L150)
-
-***
-
-### refresh\_nfts\_of\_collection\_async()
-
-> **refresh\_nfts\_of\_collection\_async**(`contractAddress`, `tokenIds`): `Promise`\<[`refresh_nfts_of_collection_async_Response`](../interfaces/refresh_nfts_of_collection_async_Response.md)\>
-
-Refresh NFTs of a collection in asynchronous manner
+A blockchain transaction relates to a wallet through the from, to, and contractAddress fields. The from field indicates the sender; if it matches the wallet address, it means the wallet initiated the transaction, such as sending tokens or RON. The to field represents the recipient; if this matches the wallet, it signifies that the wallet received assets. The contractAddress specifies any smart contract involved in the transaction. If this address matches a specific contract the wallet interacts with, it shows the relationship between the wallet and that contract.
 
 #### Parameters
 
-• **contractAddress**: `string`
+• **account**: `string`
 
-• **tokenIds**: `string`[]
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
-`Promise`\<[`refresh_nfts_of_collection_async_Response`](../interfaces/refresh_nfts_of_collection_async_Response.md)\>
+`Promise`\<[`get_transactions_of_address_Response`](../interfaces/get_transactions_of_address_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:463](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L463)
-
-***
-
-### refresh\_nfts\_of\_collection\_sync()
-
-> **refresh\_nfts\_of\_collection\_sync**(`contractAddress`, `maxWait`, `tokenIds`): `Promise`\<[`refresh_nfts_of_collection_sync_Response`](../interfaces/refresh_nfts_of_collection_sync_Response.md)\>
-
-Refresh NFTs of a collection in synchronous manner
-
-#### Parameters
-
-• **contractAddress**: `string`
-
-• **maxWait**: `number`
-
-milliseconds, when maxWait exceeds server timeout, then server timeout will be used instead
-
-• **tokenIds**: `string`[]
-
-#### Returns
-
-`Promise`\<[`refresh_nfts_of_collection_sync_Response`](../interfaces/refresh_nfts_of_collection_sync_Response.md)\>
-
-#### Async
-
-#### Defined in
-
-[src/web3-RoninSkynetProvider.ts:445](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L445)
+[src/web3-RoninSkynetProvider.ts:358](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L358)
 
 ***
 
@@ -846,79 +394,99 @@ When activityTypes is not empty, fromBlock and toBlock needs to be specified.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:185](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L185)
+[src/web3-RoninSkynetProvider.ts:189](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L189)
 
-***
+## Blocks
 
-### token\_tranfers\_of\_address()
+### get\_block\_by\_hash\_timestamp\_block\_number\_range()
 
-> **token\_tranfers\_of\_address**(`account`, `limit`?, `cursor`?): `Promise`\<[`token_tranfers_of_address_Response`](../interfaces/token_tranfers_of_address_Response.md)\>
+> **get\_block\_by\_hash\_timestamp\_block\_number\_range**(`fromBlock`, `toBlock`, `optionalParams`?): `Promise`\<[`get_block_by_hash_timestamp_block_number_range_Response`](../interfaces/get_block_by_hash_timestamp_block_number_range_Response.md)\>
 
-Get token transfers of an address with a contract
+Get block by hash, timestamp, block number range
 
 #### Parameters
 
-• **account**: `string`
+• **fromBlock**: `number`
 
-• **limit?**: `number`
+• **toBlock**: `number`
 
-The number of items to get
+• **optionalParams?**: [`OptionalParams`](../type-aliases/OptionalParams.md)
 
-• **cursor?**: `string`
-
-The page from which to get the requested items
+get the block where its life span covers the input timestamp and/or hash
 
 #### Returns
 
-`Promise`\<[`token_tranfers_of_address_Response`](../interfaces/token_tranfers_of_address_Response.md)\>
+`Promise`\<[`get_block_by_hash_timestamp_block_number_range_Response`](../interfaces/get_block_by_hash_timestamp_block_number_range_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:302](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L302)
+[src/web3-RoninSkynetProvider.ts:458](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L458)
 
 ***
 
-### token\_transfers\_of\_nft()
+### get\_block\_by\_number()
 
-> **token\_transfers\_of\_nft**(`contractAddress`, `tokenId`, `limit`?, `cursor`?): `Promise`\<[`token_transfers_of_nft_Response`](../interfaces/token_transfers_of_nft_Response.md)\>
+> **get\_block\_by\_number**(`block_number`): `Promise`\<[`get_block_by_number_Response`](../interfaces/get_block_by_number_Response.md)\>
 
-Get token transfers of an NFT
+Get block by number
 
 #### Parameters
 
-• **contractAddress**: `string`
-
-The contract address of the NFT
-
-• **tokenId**: `number`
-
-The token ID of the NFT
-
-• **limit?**: `number`
-
-The number of items to get
-
-• **cursor?**: `string`
-
-The cursor value in token_transfers_of_nft_Response.result.paging.nextCursor
+• **block\_number**: `number`
 
 #### Returns
 
-`Promise`\<[`token_transfers_of_nft_Response`](../interfaces/token_transfers_of_nft_Response.md)\>
+`Promise`\<[`get_block_by_number_Response`](../interfaces/get_block_by_number_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:416](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L416)
+[src/web3-RoninSkynetProvider.ts:441](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L441)
 
 ***
 
-### transactions\_by\_block\_number()
+### get\_finalized\_block\_number()
 
-> **transactions\_by\_block\_number**(`block_number`): `Promise`\<[`transactions_by_block_number_Response`](../interfaces/transactions_by_block_number_Response.md)\>
+> **get\_finalized\_block\_number**(): `Promise`\<[`get_finalized_block_number_Response`](../interfaces/get_finalized_block_number_Response.md)\>
+
+Get finalized block number
+
+#### Returns
+
+`Promise`\<[`get_finalized_block_number_Response`](../interfaces/get_finalized_block_number_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:398](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L398)
+
+***
+
+### get\_latest\_block\_number()
+
+> **get\_latest\_block\_number**(): `Promise`\<[`get_finalized_block_number_Response`](../interfaces/get_finalized_block_number_Response.md)\>
+
+Get latest block number
+
+#### Returns
+
+`Promise`\<[`get_finalized_block_number_Response`](../interfaces/get_finalized_block_number_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:411](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L411)
+
+***
+
+### get\_transactions\_by\_block\_number()
+
+> **get\_transactions\_by\_block\_number**(`block_number`): `Promise`\<[`get_transactions_by_block_number_Response`](../interfaces/get_transactions_by_block_number_Response.md)\>
 
 Get transactions by block number
 
@@ -928,13 +496,518 @@ Get transactions by block number
 
 #### Returns
 
-`Promise`\<[`transactions_by_block_number_Response`](../interfaces/transactions_by_block_number_Response.md)\>
+`Promise`\<[`get_transactions_by_block_number_Response`](../interfaces/get_transactions_by_block_number_Response.md)\>
 
 #### Async
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:339](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L339)
+[src/web3-RoninSkynetProvider.ts:425](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L425)
+
+## Collections
+
+### get\_collection\_detail()
+
+> **get\_collection\_detail**(`contract_addr`): `Promise`\<[`get_collection_detail_Response`](../interfaces/get_collection_detail_Response.md)\>
+
+Get collection detail
+
+#### Parameters
+
+• **contract\_addr**: `string`
+
+The address to get collection detail for
+
+#### Returns
+
+`Promise`\<[`get_collection_detail_Response`](../interfaces/get_collection_detail_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:678](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L678)
+
+***
+
+### get\_collection\_holder\_list()
+
+> **get\_collection\_holder\_list**(`contractAddress`, `limit`?, `cursor`?): `Promise`\<[`get_collection_holder_list_Response`](../interfaces/get_collection_holder_list_Response.md)\>
+
+Get collection holder list
+
+Get all owners of a collection
+
+This API allows you to retrieve a list of wallet addresses that own NFTs from a specific collection along with NFTs amounts they own.
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+The address to get collection holder list for
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<[`get_collection_holder_list_Response`](../interfaces/get_collection_holder_list_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:650](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L650)
+
+***
+
+### get\_collection\_token\_transfers()
+
+> **get\_collection\_token\_transfers**(`contractAddress`, `limit`?, `cursor`?): `Promise`\<[`get_collection_token_transfers_Response`](../interfaces/get_collection_token_transfers_Response.md)\>
+
+Get collection token transfers
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+The address to get token transfers for
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<[`get_collection_token_transfers_Response`](../interfaces/get_collection_token_transfers_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:665](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L665)
+
+***
+
+### get\_detail\_of\_nft()
+
+> **get\_detail\_of\_nft**(`contractAddress`, `tokenId`): `Promise`\<[`get_detail_of_nft_Response`](../interfaces/get_detail_of_nft_Response.md)\>
+
+Get detail of an NFT
+
+This API allows you to retrieve details of one or more NFTs their identities
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+collection address - Contract address of NFT
+
+• **tokenId**: `number`
+
+ID of NFT token
+
+#### Returns
+
+`Promise`\<[`get_detail_of_nft_Response`](../interfaces/get_detail_of_nft_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:530](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L530)
+
+***
+
+### get\_details\_of\_multiple\_collections()
+
+> **get\_details\_of\_multiple\_collections**(`contractAddresses`): `Promise`\<[`get_details_of_multiple_collections_Response`](../interfaces/get_details_of_multiple_collections_Response.md)\>
+
+Get details of multiple collections
+
+#### Parameters
+
+• **contractAddresses**: `string`[]
+
+An array of addresses
+
+#### Returns
+
+`Promise`\<[`get_details_of_multiple_collections_Response`](../interfaces/get_details_of_multiple_collections_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:693](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L693)
+
+***
+
+### get\_details\_of\_multiple\_nfts()
+
+> **get\_details\_of\_multiple\_nfts**(`contractAddress`, `tokenIds`): `Promise`\<[`get_details_of_multiple_nfts_Response`](../interfaces/get_details_of_multiple_nfts_Response.md)\>
+
+Get details of multiple NFTs
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+• **tokenIds**: `string`[]
+
+#### Returns
+
+`Promise`\<[`get_details_of_multiple_nfts_Response`](../interfaces/get_details_of_multiple_nfts_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:590](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L590)
+
+***
+
+### get\_nfts\_from\_collection()
+
+> **get\_nfts\_from\_collection**(`contractAddress`, `limit`?, `cursor`?): `Promise`\<[`get_nfts_from_collection_Response`](../interfaces/get_nfts_from_collection_Response.md)\>
+
+Get NFTs from a collection
+
+ This API is a must-have for game studios looking to efficiently manage their on-chain assets. With one simple request, game developers can access all NFTs in as collection.
+ Game studios often deal with large volumes of NFTs, from in-game items to collectibles. This API provides an easy way to retrieve and organize all assets in a collection, helping teams focus on game development, not blockchain complexity.
+ Ensure your NFT-based assets are accurately tracked and managed on-chain, providing transparency and security for both the studio and its players.
+ No need for deep blockchain knowledge—this API handles the heavy lifting.
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<[`get_nfts_from_collection_Response`](../interfaces/get_nfts_from_collection_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:615](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L615)
+
+***
+
+### get\_number\_of\_collection\_holdings\_by\_address()
+
+> **get\_number\_of\_collection\_holdings\_by\_address**(`contractAddress`, `address`, `limit`?, `cursor`?): `Promise`\<[`get_number_of_collection_holdings_by_address_Response`](../interfaces/get_number_of_collection_holdings_by_address_Response.md)\>
+
+Get the number of collection holdings by address
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+The address to get the number of collection holders for
+
+• **address**: `string`
+
+The account address
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<[`get_number_of_collection_holdings_by_address_Response`](../interfaces/get_number_of_collection_holdings_by_address_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:631](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L631)
+
+***
+
+### get\_owners\_of\_nft()
+
+> **get\_owners\_of\_nft**(`contractAddress`, `tokenId`): `Promise`\<[`get_owners_of_nft_Response`](../interfaces/get_owners_of_nft_Response.md)\>
+
+Get owners of an NFT
+
+The most efficient way to access NFT ownership data. Whether you're building a marketplace, verifying digital assets, or analyzing trends in the NFT space, our API provides a streamlined solution to gather ownership information faster and more reliably than traditional.
+
+You can travel through the whole list of owners in case an NFT has more than one owner.
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+• **tokenId**: `number`
+
+#### Returns
+
+`Promise`\<[`get_owners_of_nft_Response`](../interfaces/get_owners_of_nft_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:493](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L493)
+
+***
+
+### get\_token\_transfers\_of\_nft()
+
+> **get\_token\_transfers\_of\_nft**(`contractAddress`, `tokenId`, `limit`?, `cursor`?): `Promise`\<[`get_token_transfers_of_nft_Response`](../interfaces/get_token_transfers_of_nft_Response.md)\>
+
+Get token transfers of an NFT
+
+Get all token transfers of an NFT
+
+This API is a powerful tool to track the complete transfer history of any NFT. This API is invaluable for NFT creators, collectors, and marketplaces, providing detailed insights into every transaction an NFT has gone through. For collectors and investors, it enables easy tracking of an NFT’s provenance. NFT game studios and creators can also benefit from this API to monitor the distribution and movement of their assets across different users.
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+collection address
+
+• **tokenId**: `number`
+
+NFT ID
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<[`get_token_transfers_of_nft_Response`](../interfaces/get_token_transfers_of_nft_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:514](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L514)
+
+***
+
+### refresh\_nfts\_of\_collection\_async()
+
+> **refresh\_nfts\_of\_collection\_async**(`contractAddress`, `tokenIds`): `Promise`\<[`refresh_nfts_of_collection_async_Response`](../interfaces/refresh_nfts_of_collection_async_Response.md)\>
+
+Refresh NFTs of a collection in asynchronous manner
+
+By using this API, users don't have to wait until the API complete the refreshing process. The API will return immediately after putting tokenIds to the background queue successfully, results of refreshing operation are not notified in any channel. You should call the [NFT details API](RoninSkynetWeb3Provider.md#get_detail_of_nft) to verify refresh results.
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+• **tokenIds**: `string`[]
+
+#### Returns
+
+`Promise`\<[`refresh_nfts_of_collection_async_Response`](../interfaces/refresh_nfts_of_collection_async_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:572](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L572)
+
+***
+
+### refresh\_nfts\_of\_collection\_sync()
+
+> **refresh\_nfts\_of\_collection\_sync**(`contractAddress`, `tokenIds`, `maxWait`): `Promise`\<[`refresh_nfts_of_collection_sync_Response`](../interfaces/refresh_nfts_of_collection_sync_Response.md)\>
+
+Refresh NFTs of a collection in synchronous manner
+
+By using this API, users have to wait until the API complete the refreshing process, tokenIds list can be specified in the request body as well as the maxWait duration in milliseconds (the maximum amount of wait time this call can accept). Without its presence, the API treat it as server default timeout of 10 seconds.
+
+In the response, there are two lists, successes and failures tokenIds, failure reasons can vary and not be exposed. If an NFT keeps failing for a long time, you'd better contact developer support.
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+• **tokenIds**: `string`[]
+
+• **maxWait**: `number`
+
+milliseconds, when maxWait exceeds server timeout, then server timeout will be used instead
+
+#### Returns
+
+`Promise`\<[`refresh_nfts_of_collection_sync_Response`](../interfaces/refresh_nfts_of_collection_sync_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:551](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L551)
+
+## Contracts
+
+### get\_detail\_of\_contract()
+
+> **get\_detail\_of\_contract**(`contract_addr`): `Promise`\<[`get_detail_of_contract_Response`](../interfaces/get_detail_of_contract_Response.md)\>
+
+Get detail of a contract
+
+#### Parameters
+
+• **contract\_addr**: `string`
+
+address of contract to get detail for
+
+#### Returns
+
+`Promise`\<[`get_detail_of_contract_Response`](../interfaces/get_detail_of_contract_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:712](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L712)
+
+***
+
+### get\_details\_of\_multiple\_contracts()
+
+> **get\_details\_of\_multiple\_contracts**(`contractAddresses`): `Promise`\<[`get_details_of_multiple_contracts_Response`](../interfaces/get_details_of_multiple_contracts_Response.md)\>
+
+Get details of multiple contracts
+
+#### Parameters
+
+• **contractAddresses**: `string`[]
+
+An array of contract address to get details for
+
+#### Returns
+
+`Promise`\<[`get_details_of_multiple_contracts_Response`](../interfaces/get_details_of_multiple_contracts_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:726](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L726)
+
+## Other
+
+### concatUrl()
+
+> `protected` **concatUrl**(`url`, `urlSuffix`): `string`
+
+#### Parameters
+
+• **url**: `string`
+
+• **urlSuffix**: `string`
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:99](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L99)
+
+***
+
+### getRonin()
+
+> `protected` **getRonin**(`urlSuffix`, `config`?): `Promise`\<`AxiosResponse`\<`any`, `any`\>\>
+
+#### Parameters
+
+• **urlSuffix**: `string`
+
+• **config?**: `AxiosRequestConfig`\<`any`\>
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<`any`, `any`\>\>
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:143](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L143)
+
+***
+
+### getRoninLimitCursor()
+
+> `protected` **getRoninLimitCursor**(`url`, `limit`?, `cursor`?): `Promise`\<`any`\>
+
+Places a call to the service, with optional limits and cursor
+
+#### Parameters
+
+• **url**: `string`
+
+• **limit?**: `number`
+
+how many items can be return in a single response, maximum 200
+
+• **cursor?**: `string`
+
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+
+#### Returns
+
+`Promise`\<`any`\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:171](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L171)
+
+***
+
+### postRonin()
+
+> `protected` **postRonin**(`urlSuffix`, `data`): `Promise`\<`AxiosResponse`\<`any`, `any`\>\>
+
+#### Parameters
+
+• **urlSuffix**: `string`
+
+• **data**: `any`
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<`any`, `any`\>\>
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:153](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L153)
 
 ***
 
@@ -950,11 +1023,11 @@ Updates the url to include limit and cursors, if they're provided.
 
 • **limit?**: `number`
 
-The number of items to get
+how many items can be return in a single response, maximum 200
 
 • **cursor?**: `string`
 
-The page from which to get the requested items
+the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
 
 #### Returns
 
@@ -964,7 +1037,7 @@ Updated url if limit and cursors provided, otherwise, returns the parameter url.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:117](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L117)
+[src/web3-RoninSkynetProvider.ts:120](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L120)
 
 ***
 
@@ -984,4 +1057,76 @@ Updated url if limit and cursors provided, otherwise, returns the parameter url.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:129](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninSkynetProvider.ts#L129)
+[src/web3-RoninSkynetProvider.ts:132](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L132)
+
+## Transactions
+
+### get\_details\_of\_multiple\_transactions()
+
+> **get\_details\_of\_multiple\_transactions**(`hashes`): `Promise`\<[`get_details_of_multiple_transactions_Response`](../interfaces/get_details_of_multiple_transactions_Response.md)\>
+
+Get details of multiple transactions
+
+#### Parameters
+
+• **hashes**: `string`[]
+
+hashes of transactions
+
+#### Returns
+
+`Promise`\<[`get_details_of_multiple_transactions_Response`](../interfaces/get_details_of_multiple_transactions_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:772](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L772)
+
+***
+
+### get\_internal\_transaction\_details\_of\_transaction()
+
+> **get\_internal\_transaction\_details\_of\_transaction**(`txHash`): `Promise`\<[`get_internal_transaction_details_of_transaction_Response`](../interfaces/get_internal_transaction_details_of_transaction_Response.md)\>
+
+Get internal transaction details of a transaction
+
+#### Parameters
+
+• **txHash**: `string`
+
+hash of the transaction to get
+
+#### Returns
+
+`Promise`\<[`get_internal_transaction_details_of_transaction_Response`](../interfaces/get_internal_transaction_details_of_transaction_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:758](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L758)
+
+***
+
+### get\_internal\_transaction\_of\_transaction()
+
+> **get\_internal\_transaction\_of\_transaction**(`txHash`): `Promise`\<[`get_internal_transaction_of_transaction_Response`](../interfaces/get_internal_transaction_of_transaction_Response.md)\>
+
+Get internal transaction of a transaction
+
+#### Parameters
+
+• **txHash**: `string`
+
+hash of the transaction to get
+
+#### Returns
+
+`Promise`\<[`get_internal_transaction_of_transaction_Response`](../interfaces/get_internal_transaction_of_transaction_Response.md)\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:744](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninSkynetProvider.ts#L744)

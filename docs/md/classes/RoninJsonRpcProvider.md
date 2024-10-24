@@ -35,7 +35,7 @@ hardfork when sending transactions for Ronin.
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninJsonRpcProvider.ts#L12)
+[src/web3-RoninJsonRpcProvider.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninJsonRpcProvider.ts#L12)
 
 ## Properties
 
@@ -1217,7 +1217,7 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:137
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-RoninJsonRpcProvider.ts#L17)
+[src/web3-RoninJsonRpcProvider.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-RoninJsonRpcProvider.ts#L17)
 
 ***
 

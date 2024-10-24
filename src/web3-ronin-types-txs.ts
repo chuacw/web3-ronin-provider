@@ -1,14 +1,14 @@
 // Author: chuacw, Singapore, Singapore
 
-export interface internal_txs_Response {
-  result: internal_txs_Response_Result
+export interface get_internal_transaction_of_transaction_Response {
+  result: get_internal_transaction_of_transaction_Result
 }
 
-export interface internal_txs_Response_Result {
-  items: internal_txs_Response_Result_Item[]
+export interface get_internal_transaction_of_transaction_Result {
+  items: get_internal_transaction_of_transaction_Item[]
 }
 
-export interface internal_txs_Response_Result_Item {
+export interface get_internal_transaction_of_transaction_Item {
   transactionHash: string
   order: number
   opcode: string
@@ -24,11 +24,11 @@ export interface internal_txs_Response_Result_Item {
   blockTime: number
 }
 
-export interface internal_txs_detail_Response {
-  result: internal_txs_detail_Result
+export interface get_internal_transaction_details_of_transaction_Response {
+  result: get_internal_transaction_details_of_transaction_Result
 }
 
-export interface internal_txs_detail_Result {
+export interface get_internal_transaction_details_of_transaction_Result {
   transactionHash: string
   transactionIndex: number
   blockHash: string
@@ -53,15 +53,15 @@ export interface internal_txs_detail_Result {
   blockTime: number
 }
 
-export interface multiple_txs_details_Response {
-  result: multiple_txs_details_Result
+export interface get_details_of_multiple_transactions_Response {
+  result: get_details_of_multiple_transactions_Result
 }
 
-export interface multiple_txs_details_Result {
-  items: multiple_txs_details_Item[]
+export interface get_details_of_multiple_transactions_Result {
+  items: get_details_of_multiple_transactions_Item[]
 }
 
-export interface multiple_txs_details_Item {
+export interface get_details_of_multiple_transactions_Item {
   transactionHash: string
   transactionIndex: number
   blockHash: string

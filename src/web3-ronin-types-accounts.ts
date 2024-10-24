@@ -2,6 +2,7 @@
 
 import { Paging } from "./web3-ronin-types-global";
 
+
 export enum activityTypes {
   ContractInteraction = "ContractInteraction",
   RONTransfer = "RONTransfer",
@@ -23,7 +24,28 @@ export enum activityTypes {
   StakeRewards = "StakeRewards"
 }
 
-export type SearchCriteria = {activityTypes: activityTypes[], limit?: number, cursor?: string, fromBlock?: number, toBlock?: number };
+export type SearchCriteria = {
+  /**
+   * The activities to be searched for, must match the types listed here
+   */
+  activityTypes: activityTypes[], 
+  /**
+   * The number of items to search for
+   */
+  limit?: number, 
+  /**
+   * The page to search from
+   */
+  cursor?: string, 
+  /**
+   * The block to start the search from
+   */
+  fromBlock?: number, 
+  /**
+   * The block to end the search at
+   */
+  toBlock?: number
+};
 
 export interface search_Response {
   result: search_Result
@@ -135,16 +157,16 @@ export interface Address {
   decimals: number
 }
 
-export interface owned_nfts_of_Response {
-  result: owned_nfts_of_Result
+export interface get_owned_nfts_of_address_Response {
+  result: get_owned_nfts_of_address_Result
 }
 
-export interface owned_nfts_of_Result {
-  items: owned_nfts_of_Item[]
+export interface get_owned_nfts_of_address_Result {
+  items: get_owned_nfts_of_address_Item[]
   paging: Paging
 }
 
-export interface owned_nfts_of_Item {
+export interface get_owned_nfts_of_address_Item {
   contractAddress: string
   tokenId: string
   balance: string
@@ -152,19 +174,19 @@ export interface owned_nfts_of_Item {
   symbol: string
   standard: string
   tokenUri: string
-  metadata: owned_nfts_of_Metadata
+  metadata: get_owned_nfts_of_address_Metadata
 }
 
-export interface owned_nfts_of_Metadata {
+export interface get_owned_nfts_of_address_Metadata {
   external_url: string
   genes: string
   id: number
   image: string
   name: string
-  properties: owned_nfts_of_Properties
+  properties: get_owned_nfts_of_address_Properties
 }
 
-export interface owned_nfts_of_Properties {
+export interface get_owned_nfts_of_address_Properties {
   axie_id: number
   back_id: string
   birthdate: number
@@ -190,16 +212,16 @@ export interface owned_nfts_of_Properties {
   title: string
 }
 
-export interface fungible_token_balance_Response {
-  result: fungible_token_balance_Result
+export interface get_fungible_token_balance_Response {
+  result: get_fungible_token_balance_Result
 }
 
-export interface fungible_token_balance_Result {
-  items: fungible_token_balance_Item[]
+export interface get_fungible_token_balance_Result {
+  items: get_fungible_token_balance_Item[]
   paging: Paging
 }
 
-export interface fungible_token_balance_Item {
+export interface get_fungible_token_balance_Item {
   contractAddress: string
   name: string
   symbol: string
@@ -208,16 +230,16 @@ export interface fungible_token_balance_Item {
   decimals: number
 }
 
-export interface list_of_collections_having_NFTs_Response {
-  result: list_of_collections_having_NFTs_Result
+export interface get_list_of_collections_having_NFTs_Response {
+  result: get_list_of_collections_having_NFTs_Result
 }
 
-export interface list_of_collections_having_NFTs_Result {
-  items: list_of_collections_having_NFTs_Item[]
+export interface get_list_of_collections_having_NFTs_Result {
+  items: get_list_of_collections_having_NFTs_Item[]
   paging: Paging
 }
 
-export interface list_of_collections_having_NFTs_Item {
+export interface get_list_of_collections_having_NFTs_Item {
   contractAddress: string
   name: string
   symbol: string
@@ -226,16 +248,16 @@ export interface list_of_collections_having_NFTs_Item {
   tokenCount: number
 }
 
-export interface nft_list_of_address_and_contract_Response {
-  result: nft_list_of_address_and_contract_Result
+export interface get_nft_list_of_address_and_contract_Response {
+  result: get_nft_list_of_address_and_contract_Result
 }
 
-export interface nft_list_of_address_and_contract_Result {
-  items: nft_list_of_address_and_contract_Item[]
+export interface get_nft_list_of_address_and_contract_Result {
+  items: get_nft_list_of_address_and_contract_Item[]
   paging: Paging
 }
 
-export interface nft_list_of_address_and_contract_Item {
+export interface get_nft_list_of_address_and_contract_Item {
   contractAddress: string
   tokenId: string
   balance: string
@@ -243,19 +265,19 @@ export interface nft_list_of_address_and_contract_Item {
   symbol: string
   standard: string
   tokenUri: string
-  metadata: nft_list_of_address_and_contract_Metadata
+  metadata: get_nft_list_of_address_and_contract_Metadata
 }
 
-export interface nft_list_of_address_and_contract_Metadata {
+export interface get_nft_list_of_address_and_contract_Metadata {
   external_url: string
   genes: string
   id: number
   image: string
   name: string
-  properties: nft_list_of_address_and_contract_Properties
+  properties: get_nft_list_of_address_and_contract_Properties
 }
 
-export interface nft_list_of_address_and_contract_Properties {
+export interface get_nft_list_of_address_and_contract_Properties {
   axie_id: number
   back_id: string
   birthdate: number
@@ -281,11 +303,11 @@ export interface nft_list_of_address_and_contract_Properties {
   title: string
 }
 
-export interface balance_of_address_and_contract_Response {
-  result: balance_of_address_and_contract_Result
+export interface get_balance_of_address_and_contract_Response {
+  result: get_balance_of_address_and_contract_Result
 }
 
-export interface balance_of_address_and_contract_Result {
+export interface get_balance_of_address_and_contract_Result {
   contractAddress: string
   name: string
   symbol: string
@@ -294,15 +316,15 @@ export interface balance_of_address_and_contract_Result {
   tokenCount: number
 }
 
-export interface balances_of_address_by_multiple_contracts_Response {
-  result: balances_of_address_by_multiple_contracts_Result
+export interface get_balances_of_address_by_multiple_contracts_Response {
+  result: get_balances_of_address_by_multiple_contracts_Result
 }
 
-export interface balances_of_address_by_multiple_contracts_Result {
-  items: balances_of_address_by_multiple_contracts_Item[]
+export interface get_balances_of_address_by_multiple_contracts_Result {
+  items: get_balances_of_address_by_multiple_contracts_Item[]
 }
 
-export interface balances_of_address_by_multiple_contracts_Item {
+export interface get_balances_of_address_by_multiple_contracts_Item {
   contractAddress: string
   name: string
   symbol: string
@@ -311,16 +333,16 @@ export interface balances_of_address_by_multiple_contracts_Item {
   tokenCount: number
 }
 
-export interface token_tranfers_of_address_Response {
-  result: token_tranfers_of_address_Result
+export interface get_token_tranfers_of_address_Response {
+  result: get_token_tranfers_of_address_Result
 }
 
-export interface token_tranfers_of_address_Result {
-  items: token_tranfers_of_address_Item[]
+export interface get_token_tranfers_of_address_Result {
+  items: get_token_tranfers_of_address_Item[]
   paging: Paging
 }
 
-export interface token_tranfers_of_address_Item {
+export interface get_token_tranfers_of_address_Item {
   blockNumber: number
   logIndex: number
   contractAddress: string
@@ -335,3 +357,88 @@ export interface token_tranfers_of_address_Item {
   tokenId?: string
 }
 
+export interface get_token_tranfers_of_address_with_contract_Response {
+  result: get_token_tranfers_of_address_with_contract_Result
+}
+
+export interface get_token_tranfers_of_address_with_contract_Result {
+  items: get_token_tranfers_of_address_with_contract_Item[]
+  paging: Paging
+}
+
+export interface get_token_tranfers_of_address_with_contract_Item {
+  blockNumber: number
+  logIndex: number
+  tokenId: string
+  contractAddress: string
+  tokenStandard: string
+  decimals: number
+  from: string
+  to: string
+  value: string
+  blockHash: string
+  transactionHash: string
+  blockTime: number
+}
+
+export interface get_transactions_of_address_Response {
+  result: get_transactions_of_address_Result
+}
+
+export interface get_transactions_of_address_Result {
+  items: get_transactions_of_address_Item[]
+  paging: Paging
+}
+
+export interface get_transactions_of_address_Item {
+  transactionHash: string
+  transactionIndex: number
+  blockHash: string
+  blockNumber: number
+  from: string
+  to: string
+  contractAddress: string
+  status: number
+  gas: number
+  gasPrice: string
+  effectiveGasPrice: string
+  gasUsed: number
+  cumulativeGasUsed: number
+  logsBloom: string
+  input: string
+  nonce: number
+  value: string
+  type: number
+  v: string
+  r: string
+  s: string
+  blockTime: number
+  chainId: string
+  maxFeePerGas: string
+  maxPriorityFeePerGas: string
+}
+
+export interface get_internal_txs_transfers_Response {
+  result: get_internal_txs_transfers_Result
+}
+
+export interface get_internal_txs_transfers_Result {
+  items: get_internal_txs_transfers_Item[]
+  paging: Paging
+}
+
+export interface get_internal_txs_transfers_Item {
+  transactionHash: string
+  order: number
+  opcode: string
+  type: string
+  value: string
+  input: string
+  from: string
+  to: string
+  success: boolean
+  error: string
+  blockNumber: number
+  blockHash: string
+  blockTime: number
+}

@@ -4,7 +4,9 @@
   "types": "./dist/index.d.ts",
   "main": "index.js",
   "scripts": {
-    "prepublishOnly": "tsc -b && typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src && typedoc --cleanOutputDir true --out docs/html src",
+    "gen-markdown": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
+    "gen-html": "typedoc --cleanOutputDir true --out docs/html src",
+    "prepublishOnly": "tsc -b && npm run gen-markdown && npm run gen-html",
     "test": "jest"
   },
   "exports": {

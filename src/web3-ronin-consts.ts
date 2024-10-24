@@ -3,22 +3,22 @@ import { BigNumber } from "ethers";
 /**
  * URL to Ronin Mainnet
  */
-const URL_RONIN_MAINNET_RPC = 'https://api-gateway.skymavis.com/rpc';
+const URL_RONIN_MAINNET_RPC: string = 'https://api-gateway.skymavis.com/rpc';
 /**
  * URL to Ronin testnet
  */
-const URL_RONIN_TESTNET_RPC = 'https://api-gateway.skymavis.com/rpc/testnet';
+const URL_RONIN_TESTNET_RPC: string = 'https://api-gateway.skymavis.com/rpc/testnet';
 /**
  * URL to the Skynet service
  */
-const URL_RONIN_SKYNET_RPC = 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2';
+const URL_RONIN_SKYNET_RPC: string = 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2';
 /**
  * URL to Ronin Mainnet WebSocket
  */
-const URL_RONIN_MAINNET_WSS = 'wss://api-gateway.skymavis.com/rpc/socket';
+const URL_RONIN_MAINNET_WSS: string = 'wss://api-gateway.skymavis.com/rpc/socket';
 const UINT256_MAX = BigNumber.from("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-const ADDR_AXIE_INFINITY_SHARD = "0x97a9107c1793bc407d6f527b77e7fff4d812bece";
-const ADDR_RONIN_GATEWAY_PROXY_V3 = "0x0CF8fF40a508bdBc39fBe1Bb679dCBa64E65C7Df";
+const ADDR_AXIE_INFINITY_SHARD: string = "0x97a9107c1793bc407d6f527b77e7fff4d812bece";
+const ADDR_RONIN_GATEWAY_PROXY_V3: string = "0x0CF8fF40a508bdBc39fBe1Bb679dCBa64E65C7Df";
 
 /**
  * Error string for X-API-Key 

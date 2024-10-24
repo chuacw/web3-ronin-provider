@@ -2,58 +2,58 @@
 
 import { Paging } from "./web3-ronin-types-global"
 
-export interface owners_of_nft_Response {
-  result: owners_of_nft_Result
+export interface get_owners_of_nft_Response {
+  result: get_owners_of_nft_Result
 }
 
-export interface owners_of_nft_Result {
-  items: owners_of_nft_Item[]
+export interface get_owners_of_nft_Result {
+  items: get_owners_of_nft_Item[]
   paging: Paging
 }
 
-export interface owners_of_nft_Item {
+export interface get_owners_of_nft_Item {
   address: string
   balance: string
 }
 
-export interface token_transfers_of_nft_Response {
-  result: token_transfers_of_nft_Result
+export interface get_token_transfers_of_nft_Response {
+  result: get_token_transfers_of_nft_Result
 }
 
-export interface token_transfers_of_nft_Result {
-  items: token_transfers_of_nft_Item[]
+export interface get_token_transfers_of_nft_Result {
+  items: get_token_transfers_of_nft_Item[]
   paging: Paging
 }
 
-export interface token_transfers_of_nft_Item {
+export interface get_token_transfers_of_nft_Item {
   address: string
   balance: string
 }
 
-export interface detail_of_nft_Response {
-  result: detail_of_nft_Result
+export interface get_detail_of_nft_Response {
+  result: get_detail_of_nft_Result
 }
 
-export interface detail_of_nft_Result {
+export interface get_detail_of_nft_Result {
   tokenId: string
   contractAddress: string
   name: string
   symbol: string
   standard: string
   tokenUri: string
-  metadata: detail_of_nft_Metadata
+  metadata: get_detail_of_nft_Metadata
 }
 
-export interface detail_of_nft_Metadata {
+export interface get_detail_of_nft_Metadata {
   external_url: string
   genes: string
   id: number
   image: string
   name: string
-  properties: detail_of_nft_Properties
+  properties: get_detail_of_nft_Properties
 }
 
-export interface detail_of_nft_Properties {
+export interface get_detail_of_nft_Properties {
   axie_id: number
   back_id: string
   birthdate: number
@@ -79,35 +79,35 @@ export interface detail_of_nft_Properties {
   title: string
 }
 
-export interface nfts_from_collection_Response {
-  result: nfts_from_collection_Result
+export interface get_nfts_from_collection_Response {
+  result: get_nfts_from_collection_Result
 }
 
-export interface nfts_from_collection_Result {
-  items: nfts_from_collection_Item[]
+export interface get_nfts_from_collection_Result {
+  items: get_nfts_from_collection_Item[]
   paging: Paging
 }
 
-export interface nfts_from_collection_Item {
+export interface get_nfts_from_collection_Item {
   tokenId: string
   contractAddress: string
   name: string
   symbol: string
   standard: string
   tokenUri: string
-  metadata: nfts_from_collection_Metadata
+  metadata: get_nfts_from_collection_Metadata
 }
 
-export interface nfts_from_collection_Metadata {
+export interface get_nfts_from_collection_Metadata {
   name: string
   external_url: string
   id: number
   image: string
   genes: string
-  properties: nfts_from_collection_Properties
+  properties: get_nfts_from_collection_Properties
 }
 
-export interface nfts_from_collection_Properties {
+export interface get_nfts_from_collection_Properties {
   axie_id: number
   class: string
   bodyshape: string
@@ -146,34 +146,34 @@ export interface refresh_nfts_of_collection_async_Response {
   result: string
 }
 
-export interface details_of_multiple_nfts_Response {
-  result: details_of_multiple_nfts_Result
+export interface get_details_of_multiple_nfts_Response {
+  result: get_details_of_multiple_nfts_Result
 }
 
-export interface details_of_multiple_nfts_Result {
-  items: details_of_multiple_nfts_Item[]
+export interface get_details_of_multiple_nfts_Result {
+  items: get_details_of_multiple_nfts_Item[]
 }
 
-export interface details_of_multiple_nfts_Item {
+export interface get_details_of_multiple_nfts_Item {
   tokenId: string
   contractAddress: string
   name: string
   symbol: string
   standard: string
   tokenUri: string
-  metadata: details_of_multiple_nfts_Metadata
+  metadata: get_details_of_multiple_nfts_Metadata
 }
 
-export interface details_of_multiple_nfts_Metadata {
+export interface get_details_of_multiple_nfts_Metadata {
   external_url: string
   genes: string
   id: number
   image: string
   name: string
-  properties: details_of_multiple_nfts_Properties
+  properties: get_details_of_multiple_nfts_Properties
 }
 
-export interface details_of_multiple_nfts_Properties {
+export interface get_details_of_multiple_nfts_Properties {
   axie_id: number
   back_id: string
   birthdate: number
@@ -199,31 +199,31 @@ export interface details_of_multiple_nfts_Properties {
   title: string
 }
 
-export interface collection_holder_list_Response {
-  result: collection_holder_list_Result
+export interface get_collection_holder_list_Response {
+  result: get_collection_holder_list_Result
 }
 
-export interface collection_holder_list_Result {
-  items: collection_holder_list_Item[]
+export interface get_collection_holder_list_Result {
+  items: get_collection_holder_list_Item[]
   paging: Paging
 }
 
-export interface collection_holder_list_Item {
+export interface get_collection_holder_list_Item {
   address: string
   balance: string
   tokenCount: number
 }
 
-export interface collection_token_transfers_Response {
-  result: collection_token_transfers_Result
+export interface get_collection_token_transfers_Response {
+  result: get_collection_token_transfers_Result
 }
 
-export interface collection_token_transfers_Result {
-  items: collection_token_transfers_Item[]
+export interface get_collection_token_transfers_Result {
+  items: get_collection_token_transfers_Item[]
   paging: Paging
 }
 
-export interface collection_token_transfers_Item {
+export interface get_collection_token_transfers_Item {
   blockNumber: number
   logIndex: number
   tokenId: string
@@ -238,11 +238,11 @@ export interface collection_token_transfers_Item {
   blockTime: number
 }
 
-export interface collection_detail_Response {
-  result: collection_detail_Result
+export interface get_collection_detail_Response {
+  result: get_collection_detail_Result
 }
 
-export interface collection_detail_Result {
+export interface get_collection_detail_Result {
   contractAddress: string
   name: string
   symbol: string
@@ -252,15 +252,15 @@ export interface collection_detail_Result {
   totalTransfers: number
 }
 
-export interface details_of_multiple_collections_Response {
-  result: details_of_multiple_collections_Result
+export interface get_details_of_multiple_collections_Response {
+  result: get_details_of_multiple_collections_Result
 }
 
-export interface details_of_multiple_collections_Result {
-  items: details_of_multiple_collections_Item[]
+export interface get_details_of_multiple_collections_Result {
+  items: get_details_of_multiple_collections_Item[]
 }
 
-export interface details_of_multiple_collections_Item {
+export interface get_details_of_multiple_collections_Item {
   contractAddress: string
   name: string
   symbol: string
@@ -270,12 +270,12 @@ export interface details_of_multiple_collections_Item {
   totalTransfers: number
 }
 
-export interface number_of_collection_holdings_by_address_Response {
-  result: number_of_collection_holdings_by_address_Result
+export interface get_number_of_collection_holdings_by_address_Response {
+  result: get_number_of_collection_holdings_by_address_Result
   paging?: Paging
 }
 
-export interface number_of_collection_holdings_by_address_Result {
+export interface get_number_of_collection_holdings_by_address_Result {
   address: string
   balance: string
   tokenCount: number

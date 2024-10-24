@@ -28,7 +28,7 @@ An error indicating that the URL is empty
 
 #### Defined in
 
-[src/web3-ronin-types-errors.ts:20](https://github.com/chuacw/web3-ronin-provider/blob/7251b9677bbb79d30e6a4204bfabcc38fab6aa15/src/web3-ronin-types-errors.ts#L20)
+[src/web3-ronin-types-errors.ts:20](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-types-errors.ts#L20)
 
 ## Properties
 

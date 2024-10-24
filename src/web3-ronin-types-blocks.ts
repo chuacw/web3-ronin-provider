@@ -1,22 +1,22 @@
-export interface finalized_block_number_Response {
-  result: finalized_block_number_Result
+export interface get_finalized_block_number_Response {
+  result: get_finalized_block_number_Result
 }
 
-export interface finalized_block_number_Result {
+export interface get_finalized_block_number_Result {
   blockNumber: number
 }
 
-export type latest_block_number_Response = finalized_block_number_Response;
+export type get_latest_block_number_Response = get_finalized_block_number_Response;
 
-export interface transactions_by_block_number_Response {
-  result: transactions_by_block_number_Result
+export interface get_transactions_by_block_number_Response {
+  result: get_transactions_by_block_number_Result
 }
 
-export interface transactions_by_block_number_Result {
-  items: transactions_by_block_number_Item[]
+export interface get_transactions_by_block_number_Result {
+  items: get_transactions_by_block_number_Item[]
 }
 
-export interface transactions_by_block_number_Item {
+export interface get_transactions_by_block_number_Item {
   transactionHash: string
   transactionIndex: number
   blockHash: string
@@ -41,11 +41,11 @@ export interface transactions_by_block_number_Item {
   blockTime: number
 }
 
-export interface block_by_number_Response {
-  result: block_by_number_Result
+export interface get_block_by_number_Response {
+  result: get_block_by_number_Result
 }
 
-export interface block_by_number_Result {
+export interface get_block_by_number_Result {
   hash: string
   number: number
   parentHash: string
@@ -67,11 +67,11 @@ export interface block_by_number_Result {
   timestamp: number
 }
 
-export interface block_by_hash_timestamp_block_number_range_Response {
-  result: block_by_hash_timestamp_block_number_range_Result
+export interface get_block_by_hash_timestamp_block_number_range_Response {
+  result: get_block_by_hash_timestamp_block_number_range_Result
 }
 
-export interface block_by_hash_timestamp_block_number_range_Result {
+export interface get_block_by_hash_timestamp_block_number_range_Result {
   hash: string
   number: number
   parentHash: string
@@ -93,4 +93,19 @@ export interface block_by_hash_timestamp_block_number_range_Result {
   timestamp: number
 }
 
-export type OptionalParams = { hash?: string, timestamp?: number }
+/**
+ * Parameters for searching
+ *
+ * @export
+ * @typedef {OptionalParams}
+ */
+export type OptionalParams = { 
+  /**
+   * The searched block must match this hash
+   */
+  hash?: string,
+  /**
+   * The searched block must be within this timestamp
+   */ 
+  timestamp?: number
+}
