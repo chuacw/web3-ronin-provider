@@ -1,7 +1,8 @@
 import 'dotenv/config';
-import { SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
+import { createSkyNetProvider, SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
 import { Tokens } from '../src/web3-ronin-consts-tokens';
 import * as fs from 'fs';
+import { URL_RONIN_SKYNET_RPC } from '../src';
 
 require('dotenv').config();
 
@@ -32,13 +33,7 @@ function findDuplicates<T>(arr: T[]): { duplicates: T[], unique: T[] } {
 }
 
 async function main() {
-  const connectionInfo = {
-    url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
-    headers: {
-      "X-API-KEY": process.env.X_API_KEY || ""
-    }
-  };
-  const provider = new SkynetWeb3Provider(connectionInfo);
+  const provider = createSkyNetProvider(process.env.X_API_KEY!);
   const contractAddresses = [
     Tokens.AXIE,
     Tokens.AXIE_ACCESSORY,
@@ -52,14 +47,14 @@ async function main() {
     Tokens.WILD_FOREST_SKINS,
     Tokens.WILD_FOREST_UNITS
   ];
-  const contracts_details = await provider.multiple_contracts_details(contractAddresses);
+  const contracts_details = await provider.get_details_of_multiple_contracts(contractAddresses);
   console.log(contracts_details);
   let holders: string[] = [];
   for (const item of contracts_details.result.items) {
     let done = false; let nextCursor: string | undefined; const limit = 200;
     let count = 0;
     do {
-      const holder_list_response = await provider.collection_holder_list(item.address, limit, nextCursor);
+      const holder_list_response = await provider.get_collection_holder_list(item.address, limit, nextCursor);
       if (holder_list_response.result.paging) {
         nextCursor = holder_list_response.result.paging.nextCursor;
         count += holder_list_response.result.items.length;

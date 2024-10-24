@@ -8,4 +8,6 @@ export * from './web3-ronin-types-collections';
 export * from './web3-ronin-types-contracts';
 export * from './web3-ronin-types-errors';
 export * from './web3-ronin-types-global';
+export * from './web3-ronin-types-logs';
+export * from './web3-ronin-types-token-transfers';
 export * from './web3-ronin-types-txs';

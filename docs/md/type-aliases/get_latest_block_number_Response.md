@@ -10,4 +10,4 @@
 
 ## Defined in
 
-[src/web3-ronin-types-blocks.ts:9](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-types-blocks.ts#L9)
+[src/web3-ronin-types-blocks.ts:9](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-ronin-types-blocks.ts#L9)

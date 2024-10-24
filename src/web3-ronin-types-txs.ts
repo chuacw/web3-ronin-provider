@@ -24,11 +24,11 @@ export interface get_internal_transaction_of_transaction_Item {
   blockTime: number
 }
 
-export interface get_internal_transaction_details_of_transaction_Response {
-  result: get_internal_transaction_details_of_transaction_Result
+export interface get_detail_of_transaction_Response {
+  result: get_detail_of_transaction_Result
 }
 
-export interface get_internal_transaction_details_of_transaction_Result {
+export interface get_detail_of_transaction_Result {
   transactionHash: string
   transactionIndex: number
   blockHash: string

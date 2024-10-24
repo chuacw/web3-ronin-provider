@@ -12,17 +12,6 @@ function assert(x: any, msg: string) {
 
 async function main() {
   assert(process.env.X_API_KEY, "X_API_KEY not defined!");
-
-  // customizing the connectionInfo
-  // const connectionInfo = {
-  //   url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
-  //   headers: {
-  //     "X-API-KEY": process.env.X_API_KEY || ""
-  //   }
-  // };
-  // const provider = new SkynetWeb3Provider(connectionInfo);
-  
-  // alternative way
   const provider = createSkyNetProvider(process.env.X_API_KEY!);
 
   const accounts = [
@@ -1838,10 +1827,10 @@ async function main() {
   for (const contractAddress of contractAddresses) {
     console.log('-'.repeat(40));
     console.log(`--- ${contractAddress} ---`);
-    const contract_detail = await provider.contract_detail(contractAddress);
+    const contract_detail = await provider.get_detail_of_contract(contractAddress);
     console.log(`name: ${contract_detail.result.name}, symbol: ${contract_detail.result.symbol}`);
     for (const account of accounts) {
-      const number_of_collection_holdings_response = await provider.number_of_collection_holdings_by_address(contractAddress, account);
+      const number_of_collection_holdings_response = await provider.get_number_of_collection_holdings_by_address(contractAddress, account);
       if (number_of_collection_holdings_response.result.tokenCount > 0) {
         console.log(number_of_collection_holdings_response.result);
       }

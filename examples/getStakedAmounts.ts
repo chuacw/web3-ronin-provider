@@ -3,11 +3,12 @@ import { activityTypes } from "../src/web3-ronin-types-accounts";
 import { SkynetWeb3Provider } from "../src/web3-RoninSkynetProvider";
 import { fromBlockchainTimestamp } from "delphirtl/DateUtils"
 import 'dotenv/config';
+import { URL_RONIN_SKYNET_RPC } from "../src";
 require('dotenv').config();
 
 async function main() {
   const connectionInfo = {
-    url: 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2',
+    url: URL_RONIN_SKYNET_RPC,
     headers: {
       "X-API-KEY": process.env.X_API_KEY || ""
     }

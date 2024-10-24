@@ -1,17 +1,22 @@
-import { get_internal_transaction_details_of_transaction_Response, get_internal_transaction_of_transaction_Response, get_details_of_multiple_transactions_Response } from "./web3-ronin-types-txs";
+import {
+  get_detail_of_transaction_Response,
+  get_internal_transaction_of_transaction_Response,
+  get_details_of_multiple_transactions_Response
+} from "./web3-ronin-types-txs";
 import axios, {
   AxiosResponse, AxiosRequestConfig,
-  AxiosProxyConfig,
-  AxiosHeaders
+  AxiosProxyConfig
 } from 'axios';
 import { get_detail_of_contract_Response, get_details_of_multiple_contracts_Response } from "./web3-ronin-types-contracts";
 import {
   get_collection_detail_Response,
   get_collection_holder_list_Response,
   get_collection_token_transfers_Response,
-  get_detail_of_nft_Response, get_details_of_multiple_collections_Response, get_details_of_multiple_nfts_Response, get_nfts_from_collection_Response,
+  get_detail_of_nft_Response, get_details_of_multiple_collections_Response,
+  get_details_of_multiple_nfts_Response, get_nfts_from_collection_Response,
   get_number_of_collection_holdings_by_address_Response,
-  get_owners_of_nft_Response, refresh_nfts_of_collection_async_Response, refresh_nfts_of_collection_sync_Response, get_token_transfers_of_nft_Response
+  get_owners_of_nft_Response, refresh_nfts_of_collection_async_Response,
+  refresh_nfts_of_collection_sync_Response, get_token_transfers_of_nft_Response
 } from "./web3-ronin-types-collections";
 import {
   get_balance_of_address_and_contract_Response,
@@ -22,11 +27,19 @@ import {
   get_token_tranfers_of_address_Response,
   get_token_tranfers_of_address_with_contract_Response,
   get_transactions_of_address_Response,
-  
 } from "./web3-ronin-types-accounts";
-import { get_block_by_hash_timestamp_block_number_range_Response, get_block_by_number_Response, get_finalized_block_number_Response, get_latest_block_number_Response, OptionalParams, get_transactions_by_block_number_Response } from "./web3-ronin-types-blocks";
+import {
+  get_block_by_hash_timestamp_block_number_range_Response, get_block_by_number_Response,
+  get_finalized_block_number_Response, get_latest_block_number_Response, OptionalParams,
+  get_transactions_by_block_number_Response
+} from "./web3-ronin-types-blocks";
 import { URL_RONIN_SKYNET_RPC } from "./web3-ronin-consts";
 import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders } from "./web3-ronin-types-errors";
+import {
+  get_logs_by_contract_address_and_log_topic_Response,
+  get_logs_by_contract_address_Response
+} from "./web3-ronin-types-logs";
+import { get_token_transfers_by_block_range_OptionalParams, get_token_transfers_by_block_range_Response } from "./web3-ronin-types-token-transfers";
 
 
 /**
@@ -356,7 +369,7 @@ class RoninSkynetWeb3Provider {
    * @category Accounts
    */
   async get_transactions_of_address(account: string, limit?: number, cursor?: string): Promise<get_transactions_of_address_Response> {
-  // accounts/0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3/txs
+    // accounts/0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3/txs
     const url = `accounts/${account}/txs`;
     const result = await this.getRoninLimitCursor(url, limit, cursor);
     return result as unknown as get_transactions_of_address_Response;
@@ -381,9 +394,9 @@ class RoninSkynetWeb3Provider {
    * @category Accounts
    */
   async get_internal_txs_transfers(account: string, limit?: number, cursor?: string): Promise<get_internal_txs_transfers_Response> {
-      const url = `accounts/${account}/internal_txs/transfers`;
-      const result = await this.getRoninLimitCursor(url, limit, cursor);
-      return result as unknown as get_internal_txs_transfers_Response;
+    const url = `accounts/${account}/internal_txs/transfers`;
+    const result = await this.getRoninLimitCursor(url, limit, cursor);
+    return result as unknown as get_internal_txs_transfers_Response;
   }
 
   // Blocks
@@ -710,7 +723,8 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @category Contracts
    */
   async get_detail_of_contract(contract_addr: string): Promise<get_detail_of_contract_Response> {
-    const response = await this.getRonin(`contracts/${contract_addr}`);
+    const url = `contracts/${contract_addr}`;
+    const response = await this.getRonin(url);
     const result = response.data;
     return result as unknown as get_detail_of_contract_Response;
   }
@@ -731,6 +745,45 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     return result as unknown as get_details_of_multiple_contracts_Response;
   }
 
+  // Logs
+
+  /**
+   * Get logs by contract address
+   *
+   * @async
+   * @param {string} contractAddress
+   * @param {?number} [limit] how many items can be return in a single response, maximum 200
+   * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+   * @returns {Promise<get_logs_by_contract_address_Response>}
+   * @category Logs
+   */
+  async get_logs_by_contract_address(contractAddress: string, limit?: number, cursor?: string): Promise<get_logs_by_contract_address_Response> {
+    const url = `logs/contracts/${contractAddress}`;
+    const response = await this.getRoninLimitCursor(url, limit, cursor);
+    const result = response.data;
+    return result as unknown as get_logs_by_contract_address_Response;
+  }
+
+  /**
+   * Get logs by contract address and log topic
+   *
+   * @async
+   * @param {string} contractAddress
+   * @param {string} topic
+   * @param {?number} [limit] how many items can be return in a single response, maximum 200
+   * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
+   * @returns {Promise<get_logs_by_contract_address_and_log_topic_Response>}
+   * @category Logs
+   */
+  async get_logs_by_contract_address_and_log_topic(contractAddress: string, topic: string,
+    limit?: number, cursor?: string
+  ): Promise<get_logs_by_contract_address_and_log_topic_Response> {
+    const url = `logs/contracts/${contractAddress}/topics/${topic}`
+    const response = await this.getRoninLimitCursor(url, limit, cursor);
+    const result = response.data;
+    return result as unknown as get_logs_by_contract_address_and_log_topic_Response;
+  }
+
   // Transactions
 
   /**
@@ -742,23 +795,25 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @category Transactions
    */
   async get_internal_transaction_of_transaction(txHash: string): Promise<get_internal_transaction_of_transaction_Response> {
-    const response = await this.getRonin(`txs/${txHash}/internal_txs`);
+    const url = `txs/${txHash}/internal_txs`;
+    const response = await this.getRonin(url);
     const result = response.data;
     return result as unknown as get_internal_transaction_of_transaction_Response;
   }
 
   /**
-   * Get internal transaction details of a transaction
+   * Get detail of a transaction
    *
    * @async
    * @param {string} txHash hash of the transaction to get
-   * @returns {Promise<get_internal_transaction_details_of_transaction_Response>}
+   * @returns {Promise<get_detail_of_transaction_Response>}
    * @category Transactions
    */
-  async get_internal_transaction_details_of_transaction(txHash: string): Promise<get_internal_transaction_details_of_transaction_Response> {
-    const response = await this.getRonin(`txs/${txHash}`);
+  async get_detail_of_transaction(txHash: string): Promise<get_detail_of_transaction_Response> {
+    const url = `txs/${txHash}`;
+    const response = await this.getRonin(url);
     const result = response.data;
-    return result as unknown as get_internal_transaction_details_of_transaction_Response;
+    return result as unknown as get_detail_of_transaction_Response;
   }
 
   /**
@@ -777,6 +832,40 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     return result as unknown as get_details_of_multiple_transactions_Response;
   }
 
+  /**
+   * Get token transfers by block range, with maximum number of blocks allowed of 1000 blocks
+   *
+   * @async
+   * @param {number} fromBlock
+   * @param {number} toBlock
+   * @param {?get_token_transfers_by_block_range_OptionalParams} [optionalParams]
+   * @returns {Promise<get_token_transfers_by_block_range_Response>}
+   * @category Token transfers
+   */
+  async get_token_transfers_by_block_range(
+    fromBlock: number, toBlock: number,
+    optionalParams?: get_token_transfers_by_block_range_OptionalParams
+  ): Promise<get_token_transfers_by_block_range_Response> {
+    const urlParams = new URLSearchParams();
+    urlParams.append('fromBlock', fromBlock.toString());
+    urlParams.append('toBlock', toBlock.toString());
+    if (optionalParams) {
+      if (optionalParams.limit) {
+        urlParams.append('limit', optionalParams.limit.toString());
+      }
+      if (optionalParams.order) {
+        urlParams.append('order', optionalParams.order);
+      }
+      if (optionalParams.cursor) {
+        urlParams.append('cursor', optionalParams.cursor);
+      }
+    }
+    const url = this.update_url_with_Params(`tokens/transfers`, urlParams);
+    const response = await this.getRonin(url);
+    const result = response.data;
+    return result as unknown as get_token_transfers_by_block_range_Response;
+  }
+
 }
 
 /**
@@ -793,10 +882,23 @@ function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3P
   return result;
 }
 
+function limitParam(limit: number): { limit: number } {
+  return { limit: limit };
+}
+
+function cursorParam(cursor: string): {cursor: string} {
+  return { cursor };
+}
+
+function limitCursorParam(limit: number, nextCursor: string): { limit: number, cursor: string } {
+  return { limit, cursor: nextCursor };
+}
+
 export {
   ConnectionInfo,
   RoninSkynetWeb3Provider,
   RoninSkynetWeb3Provider as SkynetProvider,
   RoninSkynetWeb3Provider as SkynetWeb3Provider,
-  createSkyNetProvider
+  createSkyNetProvider,
+  limitParam, cursorParam, limitCursorParam
 }

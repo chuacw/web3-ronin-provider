@@ -458,6 +458,29 @@ describe('Contracts', () => {
 
 });
 
+describe('Logs', () => {
+  let provider: SkynetWeb3Provider;
+
+  beforeEach(() => {
+    const connectionInfo = {
+      url: URL_RONIN_SKYNET_RPC,
+      headers: {
+        "X-API-KEY": process.env["X-API-KEY"] || ""
+      }
+    }
+    provider = new SkynetWeb3Provider(connectionInfo);
+  });
+
+  test('Get logs by contract address', async () => {
+    
+  });
+
+  test('Get logs by contract address and log topic', async () => {
+
+  });
+
+});
+
 describe('Txs', () => {
   let provider: SkynetWeb3Provider;
 
@@ -481,7 +504,7 @@ describe('Txs', () => {
 
   test('internal_txs_detail', async () => {
     let txHash = '0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba';
-    const result = await provider.get_internal_transaction_details_of_transaction(txHash);
+    const result = await provider.get_detail_of_transaction(txHash);
     const expected = '{"result":{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","transactionIndex":15,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockNumber":39128332,"from":"0xf22a97a220392b1311f5ecde3175ec07fa21154b","to":"0x05b0bb3c1c320b280501b86706c3551995bc8571","contractAddress":"","status":1,"gas":331018,"gasPrice":"0x4a817c800","effectiveGasPrice":"0x4a817c800","gasUsed":164810,"cumulativeGasUsed":1561246,"logsBloom":"0x00000000080000000000000000410000000000001000000000000000000000002000840000000000002000000000000000004000000000000000000000080004100040000000000000020008010000000000000000000000000400000000000080000000000000000000000008000000000000000000000080000010100000000100000000000000000000000000000000000000102000000000000000000000008000000080000000000000000000000000000000000000000000004200000000000802000000000000000080000000000000000000000010000000000000000000000000002000000020020000000000000000000000000000000400000020","input":"0x3d8527ba","nonce":35,"value":"0x0","type":0,"v":"0xfeb","r":"0x9a133b81eeea377259a7b783595010d31204318c2515fff1fb8d5d1852c5c147","s":"0x69836d6d40b8a9545899e310785f7036f6f6c051421d6c2865212307cdcecd2f","blockTime":1729225108}}';
     const jsonResult = JSON.stringify(result);
     expect(jsonResult).toBe(expected);
@@ -508,3 +531,37 @@ describe('Txs', () => {
 
 });
 
+describe('Token transfer', () => {
+  let provider: SkynetWeb3Provider;
+
+  beforeEach(() => {
+    const connectionInfo = {
+      url: URL_RONIN_SKYNET_RPC,
+      headers: {
+        "X-API-KEY": process.env["X-API-KEY"] || ""
+      }
+    }
+    provider = new SkynetWeb3Provider(connectionInfo);
+  });
+
+  test('Get token transfers by block range', async () => {
+    const fromBlock = 39300772;
+    const toBlock   = 39301771;
+    const result = await provider.get_token_transfers_by_block_range(fromBlock, toBlock);
+    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items[0].blockNumber).toBeGreaterThanOrEqual(fromBlock);
+    expect(result.result.items[0].blockNumber).toBeLessThanOrEqual(toBlock);
+  }, TIMEOUT);
+
+  test('Get token transfers by block range limit=2', async () => {
+    const fromBlock = 39300772;
+    const toBlock   = 39301771;
+    const params = {limit: 2};
+    const result = await provider.get_token_transfers_by_block_range(fromBlock, toBlock, params);
+    expect(result.result.items.length).toBeGreaterThan(0);
+    expect(result.result.items.length).toBeLessThanOrEqual(2);
+    expect(result.result.items[0].blockNumber).toBeGreaterThanOrEqual(fromBlock);
+    expect(result.result.items[0].blockNumber).toBeLessThanOrEqual(toBlock);
+  }, TIMEOUT);
+
+})
