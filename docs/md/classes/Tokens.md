@@ -28,7 +28,7 @@ Address for AXIE collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L14)
+[src/web3-ronin-consts-tokens.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L14)
 
 ***
 
@@ -40,7 +40,7 @@ Address for AXIE ACCESSORY collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:71](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L71)
+[src/web3-ronin-consts-tokens.ts:71](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L71)
 
 ***
 
@@ -52,7 +52,7 @@ Address for AXIE LAND collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:92](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L92)
+[src/web3-ronin-consts-tokens.ts:92](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L92)
 
 ***
 
@@ -64,7 +64,7 @@ Address for AXIE LAND ITEM collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:57](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L57)
+[src/web3-ronin-consts-tokens.ts:57](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L57)
 
 ***
 
@@ -76,7 +76,7 @@ Address for FIGHT LEAGUE CHIPS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L43)
+[src/web3-ronin-consts-tokens.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L43)
 
 ***
 
@@ -88,7 +88,7 @@ Address for KAIDRO JOURNAL collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:36](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L36)
+[src/web3-ronin-consts-tokens.ts:36](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L36)
 
 ***
 
@@ -100,7 +100,7 @@ Address for RAGNAROK MONSTERS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:64](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L64)
+[src/web3-ronin-consts-tokens.ts:64](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L64)
 
 ***
 
@@ -112,7 +112,7 @@ Address for Ronin Name Service
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L78)
+[src/web3-ronin-consts-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L78)
 
 ***
 
@@ -124,7 +124,7 @@ Address for RUNIVERSE ITEM collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:50](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L50)
+[src/web3-ronin-consts-tokens.ts:50](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L50)
 
 ***
 
@@ -136,7 +136,7 @@ Address for WILD FOREST SKINS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:85](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L85)
+[src/web3-ronin-consts-tokens.ts:85](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L85)
 
 ***
 
@@ -148,7 +148,7 @@ Address for WILD FOREST UNITS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:21](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L21)
+[src/web3-ronin-consts-tokens.ts:21](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L21)
 
 ***
 
@@ -160,4 +160,4 @@ Address for WILDFORESTUNITS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:29](https://github.com/chuacw/web3-ronin-provider/blob/8567186df7b9f3f4227fb3bd272cc98d63a4d447/src/web3-ronin-consts-tokens.ts#L29)
+[src/web3-ronin-consts-tokens.ts:29](https://github.com/chuacw/web3-ronin-provider/blob/4a3e9d183c6bab0e7301d6bb6cb7346d9988c1ec/src/web3-ronin-consts-tokens.ts#L29)

@@ -4,7 +4,7 @@
 
 # web3-ronin-provider
 
-## Other
+## References
 
 ### SkynetProvider
 
@@ -16,11 +16,12 @@ Renames and re-exports [RoninSkynetWeb3Provider](classes/RoninSkynetWeb3Provider
 
 Renames and re-exports [RoninSkynetWeb3Provider](classes/RoninSkynetWeb3Provider.md)
 
-## Other
+## Enumerations
 
-- [SkynetProvider](globals.md#skynetprovider)
-- [SkynetWeb3Provider](globals.md#skynetweb3provider)
 - [activityTypes](enumerations/activityTypes.md)
+
+## Classes
+
 - [EEmptyHeaders](classes/EEmptyHeaders.md)
 - [EEmptyUrl](classes/EEmptyUrl.md)
 - [ENoApiKey](classes/ENoApiKey.md)
@@ -28,6 +29,9 @@ Renames and re-exports [RoninSkynetWeb3Provider](classes/RoninSkynetWeb3Provider
 - [RoninJsonRpcProvider](classes/RoninJsonRpcProvider.md)
 - [RoninSkynetWeb3Provider](classes/RoninSkynetWeb3Provider.md)
 - [Tokens](classes/Tokens.md)
+
+## Interfaces
+
 - [Address](interfaces/Address.md)
 - [get\_balance\_of\_address\_and\_contract\_Response](interfaces/get_balance_of_address_and_contract_Response.md)
 - [get\_balance\_of\_address\_and\_contract\_Result](interfaces/get_balance_of_address_and_contract_Result.md)
@@ -135,10 +139,16 @@ Renames and re-exports [RoninSkynetWeb3Provider](classes/RoninSkynetWeb3Provider
 - [search\_Result](interfaces/search_Result.md)
 - [search\_Send](interfaces/search_Send.md)
 - [search\_Send\_Token](interfaces/search_Send_Token.md)
+
+## Type Aliases
+
 - [ConnectionInfo](type-aliases/ConnectionInfo.md)
 - [get\_latest\_block\_number\_Response](type-aliases/get_latest_block_number_Response.md)
 - [OptionalParams](type-aliases/OptionalParams.md)
 - [SearchCriteria](type-aliases/SearchCriteria.md)
+
+## Variables
+
 - [ADDR\_AXIE\_INFINITY\_SHARD](variables/ADDR_AXIE_INFINITY_SHARD.md)
 - [ADDR\_RONIN\_GATEWAY\_PROXY\_V3](variables/ADDR_RONIN_GATEWAY_PROXY_V3.md)
 - [ERROR\_EMPTY\_HEADERS](variables/ERROR_EMPTY_HEADERS.md)
@@ -151,6 +161,6 @@ Renames and re-exports [RoninSkynetWeb3Provider](classes/RoninSkynetWeb3Provider
 - [URL\_RONIN\_SKYNET\_RPC](variables/URL_RONIN_SKYNET_RPC.md)
 - [URL\_RONIN\_TESTNET\_RPC](variables/URL_RONIN_TESTNET_RPC.md)
 
-## Transactions
+## Functions
 
 - [createSkyNetProvider](functions/createSkyNetProvider.md)
