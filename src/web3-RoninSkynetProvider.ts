@@ -786,7 +786,6 @@ In the response, there are two lists, successes and failures tokenIds, failure r
  * @param {string} X_API_KEY API key
  * @param {?string} [url] The URL to use for the provider. If not given, uses {@link URL_RONIN_SKYNET_RPC}
  * @returns {RoninSkynetWeb3Provider}
- * @category Transactions
  */
 function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3Provider {
   const connection = { url: url || URL_RONIN_SKYNET_RPC, headers: { "X-API-KEY": X_API_KEY } };
