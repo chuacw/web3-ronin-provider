@@ -1,6 +1,6 @@
 {
   "name": "web3-ronin-provider",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "types": "./dist/index.d.ts",
   "main": "index.js",
   "scripts": {
