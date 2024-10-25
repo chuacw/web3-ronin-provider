@@ -39,5 +39,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_12_Get_all_transactions_of_a_wallet_address
+}

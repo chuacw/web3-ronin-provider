@@ -34,5 +34,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_03_Get_all_NFTs_of_an_owner
+}

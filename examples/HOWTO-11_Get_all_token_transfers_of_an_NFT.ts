@@ -18,7 +18,7 @@ async function main() {
   console.log('Get all token transfers of an NFT');
   const contractAddress = '0x029bb759353f6547fbe387e97869057849ab4d23';
   const tokenId = 102076;
-  let token_transfers_of_nft_Response = await provider.token_transfers_of_nft(
+  let token_transfers_of_nft_Response = await provider.get_token_transfers_of_nft(
     contractAddress, tokenId
   );
 
@@ -29,7 +29,7 @@ async function main() {
       console.log('-'.repeat(60));
     }
     if (token_transfers_of_nft_Response.result.paging.nextCursor) {
-      token_transfers_of_nft_Response = await provider.token_transfers_of_nft(
+      token_transfers_of_nft_Response = await provider.get_token_transfers_of_nft(
         contractAddress, tokenId, 
         MAX_LIMIT, token_transfers_of_nft_Response.result.paging.nextCursor
       );
@@ -40,5 +40,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_11_Get_all_token_transfers_of_an_NFT
+}

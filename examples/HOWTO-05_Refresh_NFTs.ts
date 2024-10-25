@@ -22,5 +22,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_05_Refresh_NFTs
+}

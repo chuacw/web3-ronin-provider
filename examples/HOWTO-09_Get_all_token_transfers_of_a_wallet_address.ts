@@ -36,5 +36,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_09_Get_all_token_transfers_of_a_wallet_address
+}

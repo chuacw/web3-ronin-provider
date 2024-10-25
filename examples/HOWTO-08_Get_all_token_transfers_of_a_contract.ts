@@ -17,7 +17,7 @@ async function main() {
 
   console.log('Get all token transfers of a contract');
   const contractAddress = '0x32950db2a7164ae833121501c797d79e7b79d74c';
-  let collection_token_transfers_Response = await provider.collection_token_transfers(contractAddress);
+  let collection_token_transfers_Response = await provider.get_collection_token_transfers(contractAddress);
 
   do {
     for (const item of collection_token_transfers_Response.result.items) {
@@ -26,7 +26,7 @@ async function main() {
       console.log('-'.repeat(60));
     }
     if (collection_token_transfers_Response.result.paging.nextCursor) {
-      collection_token_transfers_Response = await provider.collection_token_transfers(contractAddress, 
+      collection_token_transfers_Response = await provider.get_collection_token_transfers(contractAddress, 
         MAX_LIMIT, collection_token_transfers_Response.result.paging.nextCursor
       );
       count++;
@@ -36,5 +36,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_08_Get_all_token_transfers_of_a_contract
+}

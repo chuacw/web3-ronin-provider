@@ -27,7 +27,7 @@ Use it like so:
     const connectionInfo = {
       url: URL_RONIN_SKYNET_RPC,
       headers: {
-        "X-API-KEY": process.env["X_API_KEY"] || ""
+        "X-API-KEY": process.env["X-API-KEY"] || ""
       }
     }
     const provider = new SkynetWeb3Provider(connectionInfo);

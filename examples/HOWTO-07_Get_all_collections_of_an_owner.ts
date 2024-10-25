@@ -17,7 +17,7 @@ async function main() {
 
   console.log('Get all collections of an owner');
   const account = '0x0000b7c6ccc9dd223facd7f9f896fb1b6f130000';
-  let list_of_collections_having_NFTs_Response = await provider.list_of_collections_having_NFTs(account);
+  let list_of_collections_having_NFTs_Response = await provider.get_list_of_collections_having_NFTs(account);
 
   do {
     for (const item of list_of_collections_having_NFTs_Response.result.items) {
@@ -26,7 +26,7 @@ async function main() {
       console.log('-'.repeat(60));
     }
     if (list_of_collections_having_NFTs_Response.result.paging.nextCursor) {
-      list_of_collections_having_NFTs_Response = await provider.list_of_collections_having_NFTs(account, 
+      list_of_collections_having_NFTs_Response = await provider.get_list_of_collections_having_NFTs(account, 
         MAX_LIMIT, list_of_collections_having_NFTs_Response.result.paging.nextCursor
       );
       count++;
@@ -36,5 +36,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_07_Get_all_collections_of_an_owner
+}

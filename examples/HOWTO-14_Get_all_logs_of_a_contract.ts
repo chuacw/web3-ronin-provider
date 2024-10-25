@@ -39,5 +39,11 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
+
+export {
+  main as HOWTO_14_Get_all_logs_of_a_contract
+}
 

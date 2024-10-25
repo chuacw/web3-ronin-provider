@@ -39,5 +39,10 @@ async function main() {
   console.log('Done!');
 }
 
-main();
+if (!process.env["DEBUG"]) {
+  main();
+}
 
+export {
+  main as HOWTO_13_Get_all_RON_transfers_via_internal_transactions_of_a_wallet_address
+}
