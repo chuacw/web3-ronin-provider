@@ -106,7 +106,7 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "**.ts", "src/**.ts", 
+    "**.ts", "src/**.ts", "examples/HOWTO-13_Get_all_RON_transfers_via_internal_transactions_of_a_wallet_address.ts", 
 //    "**/__tests__/*", "**/tests/*"
   ],
   "exclude": ["node_modules", "**/__tests__/*","**/tests/*", "examples"]

@@ -69,6 +69,10 @@ type ConnectionInfo = {
   proxy?: AxiosProxyConfig
 }
 
+interface resultType {
+  result: any
+}
+
 /**
  * This class implements the 
  * {@link https://docs.skymavis.com/api/web3/skynet-web-3-api Skynet Web3 API}.  
@@ -184,8 +188,14 @@ class RoninSkynetWeb3Provider {
   protected async getRoninLimitCursor(url: string, limit?: number, cursor?: string): Promise<any> {
     const _url = this.update_url(url, limit, cursor);
     const response = await this.getRonin(_url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result;
+  }
+
+  protected liftResult<T extends resultType>(incoming: T): any {
+    // const outgoing = incoming.result // do this in descendant
+    const outgoing = incoming;
+    return outgoing;
   }
 
   // Accounts
@@ -216,7 +226,7 @@ class RoninSkynetWeb3Provider {
       _searchCriteria.toBlock = searchCriteria.toBlock;
     }
     const response = await this.postRonin(url, _searchCriteria);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as search_Response;
   }
 
@@ -295,7 +305,7 @@ class RoninSkynetWeb3Provider {
   async get_balance_of_address_and_contract(account: string, contractAddress: string): Promise<get_balance_of_address_and_contract_Response> {
     const url = `accounts/${account}/contracts/${contractAddress}`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_balance_of_address_and_contract_Response;
   }
 
@@ -311,7 +321,7 @@ class RoninSkynetWeb3Provider {
   async get_balances_of_address_by_multiple_contracts(account: string, contractAddresses: string[]): Promise<get_balances_of_address_by_multiple_contracts_Response> {
     const url = `accounts/${account}/contracts`;
     const response = await this.postRonin(url, { contractAddresses });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_balances_of_address_by_multiple_contracts_Response;
   }
 
@@ -410,7 +420,7 @@ class RoninSkynetWeb3Provider {
    */
   async get_finalized_block_number(): Promise<get_finalized_block_number_Response> {
     const response = await this.getRonin('blocks/finalized/number');
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_finalized_block_number_Response;
   }
 
@@ -423,7 +433,7 @@ class RoninSkynetWeb3Provider {
    */
   async get_latest_block_number(): Promise<get_latest_block_number_Response> {
     const response = await this.getRonin('blocks/latest/number');
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_latest_block_number_Response;
   }
 
@@ -439,7 +449,7 @@ class RoninSkynetWeb3Provider {
     // blocks/39216311/txs
     const url = `blocks/${block_number}/txs`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_transactions_by_block_number_Response;
   }
 
@@ -454,7 +464,7 @@ class RoninSkynetWeb3Provider {
   async get_block_by_number(block_number: number): Promise<get_block_by_number_Response> {
     const url = `blocks/${block_number}`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_block_by_number_Response;
   }
 
@@ -484,7 +494,7 @@ class RoninSkynetWeb3Provider {
     urlParams.append('toBlock', toBlock.toString());
     const url = this.update_url_with_Params('blocks', urlParams);
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_block_by_hash_timestamp_block_number_range_Response;
   }
 
@@ -505,7 +515,7 @@ You can travel through the whole list of owners in case an NFT has more than one
    */
   async get_owners_of_nft(contractAddress: string, tokenId: number): Promise<get_owners_of_nft_Response> {
     const response = await this.getRonin(`collections/${contractAddress}/tokens/${tokenId}/owners`);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_owners_of_nft_Response;
   }
 
@@ -543,7 +553,7 @@ You can travel through the whole list of owners in case an NFT has more than one
   async get_detail_of_nft(contractAddress: string, tokenId: number): Promise<get_detail_of_nft_Response> {
     const url = `collections/${contractAddress}/tokens/${tokenId}`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_detail_of_nft_Response;
   }
 
@@ -567,7 +577,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
       maxWait,
       tokenIds
     });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as refresh_nfts_of_collection_sync_Response;
   }
 
@@ -587,7 +597,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(url, {
       tokenIds
     });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as refresh_nfts_of_collection_async_Response;
   }
 
@@ -605,7 +615,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(url, {
       tokenIds
     });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_details_of_multiple_nfts_Response;
   }
 
@@ -691,7 +701,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
   async get_collection_detail(contract_addr: string): Promise<get_collection_detail_Response> {
     const url = `collections/${contract_addr}`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_collection_detail_Response;
   }
 
@@ -708,7 +718,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(url, {
       contractAddresses
     });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_details_of_multiple_collections_Response;
   }
 
@@ -725,7 +735,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
   async get_detail_of_contract(contract_addr: string): Promise<get_detail_of_contract_Response> {
     const url = `contracts/${contract_addr}`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_detail_of_contract_Response;
   }
 
@@ -741,7 +751,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(`contracts`, {
       contractAddresses
     });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_details_of_multiple_contracts_Response;
   }
 
@@ -759,8 +769,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    */
   async get_logs_by_contract_address(contractAddress: string, limit?: number, cursor?: string): Promise<get_logs_by_contract_address_Response> {
     const url = `logs/contracts/${contractAddress}`;
-    const response = await this.getRoninLimitCursor(url, limit, cursor);
-    const result = response.data;
+    const result = await this.getRoninLimitCursor(url, limit, cursor);
     return result as unknown as get_logs_by_contract_address_Response;
   }
 
@@ -780,7 +789,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
   ): Promise<get_logs_by_contract_address_and_log_topic_Response> {
     const url = `logs/contracts/${contractAddress}/topics/${topic}`
     const response = await this.getRoninLimitCursor(url, limit, cursor);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_logs_by_contract_address_and_log_topic_Response;
   }
 
@@ -797,7 +806,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
   async get_internal_transaction_of_transaction(txHash: string): Promise<get_internal_transaction_of_transaction_Response> {
     const url = `txs/${txHash}/internal_txs`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_internal_transaction_of_transaction_Response;
   }
 
@@ -812,7 +821,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
   async get_detail_of_transaction(txHash: string): Promise<get_detail_of_transaction_Response> {
     const url = `txs/${txHash}`;
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_detail_of_transaction_Response;
   }
 
@@ -828,7 +837,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(`txs`, {
       hashes
     });
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_details_of_multiple_transactions_Response;
   }
 
@@ -862,8 +871,17 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     }
     const url = this.update_url_with_Params(`tokens/transfers`, urlParams);
     const response = await this.getRonin(url);
-    const result = response.data;
+    const result = this.liftResult(response.data);
     return result as unknown as get_token_transfers_by_block_range_Response;
+  }
+
+}
+
+class RoninSkynetWeb3ProviderV2 extends RoninSkynetWeb3Provider {
+
+  protected liftResult<T extends resultType>(incoming: T): any {
+    const outgoing = incoming.result // do this in descendant
+    return outgoing;
   }
 
 }
@@ -899,6 +917,9 @@ export {
   RoninSkynetWeb3Provider,
   RoninSkynetWeb3Provider as SkynetProvider,
   RoninSkynetWeb3Provider as SkynetWeb3Provider,
+  RoninSkynetWeb3ProviderV2,
+  RoninSkynetWeb3ProviderV2 as SkynetProviderV2,
+  RoninSkynetWeb3ProviderV2 as SkynetWeb3ProviderV2,
   createSkyNetProvider,
   limitParam, cursorParam, limitCursorParam
 }

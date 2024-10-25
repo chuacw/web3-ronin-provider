@@ -48,7 +48,7 @@ The URL to use, headers, etc
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:93](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L93)
+[src/web3-RoninSkynetProvider.ts:93](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L93)
 
 ## Accounts
 
@@ -72,7 +72,7 @@ Get balance of an address and contract
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:295](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L295)
+[src/web3-RoninSkynetProvider.ts:295](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L295)
 
 ***
 
@@ -96,7 +96,7 @@ Get balances of an address by multiple contracts
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:311](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L311)
+[src/web3-RoninSkynetProvider.ts:311](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L311)
 
 ***
 
@@ -126,7 +126,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:250](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L250)
+[src/web3-RoninSkynetProvider.ts:250](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L250)
 
 ***
 
@@ -164,7 +164,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:396](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L396)
+[src/web3-RoninSkynetProvider.ts:396](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L396)
 
 ***
 
@@ -194,7 +194,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:265](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L265)
+[src/web3-RoninSkynetProvider.ts:265](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L265)
 
 ***
 
@@ -226,7 +226,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:281](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L281)
+[src/web3-RoninSkynetProvider.ts:281](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L281)
 
 ***
 
@@ -260,7 +260,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:235](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L235)
+[src/web3-RoninSkynetProvider.ts:235](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L235)
 
 ***
 
@@ -290,7 +290,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:328](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L328)
+[src/web3-RoninSkynetProvider.ts:328](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L328)
 
 ***
 
@@ -330,7 +330,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:349](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L349)
+[src/web3-RoninSkynetProvider.ts:349](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L349)
 
 ***
 
@@ -366,7 +366,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:371](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L371)
+[src/web3-RoninSkynetProvider.ts:371](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L371)
 
 ***
 
@@ -394,7 +394,7 @@ When activityTypes is not empty, fromBlock and toBlock needs to be specified.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:202](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L202)
+[src/web3-RoninSkynetProvider.ts:202](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L202)
 
 ## Blocks
 
@@ -422,7 +422,7 @@ get the block where its life span covers the input timestamp and/or hash
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:471](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L471)
+[src/web3-RoninSkynetProvider.ts:471](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L471)
 
 ***
 
@@ -444,7 +444,7 @@ Get block by number
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:454](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L454)
+[src/web3-RoninSkynetProvider.ts:454](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L454)
 
 ***
 
@@ -462,7 +462,7 @@ Get finalized block number
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:411](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L411)
+[src/web3-RoninSkynetProvider.ts:411](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L411)
 
 ***
 
@@ -480,7 +480,7 @@ Get latest block number
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:424](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L424)
+[src/web3-RoninSkynetProvider.ts:424](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L424)
 
 ***
 
@@ -502,7 +502,7 @@ Get transactions by block number
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:438](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L438)
+[src/web3-RoninSkynetProvider.ts:438](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L438)
 
 ## Collections
 
@@ -526,7 +526,7 @@ The address to get collection detail for
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:691](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L691)
+[src/web3-RoninSkynetProvider.ts:691](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L691)
 
 ***
 
@@ -562,7 +562,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:663](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L663)
+[src/web3-RoninSkynetProvider.ts:663](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L663)
 
 ***
 
@@ -594,7 +594,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:678](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L678)
+[src/web3-RoninSkynetProvider.ts:678](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L678)
 
 ***
 
@@ -624,7 +624,7 @@ ID of NFT token
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:543](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L543)
+[src/web3-RoninSkynetProvider.ts:543](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L543)
 
 ***
 
@@ -648,7 +648,7 @@ An array of addresses
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:706](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L706)
+[src/web3-RoninSkynetProvider.ts:706](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L706)
 
 ***
 
@@ -672,7 +672,7 @@ Get details of multiple NFTs
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:603](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L603)
+[src/web3-RoninSkynetProvider.ts:603](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L603)
 
 ***
 
@@ -707,7 +707,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:628](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L628)
+[src/web3-RoninSkynetProvider.ts:628](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L628)
 
 ***
 
@@ -743,7 +743,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:644](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L644)
+[src/web3-RoninSkynetProvider.ts:644](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L644)
 
 ***
 
@@ -771,7 +771,7 @@ You can travel through the whole list of owners in case an NFT has more than one
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:506](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L506)
+[src/web3-RoninSkynetProvider.ts:506](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L506)
 
 ***
 
@@ -811,7 +811,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:527](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L527)
+[src/web3-RoninSkynetProvider.ts:527](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L527)
 
 ***
 
@@ -837,7 +837,7 @@ By using this API, users don't have to wait until the API complete the refreshin
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:585](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L585)
+[src/web3-RoninSkynetProvider.ts:585](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L585)
 
 ***
 
@@ -869,7 +869,7 @@ milliseconds, when maxWait exceeds server timeout, then server timeout will be u
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:564](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L564)
+[src/web3-RoninSkynetProvider.ts:564](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L564)
 
 ## Contracts
 
@@ -893,7 +893,7 @@ address of contract to get detail for
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:725](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L725)
+[src/web3-RoninSkynetProvider.ts:725](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L725)
 
 ***
 
@@ -917,7 +917,7 @@ An array of contract address to get details for
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:740](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L740)
+[src/web3-RoninSkynetProvider.ts:740](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L740)
 
 ## Logs
 
@@ -947,7 +947,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:760](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L760)
+[src/web3-RoninSkynetProvider.ts:760](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L760)
 
 ***
 
@@ -979,7 +979,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:778](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L778)
+[src/web3-RoninSkynetProvider.ts:778](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L778)
 
 ## Other
 
@@ -999,7 +999,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:112](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L112)
+[src/web3-RoninSkynetProvider.ts:112](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L112)
 
 ***
 
@@ -1019,7 +1019,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:156](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L156)
+[src/web3-RoninSkynetProvider.ts:156](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L156)
 
 ***
 
@@ -1049,7 +1049,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:184](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L184)
+[src/web3-RoninSkynetProvider.ts:184](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L184)
 
 ***
 
@@ -1069,7 +1069,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:166](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L166)
+[src/web3-RoninSkynetProvider.ts:166](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L166)
 
 ***
 
@@ -1099,7 +1099,7 @@ Updated url if limit and cursors provided, otherwise, returns the parameter url.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:133](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L133)
+[src/web3-RoninSkynetProvider.ts:133](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L133)
 
 ***
 
@@ -1119,7 +1119,7 @@ Updated url if limit and cursors provided, otherwise, returns the parameter url.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:145](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L145)
+[src/web3-RoninSkynetProvider.ts:145](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L145)
 
 ## Token transfers
 
@@ -1145,7 +1145,7 @@ Get token transfers by block range, with maximum number of blocks allowed of 100
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:845](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L845)
+[src/web3-RoninSkynetProvider.ts:845](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L845)
 
 ## Transactions
 
@@ -1169,7 +1169,7 @@ hash of the transaction to get
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:812](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L812)
+[src/web3-RoninSkynetProvider.ts:812](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L812)
 
 ***
 
@@ -1193,7 +1193,7 @@ hashes of transactions
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:827](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L827)
+[src/web3-RoninSkynetProvider.ts:827](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L827)
 
 ***
 
@@ -1217,4 +1217,4 @@ hash of the transaction to get
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:797](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L797)
+[src/web3-RoninSkynetProvider.ts:797](https://github.com/chuacw/web3-ronin-provider/blob/ce08d460e2589edd5c5b854bf0bd2f7be4e0431f/src/web3-RoninSkynetProvider.ts#L797)
