@@ -4,21 +4,6 @@ import { URL_RONIN_SKYNET_RPC } from "../src";
 import 'dotenv/config';
 require('dotenv').config();
 
-async function dump_NFT_owner(provider: SkynetWeb3Provider, contractAddress: string, tokenId: number) {
-  let ownerResponse = await provider.owners_of_nft(contractAddress, tokenId);
-  do {
-    for (const item of ownerResponse.result.items) {
-      console.log('-'.repeat(60));
-      console.log(`Item addr: ${item.address}`);
-      console.log(`balance: ${item.balance}`);
-      console.log('-'.repeat(60));
-    }
-    if (ownerResponse.result.paging.nextCursor) {
-      ownerResponse = await provider.owners_of_nft(contractAddress, tokenId);
-    }
-  } while (ownerResponse.result.paging.nextCursor);
-}
-
 async function main() {
   const connectionInfo = {
     url: URL_RONIN_SKYNET_RPC,
