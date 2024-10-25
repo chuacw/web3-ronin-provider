@@ -32,7 +32,7 @@ async function main() {
   const contractAddress = '0x32950db2a7164ae833121501c797d79e7b79d74c';
   const MAX_LIMIT = 200;
   let count = 0;
-  let ownerResponse = await provider.nfts_from_collection(contractAddress);
+  let ownerResponse = await provider.get_nfts_from_collection(contractAddress);
   do {
     for (const item of ownerResponse.result.items) {
       console.log('-'.repeat(60));
@@ -40,7 +40,7 @@ async function main() {
       console.log('-'.repeat(60));
     }
     if (ownerResponse.result.paging.nextCursor) {
-      ownerResponse = await provider.nfts_from_collection(contractAddress, 
+      ownerResponse = await provider.get_nfts_from_collection(contractAddress, 
         MAX_LIMIT, ownerResponse.result.paging.nextCursor
       );
       count++;

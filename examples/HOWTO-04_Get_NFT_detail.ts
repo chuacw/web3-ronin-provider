@@ -16,7 +16,7 @@ async function main() {
   console.log('Get NFT detail');
   const contractAddress = '0x32950db2a7164ae833121501c797d79e7b79d74c';
   const tokenId = 10037309;
-  let detailResponse = await provider.detail_of_nft(contractAddress, tokenId);
+  let detailResponse = await provider.get_detail_of_nft(contractAddress, tokenId);
   console.log(detailResponse.result);
   console.log('Done!');
 }

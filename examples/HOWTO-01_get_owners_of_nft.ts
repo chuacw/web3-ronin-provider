@@ -5,7 +5,7 @@ import 'dotenv/config';
 require('dotenv').config();
 
 async function dump_NFT_owner(provider: SkynetWeb3Provider, contractAddress: string, tokenId: number) {
-  let ownerResponse = await provider.owners_of_nft(contractAddress, tokenId);
+  let ownerResponse = await provider.get_owners_of_nft(contractAddress, tokenId);
   do {
     for (const item of ownerResponse.result.items) {
       console.log('-'.repeat(60));
@@ -14,7 +14,7 @@ async function dump_NFT_owner(provider: SkynetWeb3Provider, contractAddress: str
       console.log('-'.repeat(60));
     }
     if (ownerResponse.result.paging.nextCursor) {
-      ownerResponse = await provider.owners_of_nft(contractAddress, tokenId);
+      ownerResponse = await provider.get_owners_of_nft(contractAddress, tokenId);
     }
   } while (ownerResponse.result.paging.nextCursor);
 }
