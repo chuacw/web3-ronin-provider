@@ -5,7 +5,8 @@ import {
 } from "./web3-ronin-types-txs";
 import axios, {
   AxiosResponse, AxiosRequestConfig,
-  AxiosProxyConfig
+  AxiosProxyConfig,
+  AxiosError
 } from 'axios';
 import { get_detail_of_contract_Response, get_details_of_multiple_contracts_Response } from "./web3-ronin-types-contracts";
 import {
@@ -34,12 +35,13 @@ import {
   get_transactions_by_block_number_Response
 } from "./web3-ronin-types-blocks";
 import { URL_RONIN_SKYNET_RPC } from "./web3-ronin-consts";
-import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders } from "./web3-ronin-types-errors";
+import { EEmptyHeaders, EEmptyUrl, EErrorCodeMessage, ENoApiKey, ENoHeaders } from "./web3-ronin-types-errors";
 import {
   get_logs_by_contract_address_and_log_topic_Response,
   get_logs_by_contract_address_Response
 } from "./web3-ronin-types-logs";
 import { get_token_transfers_by_block_range_OptionalParams, get_token_transfers_by_block_range_Response } from "./web3-ronin-types-token-transfers";
+import { errorObj, isError, isErrorResponse } from "./web3-ronin-utils";
 
 
 /**
@@ -159,7 +161,18 @@ class RoninSkynetWeb3Provider {
       ...config,
       headers: this.#connection.headers
     };
-    const result = await axios.get(url, _config);
+    let result: AxiosResponse<any, any>;
+    try {
+      result = await axios.get(url, _config);
+    } catch (e) {
+      if (e !== null && e instanceof AxiosError && isErrorResponse(e)) {
+        const errorCode = (e.response!).data.errorCode;
+        const message = (e.response!).data.message;
+        throw new EErrorCodeMessage(errorCode, message);
+      }
+      throw e;
+    }
+    // @ts-ignore
     return result;
   }
 
@@ -168,7 +181,18 @@ class RoninSkynetWeb3Provider {
     let _config = {
       headers: this.#connection.headers
     }
-    const result = await axios.post(url, data, _config);
+    let result: AxiosResponse<any, any>;
+    try {
+      result = await axios.post(url, data, _config);
+    } catch (e) {
+      if (e !== null && e instanceof AxiosError && isErrorResponse(e)) {
+        const errorCode = (e.response!).data.errorCode;
+        const message = (e.response!).data.message;
+        throw new EErrorCodeMessage(errorCode, message);
+      }
+      throw e;
+    }
+    // @ts-ignore
     return result;
   }
 
@@ -197,6 +221,7 @@ class RoninSkynetWeb3Provider {
    * @param account address of the account to query events for.
    * @param searchCriteria When activityTypes is not empty, fromBlock and toBlock needs to be specified.
    * @returns {Promise<search_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async search(account: string, searchCriteria?: SearchCriteria): Promise<search_Response> {
@@ -216,6 +241,7 @@ class RoninSkynetWeb3Provider {
       _searchCriteria.toBlock = searchCriteria.toBlock;
     }
     const response = await this.postRonin(url, _searchCriteria);
+    // @ts-ignore
     const result = response.data;
     return result as unknown as search_Response;
   }
@@ -230,6 +256,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_owned_nfts_of_address_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_owned_nfts_of_address(address: string, limit?: number, cursor?: string): Promise<get_owned_nfts_of_address_Response> {
@@ -245,6 +272,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_fungible_token_balance_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_fungible_token_balance(address: string, limit?: number, cursor?: string): Promise<get_fungible_token_balance_Response> {
@@ -260,6 +288,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_list_of_collections_having_NFTs_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_list_of_collections_having_NFTs(address: string, limit?: number, cursor?: string): Promise<get_list_of_collections_having_NFTs_Response> {
@@ -276,6 +305,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_nft_list_of_address_and_contract_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_nft_list_of_address_and_contract(address: string, contractAddress: string, limit?: number, cursor?: string): Promise<get_nft_list_of_address_and_contract_Response> {
@@ -290,6 +320,7 @@ class RoninSkynetWeb3Provider {
    * @param {string} account
    * @param {string} contractAddress
    * @returns {Promise<get_balance_of_address_and_contract_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_balance_of_address_and_contract(account: string, contractAddress: string): Promise<get_balance_of_address_and_contract_Response> {
@@ -306,11 +337,13 @@ class RoninSkynetWeb3Provider {
    * @param {string} account
    * @param {string[]} contractAddresses
    * @returns {Promise<get_balances_of_address_by_multiple_contracts_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_balances_of_address_by_multiple_contracts(account: string, contractAddresses: string[]): Promise<get_balances_of_address_by_multiple_contracts_Response> {
     const url = `accounts/${account}/contracts`;
     const response = await this.postRonin(url, { contractAddresses });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as get_balances_of_address_by_multiple_contracts_Response;
   }
@@ -323,6 +356,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_token_tranfers_of_address_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_token_tranfers_of_address(account: string, limit?: number, cursor?: string): Promise<get_token_tranfers_of_address_Response> {
@@ -344,6 +378,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_token_tranfers_of_address_with_contract_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_token_tranfers_of_address_with_contract(account: string, contractAddress: string, limit?: number, cursor?: string): Promise<get_token_tranfers_of_address_with_contract_Response> {
@@ -366,6 +401,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_transactions_of_address_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_transactions_of_address(account: string, limit?: number, cursor?: string): Promise<get_transactions_of_address_Response> {
@@ -391,6 +427,7 @@ class RoninSkynetWeb3Provider {
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_internal_txs_transfers_Response>}
+   * @throws EErrorCodeMessage
    * @category Accounts
    */
   async get_internal_txs_transfers(account: string, limit?: number, cursor?: string): Promise<get_internal_txs_transfers_Response> {
@@ -406,6 +443,7 @@ class RoninSkynetWeb3Provider {
    *
    * @async
    * @returns {Promise<get_finalized_block_number_Response>}
+   * @throws EErrorCodeMessage
    * @category Blocks
    */
   async get_finalized_block_number(): Promise<get_finalized_block_number_Response> {
@@ -419,6 +457,7 @@ class RoninSkynetWeb3Provider {
    *
    * @async
    * @returns {Promise<get_latest_block_number_Response>}
+   * @throws EErrorCodeMessage
    * @category Blocks
    */
   async get_latest_block_number(): Promise<get_latest_block_number_Response> {
@@ -433,6 +472,7 @@ class RoninSkynetWeb3Provider {
    * @async
    * @param {number} block_number
    * @returns {Promise<get_transactions_by_block_number_Response>}
+   * @throws EErrorCodeMessage
    * @category Blocks
    */
   async get_transactions_by_block_number(block_number: number): Promise<get_transactions_by_block_number_Response> {
@@ -449,6 +489,7 @@ class RoninSkynetWeb3Provider {
    * @async
    * @param {number} block_number
    * @returns {Promise<get_block_by_number_Response>}
+   * @throws EErrorCodeMessage
    * @category Blocks
    */
   async get_block_by_number(block_number: number): Promise<get_block_by_number_Response> {
@@ -466,6 +507,7 @@ class RoninSkynetWeb3Provider {
    * @param {number} toBlock
    * @param {?OptionalParams} [optionalParams] get the block where its life span covers the input timestamp and/or hash
    * @returns {Promise<get_block_by_hash_timestamp_block_number_range_Response>}
+   * @throws EErrorCodeMessage
    * @category Blocks
    */
   async get_block_by_hash_timestamp_block_number_range(
@@ -501,6 +543,7 @@ You can travel through the whole list of owners in case an NFT has more than one
    * @param {string} contractAddress
    * @param {number} tokenId
    * @returns {Promise<get_owners_of_nft_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_owners_of_nft(contractAddress: string, tokenId: number): Promise<get_owners_of_nft_Response> {
@@ -522,6 +565,7 @@ You can travel through the whole list of owners in case an NFT has more than one
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_token_transfers_of_nft_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_token_transfers_of_nft(contractAddress: string, tokenId: number, limit?: number, cursor?: string): Promise<get_token_transfers_of_nft_Response> {
@@ -538,6 +582,7 @@ You can travel through the whole list of owners in case an NFT has more than one
    * @param contractAddress collection address - Contract address of NFT
    * @param tokenId ID of NFT token
    * @returns {Promise<get_detail_of_nft_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_detail_of_nft(contractAddress: string, tokenId: number): Promise<get_detail_of_nft_Response> {
@@ -559,6 +604,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {string[]} tokenIds
    * @param {number} maxWait milliseconds, when maxWait exceeds server timeout, then server timeout will be used instead
    * @returns {Promise<refresh_nfts_of_collection_sync_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async refresh_nfts_of_collection_sync(contractAddress: string, tokenIds: string[], maxWait: number): Promise<refresh_nfts_of_collection_sync_Response> {
@@ -567,6 +613,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
       maxWait,
       tokenIds
     });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as refresh_nfts_of_collection_sync_Response;
   }
@@ -580,6 +627,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {string} contractAddress
    * @param {string[]} tokenIds
    * @returns {Promise<refresh_nfts_of_collection_async_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async refresh_nfts_of_collection_async(contractAddress: string, tokenIds: string[]): Promise<refresh_nfts_of_collection_async_Response> {
@@ -587,6 +635,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(url, {
       tokenIds
     });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as refresh_nfts_of_collection_async_Response;
   }
@@ -598,6 +647,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {string} contractAddress
    * @param {string[]} tokenIds
    * @returns {Promise<get_details_of_multiple_nfts_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_details_of_multiple_nfts(contractAddress: string, tokenIds: string[]): Promise<get_details_of_multiple_nfts_Response> {
@@ -605,6 +655,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(url, {
       tokenIds
     });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as get_details_of_multiple_nfts_Response;
   }
@@ -623,6 +674,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_nfts_from_collection_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_nfts_from_collection(contractAddress: string, limit?: number, cursor?: string): Promise<get_nfts_from_collection_Response> {
@@ -639,6 +691,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_number_of_collection_holdings_by_address_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_number_of_collection_holdings_by_address(contractAddress: string, address: string, limit?: number, cursor?: string): Promise<get_number_of_collection_holdings_by_address_Response> {
@@ -658,6 +711,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_collection_holder_list_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_collection_holder_list(contractAddress: string, limit?: number, cursor?: string): Promise<get_collection_holder_list_Response> {
@@ -673,6 +727,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_collection_token_transfers_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_collection_token_transfers(contractAddress: string, limit?: number, cursor?: string): Promise<get_collection_token_transfers_Response> {
@@ -686,6 +741,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string} contract_addr The address to get collection detail for
    * @returns {Promise<get_collection_detail_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_collection_detail(contract_addr: string): Promise<get_collection_detail_Response> {
@@ -701,6 +757,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string[]} contractAddresses An array of addresses
    * @returns {Promise<get_details_of_multiple_collections_Response>}
+   * @throws EErrorCodeMessage
    * @category Collections
    */
   async get_details_of_multiple_collections(contractAddresses: string[]): Promise<get_details_of_multiple_collections_Response> {
@@ -708,6 +765,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     const response = await this.postRonin(url, {
       contractAddresses
     });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as get_details_of_multiple_collections_Response;
   }
@@ -720,6 +778,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string} contract_addr address of contract to get detail for
    * @returns {Promise<get_detail_of_contract_Response>}
+   * @throws EErrorCodeMessage
    * @category Contracts
    */
   async get_detail_of_contract(contract_addr: string): Promise<get_detail_of_contract_Response> {
@@ -735,12 +794,14 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string[]} contractAddresses An array of contract address to get details for
    * @returns {Promise<get_details_of_multiple_contracts_Response>}
+   * @throws EErrorCodeMessage
    * @category Contracts
    */
   async get_details_of_multiple_contracts(contractAddresses: string[]): Promise<get_details_of_multiple_contracts_Response> {
     const response = await this.postRonin(`contracts`, {
       contractAddresses
     });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as get_details_of_multiple_contracts_Response;
   }
@@ -755,6 +816,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_logs_by_contract_address_Response>}
+   * @throws EErrorCodeMessage
    * @category Logs
    */
   async get_logs_by_contract_address(contractAddress: string, limit?: number, cursor?: string): Promise<get_logs_by_contract_address_Response> {
@@ -773,6 +835,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit] how many items can be return in a single response, maximum 200
    * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
    * @returns {Promise<get_logs_by_contract_address_and_log_topic_Response>}
+   * @throws EErrorCodeMessage
    * @category Logs
    */
   async get_logs_by_contract_address_and_log_topic(contractAddress: string, topic: string,
@@ -792,6 +855,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string} txHash hash of the transaction to get
    * @returns {Promise<get_internal_transaction_of_transaction_Response>}
+   * @throws EErrorCodeMessage
    * @category Transactions
    */
   async get_internal_transaction_of_transaction(txHash: string): Promise<get_internal_transaction_of_transaction_Response> {
@@ -807,6 +871,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string} txHash hash of the transaction to get
    * @returns {Promise<get_detail_of_transaction_Response>}
+   * @throws EErrorCodeMessage
    * @category Transactions
    */
   async get_detail_of_transaction(txHash: string): Promise<get_detail_of_transaction_Response> {
@@ -822,12 +887,14 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @async
    * @param {string[]} hashes hashes of transactions
    * @returns {Promise<get_details_of_multiple_transactions_Response>}
+   * @throws EErrorCodeMessage
    * @category Transactions
    */
   async get_details_of_multiple_transactions(hashes: string[]): Promise<get_details_of_multiple_transactions_Response> {
     const response = await this.postRonin(`txs`, {
       hashes
     });
+    // @ts-ignore
     const result = response.data;
     return result as unknown as get_details_of_multiple_transactions_Response;
   }
@@ -840,6 +907,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {number} toBlock
    * @param {?get_token_transfers_by_block_range_OptionalParams} [optionalParams]
    * @returns {Promise<get_token_transfers_by_block_range_Response>}
+   * @throws EErrorCodeMessage
    * @category Token transfers
    */
   async get_token_transfers_by_block_range(
@@ -886,7 +954,7 @@ function limitParam(limit: number): { limit: number } {
   return { limit: limit };
 }
 
-function cursorParam(cursor: string): {cursor: string} {
+function cursorParam(cursor: string): { cursor: string } {
   return { cursor };
 }
 

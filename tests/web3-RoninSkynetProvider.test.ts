@@ -6,7 +6,8 @@ import { SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
 import 'dotenv/config';
 import { activityTypes } from '../src/web3-ronin-types-accounts';
 import { block_by_hash_timestamp_block_number_range_result1, block_by_hash_timestamp_block_number_range_result2, block_by_hash_timestamp_block_number_range_result3, block_by_hash_timestamp_block_number_range_result4, block_by_hash_timestamp_block_number_range_result5 } from './expected_results/block_by_hash_timestamp_block_number_range';
-import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders, ERROR_NO_API_KEY, Tokens, URL_RONIN_MAINNET_RPC, URL_RONIN_SKYNET_RPC } from "../src";
+import { EEmptyHeaders, EEmptyUrl, EErrorCodeMessage, ENoApiKey, ENoHeaders, ERROR_NO_API_KEY, Tokens, URL_RONIN_MAINNET_RPC, URL_RONIN_SKYNET_RPC } from "../src";
+import { isError, isOk, makeInvalidAddress } from '../src/web3-ronin-utils';
 require('dotenv').config();
 
 const TIMEOUT = 100000000;
@@ -123,6 +124,11 @@ describe('Accounts', () => {
     expect(result1.result.items.length).toBe(20);
   }, TIMEOUT);
 
+  test('search with address (1 character missing)', async () => {
+    const contract_addr: string = makeInvalidAddress('0xf22a97a220392b1311f5ecde3175ec07fa21154b');
+    expect(async () => {const result = await provider.search(contract_addr)}).rejects.toThrow();
+  }, TIMEOUT);
+
   test('search Approve', async () => {
     const contract_addr = '0x9317ff979e76b72afc04faa13565643a3ebefc50';
     const searchCriteria = {
@@ -149,13 +155,21 @@ describe('Accounts', () => {
     expect(result1.result.items[0].activity).toBe(activityTypes.Stake);
   }, TIMEOUT);
 
-  test('owned_nfts_of', async () => {
+  test('get_owned_nfts_of', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.get_owned_nfts_of_address(address);
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
-  test('fungible_token_balance', async () => {
+  test('get_owned_nfts_of address missing char', async () => {
+    const address = makeInvalidAddress('0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3');
+    expect(async () => { 
+      const result = await provider.get_owned_nfts_of_address(address); 
+      console.log(result);
+    }).rejects.toThrow();
+  });
+
+  test('get_fungible_token_balance', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.get_fungible_token_balance(address);
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
@@ -472,7 +486,7 @@ describe('Logs', () => {
   });
 
   test('Get logs by contract address', async () => {
-    
+
   });
 
   test('Get logs by contract address and log topic', async () => {
@@ -546,7 +560,7 @@ describe('Token transfer', () => {
 
   test('Get token transfers by block range', async () => {
     const fromBlock = 39300772;
-    const toBlock   = 39301771;
+    const toBlock = 39301771;
     const result = await provider.get_token_transfers_by_block_range(fromBlock, toBlock);
     expect(result.result.items.length).toBeGreaterThan(0);
     expect(result.result.items[0].blockNumber).toBeGreaterThanOrEqual(fromBlock);
@@ -555,8 +569,8 @@ describe('Token transfer', () => {
 
   test('Get token transfers by block range limit=2', async () => {
     const fromBlock = 39300772;
-    const toBlock   = 39301771;
-    const params = {limit: 2};
+    const toBlock = 39301771;
+    const params = { limit: 2 };
     const result = await provider.get_token_transfers_by_block_range(fromBlock, toBlock, params);
     expect(result.result.items.length).toBeGreaterThan(0);
     expect(result.result.items.length).toBeLessThanOrEqual(2);

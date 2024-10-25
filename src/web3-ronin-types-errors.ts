@@ -44,9 +44,27 @@ class EEmptyHeaders extends Error {
   }
 }
 
+/**
+ * An error indicating the error code and message
+ */
+class EErrorCodeMessage extends Error {
+  
+  /**
+   * The error code
+   *
+   * @type {number}
+   */
+  errorCode: number;
+  constructor(errorCode: number, message: string) {
+    super(message);
+    this.errorCode = errorCode;
+  }
+}
+
 export {
   EEmptyHeaders,
   EEmptyUrl,
   ENoApiKey,
-  ENoHeaders
+  ENoHeaders,
+  EErrorCodeMessage
 }
