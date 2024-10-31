@@ -1,53 +1,73 @@
 import { get_token_tranfers_of_address_Item } from "./web3-ronin-types-accounts";
+import { hasFieldOfType, isArbitraryObject } from "delphirtl/sysutils";
 
 export function hasTokenId(item: get_token_tranfers_of_address_Item): item is get_token_tranfers_of_address_Item & { tokenId: string } {
   return ('tokenId' in item);  
 }
 
+export interface errorResponse {
+  response: {
+    data: errorObj
+  }
+}
 export interface errorObj {
   errorCode: number;
   message: string;
 }
 
-interface successObj {
+export interface successObj {
   result: object;
 }
 
-function isDataError(obj: unknown): obj is errorObj {
+/**
+ * Checks if an object contains the fields: errorCode: number, and message: string
+ *
+ * @export
+ * @param {unknown} obj
+ * @returns {obj is errorObj}
+ */
+export function isErrorObj(obj: unknown): obj is errorObj {
   const result = (
-    typeof obj === "object" &&
-    obj !== null &&
-    'errorCode' in obj &&
-    typeof (obj as any).errorCode === 'number' &&
-    'message' in obj &&
-    typeof (obj as any).message === 'string'
+    hasFieldOfType<number>(obj, 'errorCode', 'number') &&
+    hasFieldOfType<string>(obj, 'message', 'string')
   );
   return result;
 }
 
-export function isErrorResponse(obj: unknown): obj is errorObj {
+/**
+ * Checks if a given objet is an object, and if it is also an error response object.
+ *
+ * @export
+ * @param {unknown} obj
+ * @returns {obj is errorResponse}
+ */
+export function isErrorResponse(obj: unknown): obj is errorResponse {
   const result = (
-    typeof obj === "object" &&
-    obj !== null &&
+    isArbitraryObject(obj) &&
     'response' in obj &&
-    typeof obj.response === "object" &&
-    obj.response !== null &&
+    isArbitraryObject(obj.response) &&
     'data' in obj.response &&
-    isDataError(obj.response.data)
+    isErrorObj(obj.response.data)
   );
   return result;
 }
 
-export function isError(obj: unknown): obj is errorObj {
-  const result = isDataError(obj);
-  return result;
-}
-
+/**
+ * Checks if an object is a success object
+ * @param obj 
+ * @returns 
+ */
 export function isOk(obj: object): obj is successObj {
-  const result = 'result' in obj && typeof (obj as any).result === 'object' && (obj as any).result !== null
+  const result = 'result' in obj && // typeof (obj as any).result === 'object' && (obj as any).result !== null
+    isArbitraryObject(obj.result);
   return result;
 }
 
+/**
+ * Makes an address invalid by removing the last character, and returning the resultant string
+ * @param address 
+ * @returns 
+ */
 export function makeInvalidAddress(address: string): string {
   const result = address.slice(0, address.length-1);
   return result;

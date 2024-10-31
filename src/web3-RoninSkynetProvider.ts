@@ -41,7 +41,8 @@ import {
   get_logs_by_contract_address_Response
 } from "./web3-ronin-types-logs";
 import { get_token_transfers_by_block_range_OptionalParams, get_token_transfers_by_block_range_Response } from "./web3-ronin-types-token-transfers";
-import { errorObj, isError, isErrorResponse } from "./web3-ronin-utils";
+import { isErrorResponse } from "./web3-ronin-utils";
+import { search_nfts_by_metadata_Request, search_nfts_by_metadata_Response,  } from "./web3-ronin-types-nft";
 
 
 /**
@@ -165,9 +166,9 @@ class RoninSkynetWeb3Provider {
     try {
       result = await axios.get(url, _config);
     } catch (e) {
-      if (e !== null && e instanceof AxiosError && isErrorResponse(e)) {
-        const errorCode = (e.response!).data.errorCode;
-        const message = (e.response!).data.message;
+      if (isErrorResponse(e)) {
+        const errorCode = e.response.data.errorCode;
+        const message = e.response.data.message;
         throw new EErrorCodeMessage(errorCode, message);
       }
       throw e;
@@ -185,9 +186,9 @@ class RoninSkynetWeb3Provider {
     try {
       result = await axios.post(url, data, _config);
     } catch (e) {
-      if (e !== null && e instanceof AxiosError && isErrorResponse(e)) {
-        const errorCode = (e.response!).data.errorCode;
-        const message = (e.response!).data.message;
+      if (isErrorResponse(e)) {
+        const errorCode = e.response.data.errorCode;
+        const message = e.response.data.message;
         throw new EErrorCodeMessage(errorCode, message);
       }
       throw e;
@@ -934,6 +935,26 @@ In the response, there are two lists, successes and failures tokenIds, failure r
     return result as unknown as get_token_transfers_by_block_range_Response;
   }
 
+  /**
+   * Search NFTs by metadata
+   *
+   * @async
+   * @param {string} contractAddress
+   * @param {search_nfts_by_metadata_Request} metadata 
+   * @param {?number} [limit]
+   * @param {?string} [cursor]
+   * @returns {Promise<search_nfts_by_metadata_Response>}
+   */
+  async search_nfts_by_metadata(contractAddress: string, metadata: search_nfts_by_metadata_Request, 
+    limit?: number, cursor?: string
+  ): Promise<search_nfts_by_metadata_Response> {
+    const url = this.update_url(`nfts/${contractAddress}/metadata/search`, limit, cursor);
+    const response = await this.postRonin(url, metadata);
+    // @ts-ignore
+    const result = response.data;
+    return result as unknown as search_nfts_by_metadata_Response;
+  }
+
 }
 
 /**
@@ -950,16 +971,46 @@ function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3P
   return result;
 }
 
-function limitParam(limit: number): { limit: number } {
-  return { limit: limit };
+enum ORDER {
+  ASC = "asc",
+  DESC = "desc"
 }
 
-function cursorParam(cursor: string): { cursor: string } {
-  return { cursor };
+export class Param {
+  limit?: number;
+  cursor?: string;
+  order?: ORDER;
+  constructor() {
+  }
+
+  cursorParam(cursor: string): Param {
+    this.cursor = cursor;
+    return this;
+  }
+
+  limitParam(limit: number): Param {
+    this.limit = limit;
+    return this;
+  }
+
+  orderParam(order: ORDER): Param {
+    this.order = order;
+    return this;
+  }
 }
 
-function limitCursorParam(limit: number, nextCursor: string): { limit: number, cursor: string } {
-  return { limit, cursor: nextCursor };
+function emptyParam(): Param {
+  return new Param();
+}
+
+function cursorParam(cursor: string): Param {
+  return new Param().cursorParam(cursor);
+}
+function limitParam(limit: number): Param {
+  return new Param().limitParam(limit);
+}
+function orderParam(order: ORDER): Param {
+  return new Param().orderParam(order);
 }
 
 export {
@@ -968,5 +1019,5 @@ export {
   RoninSkynetWeb3Provider as SkynetProvider,
   RoninSkynetWeb3Provider as SkynetWeb3Provider,
   createSkyNetProvider,
-  limitParam, cursorParam, limitCursorParam
+  limitParam, cursorParam, orderParam, emptyParam
 }

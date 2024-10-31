@@ -2,7 +2,7 @@ import { SkynetWeb3Provider } from "../src/web3-RoninSkynetProvider";
 import { URL_RONIN_SKYNET_RPC } from "../src";
 
 import 'dotenv/config';
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 async function dump_NFT_owner(provider: SkynetWeb3Provider, contractAddress: string, tokenId: number) {
   let ownerResponse = await provider.get_owners_of_nft(contractAddress, tokenId);

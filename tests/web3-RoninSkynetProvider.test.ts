@@ -6,8 +6,9 @@ import { SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
 import 'dotenv/config';
 import { activityTypes } from '../src/web3-ronin-types-accounts';
 import { block_by_hash_timestamp_block_number_range_result1, block_by_hash_timestamp_block_number_range_result2, block_by_hash_timestamp_block_number_range_result3, block_by_hash_timestamp_block_number_range_result4, block_by_hash_timestamp_block_number_range_result5 } from './expected_results/block_by_hash_timestamp_block_number_range';
-import { EEmptyHeaders, EEmptyUrl, EErrorCodeMessage, ENoApiKey, ENoHeaders, ERROR_NO_API_KEY, Tokens, URL_RONIN_MAINNET_RPC, URL_RONIN_SKYNET_RPC } from "../src";
-import { isError, isOk, makeInvalidAddress } from '../src/web3-ronin-utils';
+import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders, Tokens, URL_RONIN_MAINNET_RPC, URL_RONIN_SKYNET_RPC } from "../src";
+import { makeInvalidAddress } from '../src/web3-ronin-utils';
+import { search_nfts_by_metadata_Request } from '../src/web3-ronin-types-nft';
 require('dotenv').config();
 
 const TIMEOUT = 100000000;
@@ -36,14 +37,14 @@ describe('SkynetWeb3Provider', () => {
       url: "",
     };
     expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new EEmptyUrl());
-  });
+  }, TIMEOUT);
 
   test('creating SkynetWeb3Provider without headers', () => {
     const connectionInfo = {
       url: URL_RONIN_MAINNET_RPC,
     };
     expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new ENoHeaders());
-  });
+  }, TIMEOUT);
 
   test('creating SkynetWeb3Provider with empty headers', () => {
     const connectionInfo = {
@@ -52,7 +53,7 @@ describe('SkynetWeb3Provider', () => {
       }
     }
     expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new EEmptyHeaders());
-  });
+  }, TIMEOUT);
 
   test('creating SkynetWeb3Provider with empty API key', () => {
     const connectionInfo = {
@@ -62,26 +63,26 @@ describe('SkynetWeb3Provider', () => {
       }
     }
     expect(() => { const provider = new SkynetWeb3Provider(connectionInfo); }).toThrow(new ENoApiKey());
-  });
+  }, TIMEOUT);
 
-  test('search with no params', () => {
+  test('update_url_with_Params no params', () => {
     const url = provider.update_url_with_Params('yyy', '');
     expect(url).toBe('yyy');
   }, TIMEOUT);
 
-  test('search with 1 param', () => {
+  test('update_url_with_Params limit=1', () => {
     const urlParams = new URLSearchParams(); urlParams.append('limit', '1');
     const url = provider.update_url_with_Params('lll', urlParams);
     expect(url).toBe('lll?limit=1')
   }, TIMEOUT);
 
-  test('search with string param', () => {
+  test('update_url_with_Params limit=2', () => {
     const urlParams = new URLSearchParams(); urlParams.append('limit', '2');
     const url = provider.update_url_with_Params('lll', urlParams.toString());
     expect(url).toBe('lll?limit=2')
   }, TIMEOUT);
 
-  test('search with 2 params', () => {
+  test('update_url_with_Params limit cursor', () => {
     const urlParams = new URLSearchParams(); urlParams.append('limit', '3'); urlParams.append('cursor', 'mycursor');
     const url = provider.update_url_with_Params('zzz', urlParams);
     expect(url).toBe('zzz?limit=3&cursor=mycursor');
@@ -90,17 +91,17 @@ describe('SkynetWeb3Provider', () => {
   test('update_url with no params', () => {
     const url = provider.update_url('/a');
     expect(url).toBe('/a');
-  }, TIMEOUT)
+  }, TIMEOUT);
 
   test('update_url with limit', () => {
     const url = provider.update_url('/a', 1);
     expect(url).toBe('/a?limit=1');
-  }, TIMEOUT)
+  }, TIMEOUT);
 
   test('update_url with limit and cursor', () => {
     const url = provider.update_url('/a', 1, 'nocursor');
     expect(url).toBe('/a?limit=1&cursor=nocursor');
-  }, TIMEOUT)
+  }, TIMEOUT);
 
 });
 
@@ -124,9 +125,9 @@ describe('Accounts', () => {
     expect(result1.result.items.length).toBe(20);
   }, TIMEOUT);
 
-  test('search with address (1 character missing)', async () => {
+  test('search (invalid address)', async () => {
     const contract_addr: string = makeInvalidAddress('0xf22a97a220392b1311f5ecde3175ec07fa21154b');
-    expect(async () => {const result = await provider.search(contract_addr)}).rejects.toThrow();
+    expect(async () => { const result = await provider.search(contract_addr) }).rejects.toThrow();
   }, TIMEOUT);
 
   test('search Approve', async () => {
@@ -142,6 +143,21 @@ describe('Accounts', () => {
     expect(result1.result.items[0].activity).toBe(activityTypes.Approve);
   }, TIMEOUT);
 
+  test('search Approve (invalid address)', async () => {
+    const contract_addr = makeInvalidAddress('0x9317ff979e76b72afc04faa13565643a3ebefc50');
+    const searchCriteria = {
+      activityTypes: [activityTypes.Approve], limit: 10,
+      fromBlock: 39072391,
+      toBlock: 39172391,
+    };
+    expect(async () => {
+      const result1 = await provider.search(contract_addr, searchCriteria);
+      expect(result1.result.items.length).toBeLessThanOrEqual(searchCriteria.limit);
+      expect(result1.result.items.length).toBeGreaterThan(0);
+      expect(result1.result.items[0].activity).toBe(activityTypes.Approve);
+    }).rejects.toThrow();
+  }, TIMEOUT);
+
   test('search Stake', async () => {
     const account_addr = '0xf22a97a220392b1311f5ecde3175ec07fa21154b';
     const searchCriteria = {
@@ -155,19 +171,34 @@ describe('Accounts', () => {
     expect(result1.result.items[0].activity).toBe(activityTypes.Stake);
   }, TIMEOUT);
 
-  test('get_owned_nfts_of', async () => {
+  test('search Stake (invalid address)', async () => {
+    const account_addr = '0xf22a97a220392b1311f5ecde3175ec07fa21154b';
+    const searchCriteria = {
+      activityTypes: [activityTypes.Stake],
+      fromBlock: 38763329,
+      toBlock: 39065409,
+    };
+    expect(async () => {
+      const result1 = await provider.search(account_addr, searchCriteria);
+      expect(result1.result.items.length).toBeLessThanOrEqual(20);
+      expect(result1.result.items.length).toBeGreaterThan(0);
+      expect(result1.result.items[0].activity).toBe(activityTypes.Stake);
+    }).rejects.toThrow();
+  }, TIMEOUT);
+
+  test('get_owned_nfts_of_address', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.get_owned_nfts_of_address(address);
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
-  });
+  }, TIMEOUT);
 
-  test('get_owned_nfts_of address missing char', async () => {
+  test('get_owned_nfts_of_address (invalid address)', async () => {
     const address = makeInvalidAddress('0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3');
-    expect(async () => { 
-      const result = await provider.get_owned_nfts_of_address(address); 
+    expect(async () => {
+      const result = await provider.get_owned_nfts_of_address(address);
       console.log(result);
     }).rejects.toThrow();
-  });
+  }, TIMEOUT);
 
   test('get_fungible_token_balance', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
@@ -175,27 +206,61 @@ describe('Accounts', () => {
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
-  test('list_of_collections_having_NFTs', async () => {
+  test('get_fungible_token_balance (invalid address)', async () => {
+    const address = makeInvalidAddress('0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3');
+    expect(async () => {
+      const result = await provider.get_fungible_token_balance(address);
+      expect(result.result.items.length).toBeGreaterThanOrEqual(0);
+    }).rejects.toThrow();
+  });
+
+  test('get_list_of_collections_having_NFTs', async () => {
     const address = '0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3';
     const result = await provider.get_list_of_collections_having_NFTs(address);
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
-  test('nft_list_of_address_and_contract', async () => {
+  test('get_list_of_collections_having_NFTs (invalid address)', async () => {
+    const address = makeInvalidAddress('0xf6fd5fca4bd769ba495b29b98dba5f2ecf4ceed3');
+    expect(async () => {
+      const result = await provider.get_list_of_collections_having_NFTs(address);
+      expect(result.result.items.length).toBeGreaterThanOrEqual(0);
+    }).rejects.toThrow();
+  });
+
+  test('get_nft_list_of_address_and_contract', async () => {
     const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
     const contractAddr = Tokens.AXIE;
     const result = await provider.get_nft_list_of_address_and_contract(account, contractAddr);
     expect(result.result.items.length).toBeGreaterThanOrEqual(0)
   });
 
-  test('balance_of_address_and_contract', async () => {
+  test('get_nft_list_of_address_and_contract (invalid address)', async () => {
+    const account = makeInvalidAddress('0x0addff455fca85f4cf54869fa224c804950cc06a');
+    const contractAddr = Tokens.AXIE;
+    expect(async () => {
+      const result = await provider.get_nft_list_of_address_and_contract(account, contractAddr);
+      expect(result.result.items.length).toBeGreaterThanOrEqual(0)
+    }).rejects.toThrow();
+  });
+
+  test('get_balance_of_address_and_contract', async () => {
     const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
     const contractAddr = Tokens.AXIE;
     const result = await provider.get_balance_of_address_and_contract(account, contractAddr);
     expect(result.result.tokenCount).toBeGreaterThanOrEqual(0);
   });
 
-  test('balances_of_address_by_multiple_contracts', async () => {
+  test('get_balance_of_address_and_contract (invalid address)', async () => {
+    const account = makeInvalidAddress('0x0addff455fca85f4cf54869fa224c804950cc06a');
+    const contractAddr = Tokens.AXIE;
+    expect(async () => {
+      const result = await provider.get_balance_of_address_and_contract(account, contractAddr);
+      expect(result.result.tokenCount).toBeGreaterThanOrEqual(0);
+    }).rejects.toThrow();
+  });
+
+  test('get_balances_of_address_by_multiple_contracts', async () => {
     const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
     const contractAddresses = [
       "0x32950db2a7164ae833121501c797d79e7b79d74c",
@@ -208,10 +273,33 @@ describe('Accounts', () => {
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
   });
 
-  test('token_tranfers_of_address', async () => {
+  test('get_balances_of_address_by_multiple_contracts (invalid address)', async () => {
+    const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
+    const contractAddresses = [
+      makeInvalidAddress("0x32950db2a7164ae833121501c797d79e7b79d74c"),
+      makeInvalidAddress("0xa038c593115f6fcd673f6833e15462b475994879"),
+      makeInvalidAddress("0xf6c5f9a72e6d46f30c7223a4cff854f94c7e95aa"),
+      makeInvalidAddress("0xd78efaec85c1a4f42e6edb7209067702a2be8c90"),
+      makeInvalidAddress("0x883649b1d9e8b6d69ac9c36ca58531419d7dda8f")
+    ];
+    expect(async () => {
+      const result = await provider.get_balances_of_address_by_multiple_contracts(account, contractAddresses);
+      expect(result.result.items.length).toBeGreaterThanOrEqual(0);
+    }).rejects.toThrow();
+  });
+
+  test('get_token_tranfers_of_address', async () => {
     const account = '0x0addff455fca85f4cf54869fa224c804950cc06a';
     const result = await provider.get_token_tranfers_of_address(account);
     expect(result.result.items.length).toBeGreaterThanOrEqual(0);
+  });
+
+  test('get_token_tranfers_of_address (invalid address)', async () => {
+    const account = makeInvalidAddress('0x0addff455fca85f4cf54869fa224c804950cc06a');
+    expect(async () => {
+      const result = await provider.get_token_tranfers_of_address(account);
+      expect(result.result.items.length).toBeGreaterThanOrEqual(0);
+    }).rejects.toThrow();
   });
 
 });
@@ -508,7 +596,7 @@ describe('Txs', () => {
     provider = new SkynetWeb3Provider(connectionInfo);
   });
 
-  test('internal_txs', async () => {
+  test('get_internal_transaction_of_transaction', async () => {
     let txHash = '0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba';
     const result = await provider.get_internal_transaction_of_transaction(txHash);
     const expected = '{"result":{"items":[{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":90,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x3d8527ba","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0xd9e9569ffbf7e4193aea043dec95d3ee262fdfa7","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":309,"opcode":"CALL","type":"call","value":"0x0","input":"0x8fb2e2c200000000000000000000000005b0bb3c1c320b280501b86706c3551995bc8571","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":391,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x8fb2e2c200000000000000000000000005b0bb3c1c320b280501b86706c3551995bc8571","from":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","to":"0xe1147ff24e404ba38202ea4aee04191ef0890db2","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":733,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x61ee98dc","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0xd9e9569ffbf7e4193aea043dec95d3ee262fdfa7","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":1846,"opcode":"CALL","type":"call","value":"0x0","input":"0x80cde84d000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":1936,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x80cde84d000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b","from":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","to":"0xe1147ff24e404ba38202ea4aee04191ef0890db2","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":2757,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x74363daa000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0xd9e9569ffbf7e4193aea043dec95d3ee262fdfa7","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":3399,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x74363daa000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0xd9e9569ffbf7e4193aea043dec95d3ee262fdfa7","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":4253,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x69940d79","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0xd9e9569ffbf7e4193aea043dec95d3ee262fdfa7","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":4648,"opcode":"CALL","type":"call","value":"0x0","input":"0xa9059cbb000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b0000000000000000000000000000000000000000000000002accc8926127d8e4","from":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","to":"0x97a9107c1793bc407d6f527b77e7fff4d812bece","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":5512,"opcode":"CALL","type":"call","value":"0x0","input":"0x23b872dd000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b00000000000000000000000005b0bb3c1c320b280501b86706c3551995bc85710000000000000000000000000000000000000000000000002accc8926127d8e4","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0x97a9107c1793bc407d6f527b77e7fff4d812bece","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":6175,"opcode":"CALL","type":"call","value":"0x0","input":"0x73939bb5000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b0000000000000000000000000000000000000000000000b511830293c06f0025","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":6265,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x73939bb5000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b0000000000000000000000000000000000000000000000b511830293c06f0025","from":"0x8bd81a19420bad681b7bfc20e703ebd8e253782d","to":"0xe1147ff24e404ba38202ea4aee04191ef0890db2","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108},{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","order":7024,"opcode":"DELEGATECALL","type":"call","value":"0x0","input":"0x74363daa000000000000000000000000f22a97a220392b1311f5ecde3175ec07fa21154b","from":"0x05b0bb3c1c320b280501b86706c3551995bc8571","to":"0xd9e9569ffbf7e4193aea043dec95d3ee262fdfa7","success":true,"error":"","blockNumber":39128332,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockTime":1729225108}]}}';
@@ -516,7 +604,7 @@ describe('Txs', () => {
     expect(jsonResult).toBe(expected);
   }, TIMEOUT);
 
-  test('internal_txs_detail', async () => {
+  test('get_detail_of_transaction', async () => {
     let txHash = '0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba';
     const result = await provider.get_detail_of_transaction(txHash);
     const expected = '{"result":{"transactionHash":"0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba","transactionIndex":15,"blockHash":"0xf3e5613691e8feb9def25d680b1ec29d44191622c245f4b42db19911eff50fac","blockNumber":39128332,"from":"0xf22a97a220392b1311f5ecde3175ec07fa21154b","to":"0x05b0bb3c1c320b280501b86706c3551995bc8571","contractAddress":"","status":1,"gas":331018,"gasPrice":"0x4a817c800","effectiveGasPrice":"0x4a817c800","gasUsed":164810,"cumulativeGasUsed":1561246,"logsBloom":"0x00000000080000000000000000410000000000001000000000000000000000002000840000000000002000000000000000004000000000000000000000080004100040000000000000020008010000000000000000000000000400000000000080000000000000000000000008000000000000000000000080000010100000000100000000000000000000000000000000000000102000000000000000000000008000000080000000000000000000000000000000000000000000004200000000000802000000000000000080000000000000000000000010000000000000000000000000002000000020020000000000000000000000000000000400000020","input":"0x3d8527ba","nonce":35,"value":"0x0","type":0,"v":"0xfeb","r":"0x9a133b81eeea377259a7b783595010d31204318c2515fff1fb8d5d1852c5c147","s":"0x69836d6d40b8a9545899e310785f7036f6f6c051421d6c2865212307cdcecd2f","blockTime":1729225108}}';
@@ -524,7 +612,7 @@ describe('Txs', () => {
     expect(jsonResult).toBe(expected);
   }, TIMEOUT);
 
-  test('multiple_txs_details', async () => {
+  test('get_details_of_multiple_transactions', async () => {
     let txHashes = [
       "0xfbe5f6a0e8c57027cc97bb011120fcc12ea00b6bc6a45a7748c27d7f7e7756ba",
       "0x313153ee84e7b6019800fe73aa414fe9b7c5be676d1ae398d82a17b254460bd8"
@@ -535,7 +623,7 @@ describe('Txs', () => {
     expect(jsonResult).toBe(expected);
   }, TIMEOUT);
 
-  test('multiple_txs_details empty', async () => {
+  test('get_details_of_multiple_transactions', async () => {
     let txHashes: string[] = [];
     const result = await provider.get_details_of_multiple_transactions(txHashes);
     const expected = '{"result":{"items":[]}}';
@@ -578,4 +666,106 @@ describe('Token transfer', () => {
     expect(result.result.items[0].blockNumber).toBeLessThanOrEqual(toBlock);
   }, TIMEOUT);
 
-})
+});
+
+describe('NFTs', () => {
+  let provider: SkynetWeb3Provider;
+
+  beforeEach(() => {
+    const connectionInfo = {
+      url: URL_RONIN_SKYNET_RPC,
+      headers: {
+        "X-API-KEY": process.env["X-API-KEY"] || ""
+      }
+    }
+    provider = new SkynetWeb3Provider(connectionInfo);
+  });
+
+  test('search_nfts_by_metadata ', async () => {
+    const metadata = {
+    };
+    const contractAddress = "0x32950db2a7164ae833121501c797d79e7b79d74c";
+    const response = await provider.search_nfts_by_metadata(contractAddress, metadata as search_nfts_by_metadata_Request);
+    expect(response.result.items.length).toBeGreaterThanOrEqual(0);
+  }, TIMEOUT);
+
+  test('search_nfts_by_metadata error', async () => {
+    // no error even if wrong input???
+    const metadata = {
+      wrong: "error",
+      "trait": "eyes_id",
+      "values": [
+        "eyes-sleepless"
+      ]
+    };
+    const contractAddress = "0x32950db2a7164ae833121501c797d79e7b79d74c";
+    const response = await provider.search_nfts_by_metadata(contractAddress, metadata as unknown as search_nfts_by_metadata_Request);
+    expect(response.result.items.length).toBeGreaterThanOrEqual(0);
+  }, TIMEOUT);
+
+  test('search_nfts_by_metadata 1', async () => {
+
+    const metadata = {
+      "name": "Axie",
+      "traits": [
+        {
+          // "back_id": "back-garish-worm"
+          // "ears_id": "ears-small-frill",
+          // "eyes_id": "eyes-sleepless",
+          // "horn_id": "horn-dual-blade",
+          // "matron_id": 9787928,
+          // "mouth_id": "mouth-cute-bunny"
+          // "axie_id": 10005129,
+          "trait": "eyes_id",
+          "values": [
+            "eyes-sleepless"
+          ]
+        }
+      ],
+      "rangeTraits": [
+        {
+          "trait": "breed_count",
+          "from": 1,
+          "to": 10000
+        }
+      ]
+    };
+    const contractAddress = "0x32950db2a7164ae833121501c797d79e7b79d74c";
+    const response = await provider.search_nfts_by_metadata(contractAddress, metadata);
+    expect(response.result.items.length).toBeGreaterThan(0);
+  }, TIMEOUT);
+
+  test('search_nfts_by_metadata 2', async () => {
+
+    const metadata = {
+      "name": "Axie",
+      "traits": [
+        {
+          // "back_id": "back-garish-worm"
+          // "ears_id": "ears-small-frill",
+          // "eyes_id": "eyes-sleepless",
+          // "horn_id": "horn-dual-blade",
+          // "matron_id": 9787928,
+          // "mouth_id": "mouth-cute-bunny"
+          // "axie_id": 10005129,
+          "trait": "back_id",
+          "values": [
+            "back-garish-worm"
+          ]
+        }
+      ],
+      "rangeTraits": [
+        {
+          "trait": "breed_count",
+          "from": 1,
+          "to": 10000
+        }
+      ]
+    };
+    const contractAddress = "0x32950db2a7164ae833121501c797d79e7b79d74c";
+    const response = await provider.search_nfts_by_metadata(contractAddress, metadata);
+    expect(response.result.items.length).toBeGreaterThan(0);
+  }, TIMEOUT);
+
+});
+

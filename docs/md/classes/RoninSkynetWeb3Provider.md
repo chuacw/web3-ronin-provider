@@ -48,7 +48,7 @@ The URL to use, headers, etc
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:93](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L93)
+[src/web3-RoninSkynetProvider.ts:96](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L96)
 
 ## Accounts
 
@@ -70,9 +70,13 @@ Get balance of an address and contract
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:295](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L295)
+[src/web3-RoninSkynetProvider.ts:327](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L327)
 
 ***
 
@@ -94,9 +98,13 @@ Get balances of an address by multiple contracts
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:311](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L311)
+[src/web3-RoninSkynetProvider.ts:344](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L344)
 
 ***
 
@@ -124,9 +132,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:250](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L250)
+[src/web3-RoninSkynetProvider.ts:279](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L279)
 
 ***
 
@@ -162,9 +174,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:396](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L396)
+[src/web3-RoninSkynetProvider.ts:434](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L434)
 
 ***
 
@@ -192,9 +208,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:265](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L265)
+[src/web3-RoninSkynetProvider.ts:295](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L295)
 
 ***
 
@@ -224,9 +244,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:281](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L281)
+[src/web3-RoninSkynetProvider.ts:312](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L312)
 
 ***
 
@@ -258,9 +282,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:235](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L235)
+[src/web3-RoninSkynetProvider.ts:263](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L263)
 
 ***
 
@@ -288,9 +316,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:328](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L328)
+[src/web3-RoninSkynetProvider.ts:363](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L363)
 
 ***
 
@@ -328,9 +360,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:349](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L349)
+[src/web3-RoninSkynetProvider.ts:385](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L385)
 
 ***
 
@@ -364,9 +400,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:371](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L371)
+[src/web3-RoninSkynetProvider.ts:408](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L408)
 
 ***
 
@@ -392,9 +432,13 @@ When activityTypes is not empty, fromBlock and toBlock needs to be specified.
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:202](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L202)
+[src/web3-RoninSkynetProvider.ts:228](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L228)
 
 ## Blocks
 
@@ -420,9 +464,13 @@ get the block where its life span covers the input timestamp and/or hash
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:471](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L471)
+[src/web3-RoninSkynetProvider.ts:514](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L514)
 
 ***
 
@@ -442,9 +490,13 @@ Get block by number
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:454](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L454)
+[src/web3-RoninSkynetProvider.ts:496](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L496)
 
 ***
 
@@ -460,9 +512,13 @@ Get finalized block number
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:411](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L411)
+[src/web3-RoninSkynetProvider.ts:450](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L450)
 
 ***
 
@@ -478,9 +534,13 @@ Get latest block number
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:424](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L424)
+[src/web3-RoninSkynetProvider.ts:464](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L464)
 
 ***
 
@@ -500,9 +560,13 @@ Get transactions by block number
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:438](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L438)
+[src/web3-RoninSkynetProvider.ts:479](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L479)
 
 ## Collections
 
@@ -524,9 +588,13 @@ The address to get collection detail for
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:691](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L691)
+[src/web3-RoninSkynetProvider.ts:748](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L748)
 
 ***
 
@@ -560,9 +628,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:663](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L663)
+[src/web3-RoninSkynetProvider.ts:718](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L718)
 
 ***
 
@@ -592,9 +664,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:678](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L678)
+[src/web3-RoninSkynetProvider.ts:734](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L734)
 
 ***
 
@@ -622,9 +698,13 @@ ID of NFT token
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:543](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L543)
+[src/web3-RoninSkynetProvider.ts:589](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L589)
 
 ***
 
@@ -646,9 +726,13 @@ An array of addresses
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:706](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L706)
+[src/web3-RoninSkynetProvider.ts:764](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L764)
 
 ***
 
@@ -670,9 +754,13 @@ Get details of multiple NFTs
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:603](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L603)
+[src/web3-RoninSkynetProvider.ts:654](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L654)
 
 ***
 
@@ -705,9 +793,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:628](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L628)
+[src/web3-RoninSkynetProvider.ts:681](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L681)
 
 ***
 
@@ -741,9 +833,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:644](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L644)
+[src/web3-RoninSkynetProvider.ts:698](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L698)
 
 ***
 
@@ -769,9 +865,13 @@ You can travel through the whole list of owners in case an NFT has more than one
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:506](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L506)
+[src/web3-RoninSkynetProvider.ts:550](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L550)
 
 ***
 
@@ -809,9 +909,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:527](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L527)
+[src/web3-RoninSkynetProvider.ts:572](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L572)
 
 ***
 
@@ -835,9 +939,13 @@ By using this API, users don't have to wait until the API complete the refreshin
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:585](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L585)
+[src/web3-RoninSkynetProvider.ts:634](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L634)
 
 ***
 
@@ -867,9 +975,13 @@ milliseconds, when maxWait exceeds server timeout, then server timeout will be u
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:564](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L564)
+[src/web3-RoninSkynetProvider.ts:611](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L611)
 
 ## Contracts
 
@@ -891,9 +1003,13 @@ address of contract to get detail for
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:725](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L725)
+[src/web3-RoninSkynetProvider.ts:785](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L785)
 
 ***
 
@@ -915,9 +1031,13 @@ An array of contract address to get details for
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:740](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L740)
+[src/web3-RoninSkynetProvider.ts:801](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L801)
 
 ## Logs
 
@@ -945,9 +1065,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:760](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L760)
+[src/web3-RoninSkynetProvider.ts:823](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L823)
 
 ***
 
@@ -977,9 +1101,13 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:778](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L778)
+[src/web3-RoninSkynetProvider.ts:842](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L842)
 
 ## Other
 
@@ -999,7 +1127,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:112](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L112)
+[src/web3-RoninSkynetProvider.ts:115](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L115)
 
 ***
 
@@ -1019,7 +1147,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:156](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L156)
+[src/web3-RoninSkynetProvider.ts:159](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L159)
 
 ***
 
@@ -1049,7 +1177,7 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:184](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L184)
+[src/web3-RoninSkynetProvider.ts:209](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L209)
 
 ***
 
@@ -1069,7 +1197,35 @@ the current pointer of the result set, to iterate to the next part of the result
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:166](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L166)
+[src/web3-RoninSkynetProvider.ts:180](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L180)
+
+***
+
+### search\_nfts\_by\_metadata()
+
+> **search\_nfts\_by\_metadata**(`contractAddress`, `metadata`, `limit`?, `cursor`?): `Promise`\<`search_nfts_by_metadata_Response`\>
+
+Search NFTs by metadata
+
+#### Parameters
+
+• **contractAddress**: `string`
+
+• **metadata**: `search_nfts_by_metadata_Request`
+
+• **limit?**: `number`
+
+• **cursor?**: `string`
+
+#### Returns
+
+`Promise`\<`search_nfts_by_metadata_Response`\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninSkynetProvider.ts:948](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L948)
 
 ***
 
@@ -1099,7 +1255,7 @@ Updated url if limit and cursors provided, otherwise, returns the parameter url.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:133](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L133)
+[src/web3-RoninSkynetProvider.ts:136](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L136)
 
 ***
 
@@ -1119,7 +1275,7 @@ Updated url if limit and cursors provided, otherwise, returns the parameter url.
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:145](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L145)
+[src/web3-RoninSkynetProvider.ts:148](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L148)
 
 ## Token transfers
 
@@ -1143,9 +1299,13 @@ Get token transfers by block range, with maximum number of blocks allowed of 100
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:845](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L845)
+[src/web3-RoninSkynetProvider.ts:914](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L914)
 
 ## Transactions
 
@@ -1167,9 +1327,13 @@ hash of the transaction to get
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:812](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L812)
+[src/web3-RoninSkynetProvider.ts:878](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L878)
 
 ***
 
@@ -1191,9 +1355,13 @@ hashes of transactions
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:827](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L827)
+[src/web3-RoninSkynetProvider.ts:894](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L894)
 
 ***
 
@@ -1215,6 +1383,10 @@ hash of the transaction to get
 
 #### Async
 
+#### Throws
+
+EErrorCodeMessage
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:797](https://github.com/chuacw/web3-ronin-provider/blob/023290ecb372f58c7f32d82694336112a4fc5a2a/src/web3-RoninSkynetProvider.ts#L797)
+[src/web3-RoninSkynetProvider.ts:862](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-RoninSkynetProvider.ts#L862)
