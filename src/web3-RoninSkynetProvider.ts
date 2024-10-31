@@ -944,6 +944,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
    * @param {?number} [limit]
    * @param {?string} [cursor]
    * @returns {Promise<search_nfts_by_metadata_Response>}
+   * @category NFTs
    */
   async search_nfts_by_metadata(contractAddress: string, metadata: search_nfts_by_metadata_Request, 
     limit?: number, cursor?: string
