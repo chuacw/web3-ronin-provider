@@ -27,17 +27,19 @@
   "bugs": {
     "url": "https://github.com/chuacw/web3-ronin-provider/issues"
   },
-  "homepage": "https://github.com/chuacw/web3-ronin-provider#readme",
+  "homepage": "https://chuacw.github.io/web3-ronin-provider/html/index.html",
   "description": "A Ronin JSON RPC and SkyNet Web3 provider",
   "dependencies": {
     "@ethersproject/providers": "^5.7.2",
     "axios": "^1.7.7",
     "delphirtl": "^1.1.20",
-    "ethers": "5.7"
+    "ethers": "5.7",
+    "web3-ronin-provider": "file:"
   },
   "files": [
     "dist/**/*",
-    "docs/**/*"
+    "docs/**/*",
+    "examples/**/*"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.13",

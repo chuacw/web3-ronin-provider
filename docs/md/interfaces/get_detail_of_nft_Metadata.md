@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:48](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-ronin-types-collections.ts#L48)
+[src/web3-ronin-types-collections.ts:48](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L48)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:49](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-ronin-types-collections.ts#L49)
+[src/web3-ronin-types-collections.ts:49](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L49)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:50](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-ronin-types-collections.ts#L50)
+[src/web3-ronin-types-collections.ts:50](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L50)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:51](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-ronin-types-collections.ts#L51)
+[src/web3-ronin-types-collections.ts:51](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L51)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:52](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-ronin-types-collections.ts#L52)
+[src/web3-ronin-types-collections.ts:52](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L52)
 
 ***
 
@@ -64,4 +64,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:53](https://github.com/chuacw/web3-ronin-provider/blob/4a0b7e0e7b62260bac28b4a11f9e6d6a49bfdfb2/src/web3-ronin-types-collections.ts#L53)
+[src/web3-ronin-types-collections.ts:53](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L53)
