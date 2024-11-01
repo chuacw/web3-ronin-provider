@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:142](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L142)
+[src/web3-ronin-types-collections.ts:142](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-collections.ts#L142)
 
 ***
 
@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-collections.ts:141](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-collections.ts#L141)
+[src/web3-ronin-types-collections.ts:141](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-collections.ts#L141)

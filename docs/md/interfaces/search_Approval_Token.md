@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-accounts.ts:90](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-accounts.ts#L90)
+[src/web3-ronin-types-accounts.ts:90](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-accounts.ts#L90)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-accounts.ts:94](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-accounts.ts#L94)
+[src/web3-ronin-types-accounts.ts:94](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-accounts.ts#L94)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-accounts.ts:91](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-accounts.ts#L91)
+[src/web3-ronin-types-accounts.ts:91](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-accounts.ts#L91)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-accounts.ts:93](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-accounts.ts#L93)
+[src/web3-ronin-types-accounts.ts:93](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-accounts.ts#L93)
 
 ***
 
@@ -54,4 +54,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-accounts.ts:92](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-accounts.ts#L92)
+[src/web3-ronin-types-accounts.ts:92](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-accounts.ts#L92)

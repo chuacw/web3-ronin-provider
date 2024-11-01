@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:8](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L8)
+[src/web3-ronin-types-contracts.ts:8](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L8)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:13](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L13)
+[src/web3-ronin-types-contracts.ts:13](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L13)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L12)
+[src/web3-ronin-types-contracts.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L12)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:9](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L9)
+[src/web3-ronin-types-contracts.ts:9](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L9)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:11](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L11)
+[src/web3-ronin-types-contracts.ts:11](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L11)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:10](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L10)
+[src/web3-ronin-types-contracts.ts:10](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L10)
 
 ***
 
@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L14)
+[src/web3-ronin-types-contracts.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L14)
 
 ***
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L16)
+[src/web3-ronin-types-contracts.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L16)
 
 ***
 
@@ -94,4 +94,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-contracts.ts:15](https://github.com/chuacw/web3-ronin-provider/blob/39237bbe6c8b49680e9636774ca2ccc3dfa139fe/src/web3-ronin-types-contracts.ts#L15)
+[src/web3-ronin-types-contracts.ts:15](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-types-contracts.ts#L15)

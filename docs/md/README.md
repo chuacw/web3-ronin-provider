@@ -37,10 +37,13 @@ Use it like so:
     const provider = new SkynetWeb3Provider(connectionInfo);
     const contract_addr = '0x32950db2a7164ae833121501c797d79e7b79d74c';
     const tokenId = 3067049;
-    const result = await provider.owners_of_nft(contract_addr, tokenId);
+    const response = await provider.get_owners_of_nft(contract_addr, tokenId);
 ```
 
 ## Documentation
 For further documentation, see the 
-* [docs directory](_media/globals.md) on GitHub.
-* [HTML documents](_media/index.html).
+* [docs directory](https://chuacw.github.io/web3-ronin-provider/md/globals.html) on GitHub.
+* [HTML documents](https://chuacw.github.io/web3-ronin-provider/html/index.html).
+
+## Examples
+There's an [examples](./examples/) directory showing how to use the SkyNet Web3 provider.

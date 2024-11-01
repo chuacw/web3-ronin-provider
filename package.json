@@ -6,7 +6,7 @@
   "scripts": {
     "gen-markdown": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
     "gen-html": "typedoc --cleanOutputDir true --out docs/html src",
-    "prepublishOnly": "tsc -b && npm run gen-markdown && npm run gen-html",
+    "prepublishOnly": "tsc -b",
     "test": "jest"
   },
   "exports": {
