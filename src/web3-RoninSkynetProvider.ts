@@ -107,9 +107,11 @@ class RoninSkynetWeb3Provider {
     if (connection.headers["X-API-KEY"] === undefined || connection.headers["X-API-KEY"] === "") {
       throw new ENoApiKey();
     };
-    this.#connection.headers!["Connection"] = "Keep-Alive";
-    this.#connection.headers!["Keep-Alive"] = "timeout=5, max=1000";
+    this.#connection.headers!["Accept"]                      = 'application/json';
     this.#connection.headers!["Access-Control-Allow-Origin"] = "*";
+    this.#connection.headers!["Connection"]                  = "Keep-Alive";
+    this.#connection.headers!["Content-Type"]                = 'application/json';
+    this.#connection.headers!["Keep-Alive"]                  = "timeout=5, max=1000";
   }
 
   protected concatUrl(url: string, urlSuffix: string): string {

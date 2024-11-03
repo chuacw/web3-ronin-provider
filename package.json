@@ -34,7 +34,7 @@
   "dependencies": {
     "@ethersproject/providers": "^5.7.2",
     "axios": "^1.7.7",
-    "delphirtl": "^1.1.20",
+    "delphirtl": "^1.1.21",
     "ethers": "5.7"
   },
   "files": [
