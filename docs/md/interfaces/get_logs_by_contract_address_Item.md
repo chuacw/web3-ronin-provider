@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:13](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L13)
+[src/web3-ronin-types-logs.ts:13](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L13)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:19](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L19)
+[src/web3-ronin-types-logs.ts:19](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L19)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L16)
+[src/web3-ronin-types-logs.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L16)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:15](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L15)
+[src/web3-ronin-types-logs.ts:15](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L15)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:20](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L20)
+[src/web3-ronin-types-logs.ts:20](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L20)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:21](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L21)
+[src/web3-ronin-types-logs.ts:21](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L21)
 
 ***
 
@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L14)
+[src/web3-ronin-types-logs.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L14)
 
 ***
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L17)
+[src/web3-ronin-types-logs.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L17)
 
 ***
 
@@ -94,4 +94,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-logs.ts:18](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-types-logs.ts#L18)
+[src/web3-ronin-types-logs.ts:18](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-logs.ts#L18)

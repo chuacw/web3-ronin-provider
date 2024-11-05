@@ -14,7 +14,7 @@
 
 #### Defined in
 
-src/web3-ronin-types-rest-nfts.ts:81
+[src/web3-ronin-types-rest-nfts.ts:81](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-nfts.ts#L81)
 
 ***
 
@@ -24,7 +24,7 @@ src/web3-ronin-types-rest-nfts.ts:81
 
 #### Defined in
 
-src/web3-ronin-types-rest-nfts.ts:82
+[src/web3-ronin-types-rest-nfts.ts:82](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-nfts.ts#L82)
 
 ***
 
@@ -34,7 +34,7 @@ src/web3-ronin-types-rest-nfts.ts:82
 
 #### Defined in
 
-src/web3-ronin-types-rest-nfts.ts:83
+[src/web3-ronin-types-rest-nfts.ts:83](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-nfts.ts#L83)
 
 ***
 
@@ -44,4 +44,4 @@ src/web3-ronin-types-rest-nfts.ts:83
 
 #### Defined in
 
-src/web3-ronin-types-rest-nfts.ts:84
+[src/web3-ronin-types-rest-nfts.ts:84](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-nfts.ts#L84)

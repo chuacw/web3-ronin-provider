@@ -16,7 +16,7 @@ The block hash to searh for
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:121
+[src/web3-ronin-types-rest-accounts.ts:121](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L121)
 
 ***
 
@@ -28,7 +28,7 @@ The block number to searh for
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:125
+[src/web3-ronin-types-rest-accounts.ts:125](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L125)
 
 ***
 
@@ -38,7 +38,7 @@ src/web3-ronin-types-rest-accounts.ts:125
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:126
+[src/web3-ronin-types-rest-accounts.ts:126](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L126)
 
 ***
 
@@ -48,4 +48,4 @@ src/web3-ronin-types-rest-accounts.ts:126
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:127
+[src/web3-ronin-types-rest-accounts.ts:127](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L127)

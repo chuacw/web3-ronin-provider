@@ -14,7 +14,7 @@
 
 #### Defined in
 
-src/web3-ronin-types-rest-token-balances.ts:9
+[src/web3-ronin-types-rest-token-balances.ts:9](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-token-balances.ts#L9)
 
 ***
 
@@ -24,7 +24,7 @@ src/web3-ronin-types-rest-token-balances.ts:9
 
 #### Defined in
 
-src/web3-ronin-types-rest-token-balances.ts:10
+[src/web3-ronin-types-rest-token-balances.ts:10](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-token-balances.ts#L10)
 
 ***
 
@@ -34,7 +34,7 @@ src/web3-ronin-types-rest-token-balances.ts:10
 
 #### Defined in
 
-src/web3-ronin-types-rest-token-balances.ts:11
+[src/web3-ronin-types-rest-token-balances.ts:11](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-token-balances.ts#L11)
 
 ***
 
@@ -44,4 +44,4 @@ src/web3-ronin-types-rest-token-balances.ts:11
 
 #### Defined in
 
-src/web3-ronin-types-rest-token-balances.ts:12
+[src/web3-ronin-types-rest-token-balances.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-token-balances.ts#L12)

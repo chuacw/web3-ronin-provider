@@ -14,7 +14,7 @@
 
 #### Defined in
 
-src/web3-ronin-types-rest-tokens.ts:76
+[src/web3-ronin-types-rest-tokens.ts:76](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-tokens.ts#L76)
 
 ***
 
@@ -24,7 +24,7 @@ src/web3-ronin-types-rest-tokens.ts:76
 
 #### Defined in
 
-src/web3-ronin-types-rest-tokens.ts:78
+[src/web3-ronin-types-rest-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-tokens.ts#L78)
 
 ***
 
@@ -34,4 +34,4 @@ src/web3-ronin-types-rest-tokens.ts:78
 
 #### Defined in
 
-src/web3-ronin-types-rest-tokens.ts:77
+[src/web3-ronin-types-rest-tokens.ts:77](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-tokens.ts#L77)

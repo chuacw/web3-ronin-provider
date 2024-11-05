@@ -19,7 +19,7 @@
     "Ronin",
     "Web3",
     "Provider",
-    "SkyNet",
+    "Skynet",
     "API",
     "JSON RPC",
     "RPC"
@@ -30,7 +30,7 @@
     "url": "https://github.com/chuacw/web3-ronin-provider/issues"
   },
   "homepage": "https://chuacw.github.io/web3-ronin-provider/html/index.html",
-  "description": "A Ronin JSON RPC and SkyNet Web3 provider",
+  "description": "A Ronin REST, JSON RPC, and Skynet Web3 provider",
   "dependencies": {
     "@ethersproject/providers": "^5.7.2",
     "axios": "^1.7.7",

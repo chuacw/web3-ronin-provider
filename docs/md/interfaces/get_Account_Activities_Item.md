@@ -14,7 +14,7 @@
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:39
+[src/web3-ronin-types-rest-accounts.ts:39](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L39)
 
 ***
 
@@ -24,7 +24,7 @@ src/web3-ronin-types-rest-accounts.ts:39
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:35
+[src/web3-ronin-types-rest-accounts.ts:35](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L35)
 
 ***
 
@@ -34,7 +34,7 @@ src/web3-ronin-types-rest-accounts.ts:35
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:36
+[src/web3-ronin-types-rest-accounts.ts:36](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L36)
 
 ***
 
@@ -44,7 +44,7 @@ src/web3-ronin-types-rest-accounts.ts:36
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:41
+[src/web3-ronin-types-rest-accounts.ts:41](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L41)
 
 ***
 
@@ -54,7 +54,7 @@ src/web3-ronin-types-rest-accounts.ts:41
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:40
+[src/web3-ronin-types-rest-accounts.ts:40](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L40)
 
 ***
 
@@ -64,7 +64,7 @@ src/web3-ronin-types-rest-accounts.ts:40
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:38
+[src/web3-ronin-types-rest-accounts.ts:38](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L38)
 
 ***
 
@@ -74,4 +74,4 @@ src/web3-ronin-types-rest-accounts.ts:38
 
 #### Defined in
 
-src/web3-ronin-types-rest-accounts.ts:37
+[src/web3-ronin-types-rest-accounts.ts:37](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-accounts.ts#L37)

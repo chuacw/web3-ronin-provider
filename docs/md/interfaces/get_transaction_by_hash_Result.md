@@ -14,7 +14,7 @@
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:48
+[src/web3-ronin-types-rest-transactions.ts:48](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L48)
 
 ***
 
@@ -24,7 +24,7 @@ src/web3-ronin-types-rest-transactions.ts:48
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:49
+[src/web3-ronin-types-rest-transactions.ts:49](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L49)
 
 ***
 
@@ -34,7 +34,7 @@ src/web3-ronin-types-rest-transactions.ts:49
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:54
+[src/web3-ronin-types-rest-transactions.ts:54](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L54)
 
 ***
 
@@ -44,7 +44,7 @@ src/web3-ronin-types-rest-transactions.ts:54
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:68
+[src/web3-ronin-types-rest-transactions.ts:68](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L68)
 
 ***
 
@@ -54,7 +54,7 @@ src/web3-ronin-types-rest-transactions.ts:68
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:52
+[src/web3-ronin-types-rest-transactions.ts:52](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L52)
 
 ***
 
@@ -64,7 +64,7 @@ src/web3-ronin-types-rest-transactions.ts:52
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:59
+[src/web3-ronin-types-rest-transactions.ts:59](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L59)
 
 ***
 
@@ -74,7 +74,7 @@ src/web3-ronin-types-rest-transactions.ts:59
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:57
+[src/web3-ronin-types-rest-transactions.ts:57](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L57)
 
 ***
 
@@ -84,7 +84,7 @@ src/web3-ronin-types-rest-transactions.ts:57
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:50
+[src/web3-ronin-types-rest-transactions.ts:50](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L50)
 
 ***
 
@@ -94,7 +94,7 @@ src/web3-ronin-types-rest-transactions.ts:50
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:55
+[src/web3-ronin-types-rest-transactions.ts:55](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L55)
 
 ***
 
@@ -104,7 +104,7 @@ src/web3-ronin-types-rest-transactions.ts:55
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:56
+[src/web3-ronin-types-rest-transactions.ts:56](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L56)
 
 ***
 
@@ -114,7 +114,7 @@ src/web3-ronin-types-rest-transactions.ts:56
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:58
+[src/web3-ronin-types-rest-transactions.ts:58](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L58)
 
 ***
 
@@ -124,7 +124,7 @@ src/web3-ronin-types-rest-transactions.ts:58
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:61
+[src/web3-ronin-types-rest-transactions.ts:61](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L61)
 
 ***
 
@@ -134,7 +134,7 @@ src/web3-ronin-types-rest-transactions.ts:61
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:60
+[src/web3-ronin-types-rest-transactions.ts:60](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L60)
 
 ***
 
@@ -144,7 +144,7 @@ src/web3-ronin-types-rest-transactions.ts:60
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:62
+[src/web3-ronin-types-rest-transactions.ts:62](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L62)
 
 ***
 
@@ -154,7 +154,7 @@ src/web3-ronin-types-rest-transactions.ts:62
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:66
+[src/web3-ronin-types-rest-transactions.ts:66](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L66)
 
 ***
 
@@ -164,7 +164,7 @@ src/web3-ronin-types-rest-transactions.ts:66
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:67
+[src/web3-ronin-types-rest-transactions.ts:67](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L67)
 
 ***
 
@@ -174,7 +174,7 @@ src/web3-ronin-types-rest-transactions.ts:67
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:53
+[src/web3-ronin-types-rest-transactions.ts:53](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L53)
 
 ***
 
@@ -184,7 +184,7 @@ src/web3-ronin-types-rest-transactions.ts:53
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:51
+[src/web3-ronin-types-rest-transactions.ts:51](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L51)
 
 ***
 
@@ -194,7 +194,7 @@ src/web3-ronin-types-rest-transactions.ts:51
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:46
+[src/web3-ronin-types-rest-transactions.ts:46](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L46)
 
 ***
 
@@ -204,7 +204,7 @@ src/web3-ronin-types-rest-transactions.ts:46
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:47
+[src/web3-ronin-types-rest-transactions.ts:47](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L47)
 
 ***
 
@@ -214,7 +214,7 @@ src/web3-ronin-types-rest-transactions.ts:47
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:64
+[src/web3-ronin-types-rest-transactions.ts:64](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L64)
 
 ***
 
@@ -224,7 +224,7 @@ src/web3-ronin-types-rest-transactions.ts:64
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:65
+[src/web3-ronin-types-rest-transactions.ts:65](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L65)
 
 ***
 
@@ -234,4 +234,4 @@ src/web3-ronin-types-rest-transactions.ts:65
 
 #### Defined in
 
-src/web3-ronin-types-rest-transactions.ts:63
+[src/web3-ronin-types-rest-transactions.ts:63](https://github.com/chuacw/web3-ronin-provider/blob/1a659b81d9c7d7afbced0ae2b11550f4f6c0a233/src/web3-ronin-types-rest-transactions.ts#L63)
