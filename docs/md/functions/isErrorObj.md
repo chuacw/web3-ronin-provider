@@ -22,4 +22,4 @@ Checks if an object contains the fields: errorCode: number, and message: string
 
 ## Defined in
 
-[src/web3-ronin-utils.ts:36](https://github.com/chuacw/web3-ronin-provider/blob/a0101c455e71e221c1f508afff12749e77bf1fd8/src/web3-ronin-utils.ts#L36)
+[src/web3-ronin-utils.ts:36](https://github.com/chuacw/web3-ronin-provider/blob/5e9462adf1edb8f1f7982dc5f4e5bd7094a4d6eb/src/web3-ronin-utils.ts#L36)

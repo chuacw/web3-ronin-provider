@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:911](https://github.com/chuacw/web3-ronin-provider/blob/a0101c455e71e221c1f508afff12749e77bf1fd8/src/web3-RoninSkynetProvider.ts#L911)
+[src/web3-RoninSkynetProvider.ts:911](https://github.com/chuacw/web3-ronin-provider/blob/5e9462adf1edb8f1f7982dc5f4e5bd7094a4d6eb/src/web3-RoninSkynetProvider.ts#L911)
 
 ***
 
@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:912](https://github.com/chuacw/web3-ronin-provider/blob/a0101c455e71e221c1f508afff12749e77bf1fd8/src/web3-RoninSkynetProvider.ts#L912)
+[src/web3-RoninSkynetProvider.ts:912](https://github.com/chuacw/web3-ronin-provider/blob/5e9462adf1edb8f1f7982dc5f4e5bd7094a4d6eb/src/web3-RoninSkynetProvider.ts#L912)
