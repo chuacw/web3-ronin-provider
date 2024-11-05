@@ -35,7 +35,7 @@ hardfork when sending transactions for Ronin.
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninJsonRpcProvider.ts#L12)
+[src/web3-RoninJsonRpcProvider.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninJsonRpcProvider.ts#L12)
 
 ## Properties
 
@@ -367,9 +367,11 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:60
 
 ### \_cache
 
-> `get` **\_cache**(): `Record`\<`string`, `Promise`\<`any`\>\>
+#### Get Signature
 
-#### Returns
+> **get** **\_cache**(): `Record`\<`string`, `Promise`\<`any`\>\>
+
+##### Returns
 
 `Record`\<`string`, `Promise`\<`any`\>\>
 
@@ -385,9 +387,11 @@ node\_modules/@ethersproject/providers/lib/json-rpc-provider.d.ts:33
 
 ### blockNumber
 
-> `get` **blockNumber**(): `number`
+#### Get Signature
 
-#### Returns
+> **get** **blockNumber**(): `number`
+
+##### Returns
 
 `number`
 
@@ -403,9 +407,11 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:101
 
 ### network
 
-> `get` **network**(): `Network`
+#### Get Signature
 
-#### Returns
+> **get** **network**(): `Network`
+
+##### Returns
 
 `Network`
 
@@ -421,17 +427,25 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:98
 
 ### polling
 
-> `get` **polling**(): `boolean`
+#### Get Signature
 
-> `set` **polling**(`value`): `void`
+> **get** **polling**(): `boolean`
 
-#### Parameters
+##### Returns
+
+`boolean`
+
+#### Set Signature
+
+> **set** **polling**(`value`): `void`
+
+##### Parameters
 
 • **value**: `boolean`
 
-#### Returns
+##### Returns
 
-`boolean`
+`void`
 
 #### Inherited from
 
@@ -445,17 +459,25 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:102
 
 ### pollingInterval
 
-> `get` **pollingInterval**(): `number`
+#### Get Signature
 
-> `set` **pollingInterval**(`value`): `void`
+> **get** **pollingInterval**(): `number`
 
-#### Parameters
+##### Returns
+
+`number`
+
+#### Set Signature
+
+> **set** **pollingInterval**(`value`): `void`
+
+##### Parameters
 
 • **value**: `number`
 
-#### Returns
+##### Returns
 
-`number`
+`void`
 
 #### Inherited from
 
@@ -469,9 +491,11 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:104
 
 ### ready
 
-> `get` **ready**(): `Promise`\<`Network`\>
+#### Get Signature
 
-#### Returns
+> **get** **ready**(): `Promise`\<`Network`\>
+
+##### Returns
 
 `Promise`\<`Network`\>
 
@@ -1217,7 +1241,7 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:137
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninJsonRpcProvider.ts#L17)
+[src/web3-RoninJsonRpcProvider.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninJsonRpcProvider.ts#L17)
 
 ***
 

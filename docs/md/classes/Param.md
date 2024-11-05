@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:984](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L984)
+[src/web3-RoninSkynetProvider.ts:919](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L919)
 
 ## Properties
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:982](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L982)
+[src/web3-RoninSkynetProvider.ts:917](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L917)
 
 ***
 
@@ -38,23 +38,25 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:981](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L981)
+[src/web3-RoninSkynetProvider.ts:916](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L916)
 
 ***
 
 ### order?
 
-> `optional` **order**: `ORDER`
+> `optional` **order**: [`ORDER`](../enumerations/ORDER.md)
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:983](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L983)
+[src/web3-RoninSkynetProvider.ts:918](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L918)
 
 ## Methods
 
 ### cursorParam()
 
 > **cursorParam**(`cursor`): [`Param`](Param.md)
+
+Updates this instance to include the given cursor
 
 #### Parameters
 
@@ -66,13 +68,15 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:987](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L987)
+[src/web3-RoninSkynetProvider.ts:928](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L928)
 
 ***
 
 ### limitParam()
 
 > **limitParam**(`limit`): [`Param`](Param.md)
+
+Updates this instance to include the given limit
 
 #### Parameters
 
@@ -84,7 +88,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:992](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L992)
+[src/web3-RoninSkynetProvider.ts:939](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L939)
 
 ***
 
@@ -92,9 +96,11 @@
 
 > **orderParam**(`order`): [`Param`](Param.md)
 
+Updates this instance to include the given order
+
 #### Parameters
 
-• **order**: `ORDER`
+• **order**: [`ORDER`](../enumerations/ORDER.md)
 
 #### Returns
 
@@ -102,4 +108,4 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:997](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L997)
+[src/web3-RoninSkynetProvider.ts:950](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L950)

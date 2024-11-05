@@ -8,6 +8,8 @@
 
 > **limitParam**(`limit`): [`Param`](../classes/Param.md)
 
+Creates a Param with the given limit
+
 ## Parameters
 
 • **limit**: `number`
@@ -18,4 +20,4 @@
 
 ## Defined in
 
-[src/web3-RoninSkynetProvider.ts:1010](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L1010)
+[src/web3-RoninSkynetProvider.ts:981](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L981)

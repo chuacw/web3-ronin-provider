@@ -8,10 +8,12 @@
 
 > **emptyParam**(): [`Param`](../classes/Param.md)
 
+Creates an empty Param instance that can be updated with the various methods in [Param](../classes/Param.md)
+
 ## Returns
 
 [`Param`](../classes/Param.md)
 
 ## Defined in
 
-[src/web3-RoninSkynetProvider.ts:1003](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L1003)
+[src/web3-RoninSkynetProvider.ts:961](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L961)

@@ -1,9 +1,20 @@
 # Utilities for Ronin blockchain
-This package provides 2 Web3 providers for the Ronin blockchain.  
+This package provides 3 providers for interacting with the Ronin blockchain.  
 
-The 2 Web3 providers are:  
+The 3 Web3 providers are:  
+* SkyNet REST provider
 * Ronin JSON RPC provider
-* Ronin SkyNet provider
+* SkyNet Web3 provider
+
+## SkyNet REST provider
+A REST provider for SkyNet.
+
+Use it like so:
+```
+    const  provider = createSkyNetRESTProvider(process.env["X-API-KEY"] || "");
+    const contractAddr = "0xf6c5f9a72e6d46f30c7223a4cff854f94c7e95aa";
+    const response = await provider.get_contract_by_address(contractAddr);
+```
 
 ## Ronin JSON RPC provider
 A JSON RPC Provider for Ronin.  
@@ -22,7 +33,10 @@ Use this like so:
 ## Ronin SkyNet Web3 Provider
 A SkyNet Web3 Provider for Ronin.  
 
-Use it like so:
+#### Creating an instance of the SkyNet Web3 Provider
+---
+Create it like this:
+
 ```
     const connectionInfo = {
       url: URL_RONIN_SKYNET_RPC,
@@ -31,6 +45,15 @@ Use it like so:
       }
     }
     const provider = new SkynetWeb3Provider(connectionInfo);
+```
+
+or like this:
+```
+    const provider = createSkyNetProvider(API_KEY);
+```
+
+Use it like so:
+```
     const contract_addr = '0x32950db2a7164ae833121501c797d79e7b79d74c';
     const tokenId = 3067049;
     const response = await provider.get_owners_of_nft(contract_addr, tokenId);

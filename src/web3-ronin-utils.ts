@@ -10,6 +10,13 @@ export interface errorResponse {
     data: errorObj
   }
 }
+export interface RESTerrorResponse {
+  response: {
+    data: string,
+    status: number,
+    statusText: string
+  }
+}
 export interface errorObj {
   errorCode: number;
   message: string;
@@ -49,6 +56,16 @@ export function isErrorResponse(obj: unknown): obj is errorResponse {
     'data' in obj.response &&
     isErrorObj(obj.response.data)
   );
+  return result;
+}
+
+export function isRESTError(obj: unknown): obj is RESTerrorResponse {
+  const result = (
+    isArbitraryObject(obj) &&
+    'response' in obj &&
+    isArbitraryObject(obj.response) &&
+    typeof obj.response.data === 'string'
+  )
   return result;
 }
 

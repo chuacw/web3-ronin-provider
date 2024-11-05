@@ -260,15 +260,7 @@ export interface get_details_of_multiple_collections_Result {
   items: get_details_of_multiple_collections_Item[]
 }
 
-export interface get_details_of_multiple_collections_Item {
-  contractAddress: string
-  name: string
-  symbol: string
-  standard: string
-  totalSupply: string
-  totalOwners: number
-  totalTransfers: number
-}
+export type get_details_of_multiple_collections_Item = get_collection_detail_Result;
 
 export interface get_number_of_collection_holdings_by_address_Response {
   result: get_number_of_collection_holdings_by_address_Result

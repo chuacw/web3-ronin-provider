@@ -26,9 +26,11 @@ A class that provides various NFT collection addresses
 
 Address for AXIE collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:14](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L14)
+[src/web3-ronin-consts-tokens.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L16)
 
 ***
 
@@ -38,9 +40,25 @@ Address for AXIE collection
 
 Address for AXIE ACCESSORY collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:71](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L71)
+[src/web3-ronin-consts-tokens.ts:87](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L87)
+
+***
+
+### Axie\_Infinity\_Shard
+
+> `readonly` `static` **Axie\_Infinity\_Shard**: `"0x97a9107c1793bc407d6f527b77e7fff4d812bece"`
+
+Alias for AXS
+
+#### Static
+
+#### Defined in
+
+[src/web3-ronin-consts-tokens.ts:132](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L132)
 
 ***
 
@@ -50,9 +68,11 @@ Address for AXIE ACCESSORY collection
 
 Address for AXIE LAND collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:92](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L92)
+[src/web3-ronin-consts-tokens.ts:114](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L114)
 
 ***
 
@@ -62,9 +82,25 @@ Address for AXIE LAND collection
 
 Address for AXIE LAND ITEM collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:57](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L57)
+[src/web3-ronin-consts-tokens.ts:69](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L69)
+
+***
+
+### AXS
+
+> `readonly` `static` **AXS**: `"0x97a9107c1793bc407d6f527b77e7fff4d812bece"` = `"0x97a9107c1793bc407d6f527b77e7fff4d812bece"`
+
+Address for AXS (Axie Infinity Shard)
+
+#### Static
+
+#### Defined in
+
+[src/web3-ronin-consts-tokens.ts:123](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L123)
 
 ***
 
@@ -74,9 +110,11 @@ Address for AXIE LAND ITEM collection
 
 Address for FIGHT LEAGUE CHIPS collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L43)
+[src/web3-ronin-consts-tokens.ts:51](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L51)
 
 ***
 
@@ -86,9 +124,11 @@ Address for FIGHT LEAGUE CHIPS collection
 
 Address for KAIDRO JOURNAL collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:36](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L36)
+[src/web3-ronin-consts-tokens.ts:42](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L42)
 
 ***
 
@@ -98,9 +138,11 @@ Address for KAIDRO JOURNAL collection
 
 Address for RAGNAROK MONSTERS collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:64](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L64)
+[src/web3-ronin-consts-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L78)
 
 ***
 
@@ -110,9 +152,11 @@ Address for RAGNAROK MONSTERS collection
 
 Address for Ronin Name Service
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L78)
+[src/web3-ronin-consts-tokens.ts:96](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L96)
 
 ***
 
@@ -122,9 +166,11 @@ Address for Ronin Name Service
 
 Address for RUNIVERSE ITEM collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:50](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L50)
+[src/web3-ronin-consts-tokens.ts:60](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L60)
 
 ***
 
@@ -134,9 +180,11 @@ Address for RUNIVERSE ITEM collection
 
 Address for WILD FOREST SKINS collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:85](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L85)
+[src/web3-ronin-consts-tokens.ts:105](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L105)
 
 ***
 
@@ -146,9 +194,11 @@ Address for WILD FOREST SKINS collection
 
 Address for WILD FOREST UNITS collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:21](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L21)
+[src/web3-ronin-consts-tokens.ts:24](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L24)
 
 ***
 
@@ -158,6 +208,8 @@ Address for WILD FOREST UNITS collection
 
 Address for WILDFORESTUNITS collection
 
+#### Static
+
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:29](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-ronin-consts-tokens.ts#L29)
+[src/web3-ronin-consts-tokens.ts:33](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-ronin-consts-tokens.ts#L33)

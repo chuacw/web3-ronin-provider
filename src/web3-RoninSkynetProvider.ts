@@ -3,11 +3,7 @@ import {
   get_internal_transaction_of_transaction_Response,
   get_details_of_multiple_transactions_Response
 } from "./web3-ronin-types-txs";
-import axios, {
-  AxiosResponse, AxiosRequestConfig,
-  AxiosProxyConfig,
-  AxiosError
-} from 'axios';
+import axios, { AxiosResponse, AxiosRequestConfig} from 'axios';
 import { get_detail_of_contract_Response, get_details_of_multiple_contracts_Response } from "./web3-ronin-types-contracts";
 import {
   get_collection_detail_Response,
@@ -35,7 +31,7 @@ import {
   get_transactions_by_block_number_Response
 } from "./web3-ronin-types-blocks";
 import { URL_RONIN_SKYNET_RPC } from "./web3-ronin-consts";
-import { EEmptyHeaders, EEmptyUrl, EErrorCodeMessage, ENoApiKey, ENoHeaders } from "./web3-ronin-types-errors";
+import { EErrorCodeMessage } from "./web3-ronin-types-errors";
 import {
   get_logs_by_contract_address_and_log_topic_Response,
   get_logs_by_contract_address_Response
@@ -43,48 +39,24 @@ import {
 import { get_token_transfers_by_block_range_OptionalParams, get_token_transfers_by_block_range_Response } from "./web3-ronin-types-token-transfers";
 import { isErrorResponse } from "./web3-ronin-utils";
 import { search_nfts_by_metadata_Request, search_nfts_by_metadata_Response,  } from "./web3-ronin-types-nft";
+import { ConnectionInfo } from "./web3-ronin-types-global";
+import { CustomSkynetProvider } from "./web3-roninCustomSkynetProvider";
 
-
-/**
- * Provides the URL, headers, and other information to set up a connection to the backend.
- * @typedef ConnectionInfo
- * @type {object}
- * @property {string} url - URL to the service.
- * @property {object} [headers] - X-API-KEY amongst others.
- * @property {AxiosProxyConfig} [proxy] - Proxy
- */
-type ConnectionInfo = {
-  /**
-   * The URL for the connection
-   *
-   * @type {string}
-   */
-  url: string,
-  /**
-   * Optional headers as key-value pairs.
-   *
-   * @type {?({ [key: string]: string | number })}
-   */
-  headers?: { [key: string]: string | number },
-  /**
-   * Optional proxy configuration
-   */
-  proxy?: AxiosProxyConfig
-}
+// For looking at HTTP requests
+// import { AxiosInstance } from 'axios';
+// import tunnel from 'tunnel';
 
 /**
  * This class implements the 
  * {@link https://docs.skymavis.com/api/web3/skynet-web-3-api Skynet Web3 API}.  
  * 
- * To create a RoninSkynetWeb3Provider quickly, call {@link createSkyNetProvider} with the API key.  
- * To customize headers, call the RoninSkynetWeb3Provider constructor with a tailored {@link ConnectionInfo} parameter.
+ * To create a SkynetWeb3Provider quickly, call {@link createSkynetProvider} with the API key.  
+ * To customize headers, call the SkynetWeb3Provider constructor with a tailored {@link ConnectionInfo} parameter.
  */
-class RoninSkynetWeb3Provider {
-
-  readonly #connection: ConnectionInfo;
+class SkynetWeb3Provider extends CustomSkynetProvider {
 
   /**
-   * Creates an instance of RoninSkynetWeb3Provider, see documentation in the docs directory. 
+   * Creates an instance of SkynetWeb3Provider, see documentation in the docs directory. 
    *
    * @throws {@link EEmptyHeaders} when headers are present, but empty
    * @throws {@link EEmptyUrl} when URL is empty
@@ -94,75 +66,42 @@ class RoninSkynetWeb3Provider {
    * @param {ConnectionInfo} connection The URL to use, headers, etc
    */
   constructor(connection: ConnectionInfo) {
-    this.#connection = connection;
-    if (connection.url === "") {
-      throw new EEmptyUrl();
-    }
-    if (!connection["headers"]) {
-      throw new ENoHeaders();
-    }
-    if (Object.keys(connection.headers).length === 0) {
-      throw new EEmptyHeaders();
-    }
-    if (connection.headers["X-API-KEY"] === undefined || connection.headers["X-API-KEY"] === "") {
-      throw new ENoApiKey();
-    };
-    this.#connection.headers!["Accept"]                      = 'application/json';
-    this.#connection.headers!["Access-Control-Allow-Origin"] = "*";
-    this.#connection.headers!["Connection"]                  = "Keep-Alive";
-    this.#connection.headers!["Content-Type"]                = 'application/json';
-    this.#connection.headers!["Keep-Alive"]                  = "timeout=5, max=1000";
-  }
+    super(connection);
+    this.connection.headers!["Access-Control-Allow-Origin"] = "*";
 
-  protected concatUrl(url: string, urlSuffix: string): string {
-    let _url = url;
-    if (!_url.endsWith('/')) {
-      _url = _url + '/';
-    }
-    let _urlSuffix = urlSuffix;
-    if (url.startsWith('/')) {
-      _urlSuffix = _urlSuffix.slice(1);
-    }
-    const result = _url + _urlSuffix;
-    return result;
+    // See https://stackoverflow.com/questions/53217835/sending-nodejs-axios-requests-via-fiddler
+    // this.axiosInstance = axios.create({
+    //   httpsAgent: tunnel.httpsOverHttp({
+    //     proxy: {
+    //       host: '127.0.0.1',
+    //       port: 8888,
+    //     },
+    //     rejectUnauthorized: false,
+    //     checkServerIdentity: (host, cert) => {
+    //       // Customize certificate verification here, returning an error if the
+    //       // certificate is invalid or should not be trusted.
+    //       return undefined;
+    //     }
+    //   }),
+    // });
+
   }
 
   /**
-   * Updates the url to include limit and cursors, if they're provided.
+   * Sends HTTP GET message to the service provider
    *
-   * @param {string} url
-   * @param {?number} [limit] how many items can be return in a single response, maximum 200
-   * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
-   * @returns {string} Updated url if limit and cursors provided, otherwise, returns the parameter url.
+   * @protected
+   * @async
+   * @param {string} urlSuffix
+   * @param {?AxiosRequestConfig} [config]
+   * @returns {Promise<AxiosResponse<any, any>>}
+   * @throws {@link EErrorCodeMessage}
    */
-  protected update_url(url: string, limit?: number, cursor?: string): string {
-    const urlParams = new URLSearchParams();
-    if (limit) {
-      urlParams.append('limit', limit.toString());
-    }
-    if (cursor) {
-      urlParams.append('cursor', cursor);
-    }
-    const result = this.update_url_with_Params(url, urlParams);
-    return result;
-  }
-
-  protected update_url_with_Params(url: string, params: string | URLSearchParams): string {
-    let _params;
-    if (typeof params !== 'string') {
-      _params = params.toString();
-    } else {
-      _params = params;
-    }
-    const result = _params === '' ? url : url + '?' + _params;
-    return result;
-  }
-
   protected async getRonin(urlSuffix: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any, any>> {
-    const url = this.concatUrl(this.#connection.url, urlSuffix);
+    const url = this.concatUrl(this.connection.url, urlSuffix);
     let _config = {
       ...config,
-      headers: this.#connection.headers
+      headers: this.connection.headers
     };
     let result: AxiosResponse<any, any>;
     try {
@@ -179,10 +118,20 @@ class RoninSkynetWeb3Provider {
     return result;
   }
 
+  /**
+   * Sends HTTP POST message to the service provider
+   *
+   * @protected
+   * @async
+   * @param {string} urlSuffix
+   * @param {*} data
+   * @returns {Promise<AxiosResponse<any, any>>}
+   * @throws {@link EErrorCodeMessage}
+   */
   protected async postRonin(urlSuffix: string, data: any): Promise<AxiosResponse<any, any>> {
-    const url = this.concatUrl(this.#connection.url, urlSuffix);
+    const url = this.concatUrl(this.connection.url, urlSuffix);
     let _config = {
-      headers: this.#connection.headers
+      headers: this.connection.headers
     }
     let result: AxiosResponse<any, any>;
     try {
@@ -196,22 +145,6 @@ class RoninSkynetWeb3Provider {
       throw e;
     }
     // @ts-ignore
-    return result;
-  }
-
-  /**
-   * Places a call to the service, with optional limits and cursor
-   *
-   * @async
-   * @param {string} url
-   * @param {?number} [limit] how many items can be return in a single response, maximum 200
-   * @param {?string} [cursor] the current pointer of the result set, to iterate to the next part of the results, it's returned by the previous call (nextCursor field), you get it and pass to the next call, present nextCursor means there will be more results to scroll, empty nextCursor means it reaches to the end of results
-   * @returns {Promise<any>}
-   */
-  protected async getRoninLimitCursor(url: string, limit?: number, cursor?: string): Promise<any> {
-    const _url = this.update_url(url, limit, cursor);
-    const response = await this.getRonin(_url);
-    const result = response.data;
     return result;
   }
 
@@ -968,13 +901,13 @@ In the response, there are two lists, successes and failures tokenIds, failure r
  * @param {?string} [url] The URL to use for the provider. If not given, uses {@link URL_RONIN_SKYNET_RPC}
  * @returns {RoninSkynetWeb3Provider}
  */
-function createSkyNetProvider(X_API_KEY: string, url?: string): RoninSkynetWeb3Provider {
+function createSkynetProvider(X_API_KEY: string, url?: string): SkynetWeb3Provider {
   const connection = { url: url || URL_RONIN_SKYNET_RPC, headers: { "X-API-KEY": X_API_KEY } };
-  const result = new RoninSkynetWeb3Provider(connection);
+  const result = new SkynetWeb3Provider(connection);
   return result;
 }
 
-enum ORDER {
+export enum ORDER {
   ASC = "asc",
   DESC = "desc"
 }
@@ -986,41 +919,84 @@ export class Param {
   constructor() {
   }
 
+  /**
+   * Updates this instance to include the given cursor
+   *
+   * @param {string} cursor
+   * @returns {Param}
+   */
   cursorParam(cursor: string): Param {
     this.cursor = cursor;
     return this;
   }
 
+  /**
+   * Updates this instance to include the given limit
+   *
+   * @param {number} limit
+   * @returns {Param}
+   */
   limitParam(limit: number): Param {
     this.limit = limit;
     return this;
   }
 
+  /**
+   * Updates this instance to include the given order
+   *
+   * @param {ORDER} order
+   * @returns {Param}
+   */
   orderParam(order: ORDER): Param {
     this.order = order;
     return this;
   }
 }
 
+/**
+ * Creates an empty Param instance that can be updated with the various methods in {@link Param}
+ *
+ * @returns {Param}
+ */
 function emptyParam(): Param {
   return new Param();
 }
 
+/**
+ * Creates a Param with the given cursor
+ *
+ * @param {string} cursor
+ * @returns {Param}
+ */
 function cursorParam(cursor: string): Param {
   return new Param().cursorParam(cursor);
 }
+
+/**
+ * Creates a Param with the given limit
+ *
+ * @param {number} limit
+ * @returns {Param}
+ */
 function limitParam(limit: number): Param {
   return new Param().limitParam(limit);
 }
+
+/**
+ * Creates a Param with the given order
+ * 
+ * @param order 
+ * @returns 
+ */
 function orderParam(order: ORDER): Param {
   return new Param().orderParam(order);
 }
 
 export {
   ConnectionInfo,
-  RoninSkynetWeb3Provider,
-  RoninSkynetWeb3Provider as SkynetProvider,
-  RoninSkynetWeb3Provider as SkynetWeb3Provider,
-  createSkyNetProvider,
+  SkynetWeb3Provider,
+  SkynetWeb3Provider as RoninSkynetProvider,
+  SkynetWeb3Provider as SkynetProvider,
+  createSkynetProvider,
   limitParam, cursorParam, orderParam, emptyParam
 }

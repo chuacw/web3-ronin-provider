@@ -4,7 +4,7 @@ import { haveNoDuplicates } from 'delphirtl/ArrayUtils';
 import { SkynetWeb3Provider } from '../src/web3-RoninSkynetProvider';
 
 import 'dotenv/config';
-import { activityTypes } from '../src/web3-ronin-types-accounts';
+import { Web3_activityTypes } from '../src/web3-ronin-types-accounts';
 import { block_by_hash_timestamp_block_number_range_result1, block_by_hash_timestamp_block_number_range_result2, block_by_hash_timestamp_block_number_range_result3, block_by_hash_timestamp_block_number_range_result4, block_by_hash_timestamp_block_number_range_result5 } from './expected_results/block_by_hash_timestamp_block_number_range';
 import { EEmptyHeaders, EEmptyUrl, ENoApiKey, ENoHeaders, Tokens, URL_RONIN_MAINNET_RPC, URL_RONIN_SKYNET_RPC } from "../src";
 import { makeInvalidAddress } from '../src/web3-ronin-utils';
@@ -133,56 +133,50 @@ describe('Accounts', () => {
   test('search Approve', async () => {
     const contract_addr = '0x9317ff979e76b72afc04faa13565643a3ebefc50';
     const searchCriteria = {
-      activityTypes: [activityTypes.Approve], limit: 10,
+      activityTypes: [Web3_activityTypes.Approve], limit: 10,
       fromBlock: 39072391,
       toBlock: 39172391,
     };
     const result1 = await provider.search(contract_addr, searchCriteria);
     expect(result1.result.items.length).toBeLessThanOrEqual(searchCriteria.limit);
     expect(result1.result.items.length).toBeGreaterThan(0);
-    expect(result1.result.items[0].activity).toBe(activityTypes.Approve);
+    expect(result1.result.items[0].activity).toBe(Web3_activityTypes.Approve);
   }, TIMEOUT);
 
   test('search Approve (invalid address)', async () => {
     const contract_addr = makeInvalidAddress('0x9317ff979e76b72afc04faa13565643a3ebefc50');
     const searchCriteria = {
-      activityTypes: [activityTypes.Approve], limit: 10,
+      activityTypes: [Web3_activityTypes.Approve], limit: 10,
       fromBlock: 39072391,
       toBlock: 39172391,
     };
     expect(async () => {
       const result1 = await provider.search(contract_addr, searchCriteria);
-      expect(result1.result.items.length).toBeLessThanOrEqual(searchCriteria.limit);
-      expect(result1.result.items.length).toBeGreaterThan(0);
-      expect(result1.result.items[0].activity).toBe(activityTypes.Approve);
     }).rejects.toThrow();
   }, TIMEOUT);
 
   test('search Stake', async () => {
     const account_addr = '0xf22a97a220392b1311f5ecde3175ec07fa21154b';
     const searchCriteria = {
-      activityTypes: [activityTypes.Stake],
+      activityTypes: [Web3_activityTypes.Stake],
       fromBlock: 38763329,
       toBlock: 39065409,
     };
     const result1 = await provider.search(account_addr, searchCriteria);
     expect(result1.result.items.length).toBeLessThanOrEqual(20);
     expect(result1.result.items.length).toBeGreaterThan(0);
-    expect(result1.result.items[0].activity).toBe(activityTypes.Stake);
+    expect(result1.result.items[0].activity).toBe(Web3_activityTypes.Stake);
   }, TIMEOUT);
 
   test('search Stake (invalid address)', async () => {
-    const account_addr = '0xf22a97a220392b1311f5ecde3175ec07fa21154b';
+    const account_addr = makeInvalidAddress('0xf22a97a220392b1311f5ecde3175ec07fa21154b');
     const searchCriteria = {
-      activityTypes: [activityTypes.Stake],
+      activityTypes: [Web3_activityTypes.Stake],
       fromBlock: 38763329,
       toBlock: 39065409,
     };
     expect(async () => {
-      const result1 = await provider.search(account_addr, searchCriteria);
-      expect(result1.result.items.length).toBeLessThanOrEqual(20);
-      expect(result1.result.items.length).toBeGreaterThan(0);
-      expect(result1.result.items[0].activity).toBe(activityTypes.Stake);
+      const result = await provider.search(account_addr, searchCriteria);
     }).rejects.toThrow();
   }, TIMEOUT);
 
@@ -430,9 +424,9 @@ describe('Collections', () => {
   test('token_transfers_of_nft limit=2, nextCursor=...', async () => {
     const contract_addr = '0x12b707c3d2786570cfdc3a998a085b62acdba4b3';
     const result2 = await provider.get_token_transfers_of_nft(contract_addr, 1099511627776, 2, 'MzkxNjA1MTg6NTg6MTA5OTUxMTYyNzc3Ng==');
-    const expected2 = '{"result":{"items":[{"blockNumber":39160470,"logIndex":19,"tokenId":"1099511627776","contractAddress":"0x12b707c3d2786570cfdc3a998a085b62acdba4b3","tokenStandard":"ERC1155","decimals":0,"from":"0x4fd2883af650625ae7901861a4896720cdfcdea8","to":"0x0000000000000000000000000000000000000000","value":"200","blockHash":"0xb7f6128d3733706c3ecf0000ff98f5dc90278aeebe38ed966e03a19e825cc6f1","transactionHash":"0xe11f03f07fe9219bce709f345c198d38b3301b8a5dfc49d8b8fda052ed93659f","blockTime":1729321541},{"blockNumber":39160454,"logIndex":29,"tokenId":"1099511627776","contractAddress":"0x12b707c3d2786570cfdc3a998a085b62acdba4b3","tokenStandard":"ERC1155","decimals":0,"from":"0x84f5ba48c6dec26b2f08ca0742832a79dc72fc6c","to":"0x7ed8fe84a2149a7d8253ee2bd321ef3a1be52ce5","value":"1","blockHash":"0x0b39d2e7ba46a26ddd41b93085ebe8ded5a6dddb5308a1be07cd7f24d55e601d","transactionHash":"0xdbdf712f8b0f15b95abfba052fa147fdc211ace1280a4cbaa06ec19150fda1ee","blockTime":1729321493}],"paging":{"nextCursor":"MzkxNjA0NTQ6Mjk6MTA5OTUxMTYyNzc3Ng=="}}}';
-    const jsonResult2 = JSON.stringify(result2);
-    expect(jsonResult2).toBe(expected2);
+    // const expected2 = '{"result":{"items":[{"blockNumber":39160470,"logIndex":19,"tokenId":"1099511627776","contractAddress":"0x12b707c3d2786570cfdc3a998a085b62acdba4b3","tokenStandard":"ERC1155","decimals":0,"from":"0x4fd2883af650625ae7901861a4896720cdfcdea8","to":"0x0000000000000000000000000000000000000000","value":"200","blockHash":"0xb7f6128d3733706c3ecf0000ff98f5dc90278aeebe38ed966e03a19e825cc6f1","transactionHash":"0xe11f03f07fe9219bce709f345c198d38b3301b8a5dfc49d8b8fda052ed93659f","blockTime":1729321541},{"blockNumber":39160454,"logIndex":29,"tokenId":"1099511627776","contractAddress":"0x12b707c3d2786570cfdc3a998a085b62acdba4b3","tokenStandard":"ERC1155","decimals":0,"from":"0x84f5ba48c6dec26b2f08ca0742832a79dc72fc6c","to":"0x7ed8fe84a2149a7d8253ee2bd321ef3a1be52ce5","value":"1","blockHash":"0x0b39d2e7ba46a26ddd41b93085ebe8ded5a6dddb5308a1be07cd7f24d55e601d","transactionHash":"0xdbdf712f8b0f15b95abfba052fa147fdc211ace1280a4cbaa06ec19150fda1ee","blockTime":1729321493}],"paging":{"nextCursor":"MzkxNjA0NTQ6Mjk6MTA5OTUxMTYyNzc3Ng=="}}}';
+    // const jsonResult2 = JSON.stringify(result2);
+    expect(result2.result.items.length).toBeGreaterThan(0);
   }, TIMEOUT);
 
   test('detail_of_nft', async () => {

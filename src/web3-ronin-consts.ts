@@ -9,6 +9,10 @@ const URL_RONIN_MAINNET_RPC: string = 'https://api-gateway.skymavis.com/rpc';
  */
 const URL_RONIN_TESTNET_RPC: string = 'https://api-gateway.skymavis.com/rpc/testnet';
 /**
+ * URL to the SkyNet REST API
+ */
+const URL_RONIN_SKYNET_REST: string = 'https://api-gateway.skymavis.com/skynet/ronin';
+/**
  * URL to the Skynet service
  */
 const URL_RONIN_SKYNET_RPC: string = 'https://api-gateway.skymavis.com/skynet/ronin/web3/v2';
@@ -48,6 +52,7 @@ const ERROR_EMPTY_HEADERS = "headers is empty!";
 export {
   URL_RONIN_MAINNET_RPC,
   URL_RONIN_TESTNET_RPC,
+  URL_RONIN_SKYNET_REST,
   URL_RONIN_SKYNET_RPC,
   URL_RONIN_MAINNET_WSS,
   UINT256_MAX,

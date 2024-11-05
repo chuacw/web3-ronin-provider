@@ -2,11 +2,11 @@
 
 ***
 
-[web3-ronin-provider](../globals.md) / createSkyNetProvider
+[web3-ronin-provider](../globals.md) / createSkynetProvider
 
-# Function: createSkyNetProvider()
+# Function: createSkynetProvider()
 
-> **createSkyNetProvider**(`X_API_KEY`, `url`?): [`RoninSkynetWeb3Provider`](../classes/RoninSkynetWeb3Provider.md)
+> **createSkynetProvider**(`X_API_KEY`, `url`?): [`SkynetWeb3Provider`](../classes/SkynetWeb3Provider.md)
 
 Shortcut to creating a RoninSkynetWeb3Provider given the API key
 
@@ -22,10 +22,10 @@ The URL to use for the provider. If not given, uses [URL_RONIN_SKYNET_RPC](../va
 
 ## Returns
 
-[`RoninSkynetWeb3Provider`](../classes/RoninSkynetWeb3Provider.md)
+[`SkynetWeb3Provider`](../classes/SkynetWeb3Provider.md)
 
 ## Async
 
 ## Defined in
 
-[src/web3-RoninSkynetProvider.ts:969](https://github.com/chuacw/web3-ronin-provider/blob/746ea3f5b1cadd8ceeca40298f62b32897e1ae69/src/web3-RoninSkynetProvider.ts#L969)
+[src/web3-RoninSkynetProvider.ts:904](https://github.com/chuacw/web3-ronin-provider/blob/56fda69eb1bad2d2fd8f29422ffb14cf65ae3973/src/web3-RoninSkynetProvider.ts#L904)

@@ -2,8 +2,7 @@
 
 import { Paging } from "./web3-ronin-types-global";
 
-
-export enum activityTypes {
+export enum Web3_activityTypes {
   ContractInteraction = "ContractInteraction",
   RONTransfer = "RONTransfer",
   ScatterDisperse = "ScatterDisperse",
@@ -24,11 +23,33 @@ export enum activityTypes {
   StakeRewards = "StakeRewards"
 }
 
+export enum REST_activityType {
+  Approve                    = "Approve",
+  Burn                       = "Burn",
+  ClaimRewards               = "ClaimRewards",
+  Deposit                    = "Deposit",
+  KatanaAddLiquidity         = "KatanaAddLiquidity",
+  KatanaRemoveLiquidity      = "KatanaRemoveLiquidity",
+  KatanaSwap                 = "KatanaSwap",
+  MarketplaceOrderCancelled  = "MarketplaceOrderCancelled",
+  MarketplaceOrderMatched    = "MarketplaceOrderMatched",
+  Mint                       = "Mint",
+  Restake                    = "Restake",
+  RONTransfer                = "RONTransfer",
+  ScatterDisperse            = "ScatterDisperse",
+  Stake                      = "Stake",
+  StakeRewards               = "StakeRewards",
+  Swap                       = "Swap",
+  Transfer                   = "Transfer",
+  Unstake                    = "Unstake",
+  Withdraw                   = "Withdraw"
+}
+
 export type SearchCriteria = {
   /**
    * The activities to be searched for, must match the types listed here
    */
-  activityTypes: activityTypes[], 
+  activityTypes: Web3_activityTypes[], 
   /**
    * The number of items to search for
    */
