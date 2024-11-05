@@ -2,16 +2,16 @@
 This package provides 3 providers for interacting with the Ronin blockchain.  
 
 The 3 Web3 providers are:  
-* SkyNet REST provider
+* Skynet REST provider
 * Ronin JSON RPC provider
-* SkyNet Web3 provider
+* Skynet Web3 provider
 
-## SkyNet REST provider
-A REST provider for SkyNet.
+## Skynet REST provider
+A REST provider for Skynet.
 
 Use it like so:
 ```
-    const  provider = createSkyNetRESTProvider(process.env["X-API-KEY"] || "");
+    const  provider = createSkynetRESTProvider(process.env["X-API-KEY"] || "");
     const contractAddr = "0xf6c5f9a72e6d46f30c7223a4cff854f94c7e95aa";
     const response = await provider.get_contract_by_address(contractAddr);
 ```
@@ -30,10 +30,10 @@ Use this like so:
   const provider = new RoninJsonRpcProvider(connection_info);
 ```
 
-## Ronin SkyNet Web3 Provider
-A SkyNet Web3 Provider for Ronin.  
+## Ronin Skynet Web3 Provider
+A Skynet Web3 Provider for Ronin.  
 
-#### Creating an instance of the SkyNet Web3 Provider
+#### Creating an instance of the Skynet Web3 Provider
 ---
 Create it like this:
 
@@ -49,7 +49,7 @@ Create it like this:
 
 or like this:
 ```
-    const provider = createSkyNetProvider(API_KEY);
+    const provider = createSkynetProvider(API_KEY);
 ```
 
 Use it like so:
@@ -65,4 +65,4 @@ For further documentation, see the
 * [HTML documents](https://chuacw.github.io/web3-ronin-provider/html/index.html).
 
 ## Examples
-There's an [examples](./examples/) directory showing how to use the SkyNet Web3 provider.
+There's an [examples](./examples/) directory showing how to use the Skynet Web3 provider.

@@ -9,7 +9,7 @@ const URL_RONIN_MAINNET_RPC: string = 'https://api-gateway.skymavis.com/rpc';
  */
 const URL_RONIN_TESTNET_RPC: string = 'https://api-gateway.skymavis.com/rpc/testnet';
 /**
- * URL to the SkyNet REST API
+ * URL to the Skynet REST API
  */
 const URL_RONIN_SKYNET_REST: string = 'https://api-gateway.skymavis.com/skynet/ronin';
 /**
