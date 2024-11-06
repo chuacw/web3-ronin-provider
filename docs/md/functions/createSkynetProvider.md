@@ -28,4 +28,4 @@ The URL to use for the provider. If not given, uses [URL_RONIN_SKYNET_RPC](../va
 
 ## Defined in
 
-[src/web3-RoninSkynetProvider.ts:904](https://github.com/chuacw/web3-ronin-provider/blob/5e9462adf1edb8f1f7982dc5f4e5bd7094a4d6eb/src/web3-RoninSkynetProvider.ts#L904)
+[src/web3-RoninSkynetProvider.ts:904](https://github.com/chuacw/web3-ronin-provider/blob/5334d3e4a39d6911ce4028a880b09b3429564837/src/web3-RoninSkynetProvider.ts#L904)

@@ -894,7 +894,7 @@ In the response, there are two lists, successes and failures tokenIds, failure r
 }
 
 /**
- * Shortcut to creating a RoninSkynetWeb3Provider given the API key
+ * Shortcut to creating a SkynetWeb3Provider given the API key
  *
  * @async
  * @param {string} X_API_KEY API key
