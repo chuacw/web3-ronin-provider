@@ -34,6 +34,11 @@ Use this like so:
   const provider = new RoninJsonRpcProvider(connection_info);
 ```
 
+or like this:
+```
+    const provider = createRoninJsonRpcProvider(API_KEY);
+```
+
 ## Ronin Skynet Web3 Provider
 A Skynet Web3 Provider for Ronin.  
 

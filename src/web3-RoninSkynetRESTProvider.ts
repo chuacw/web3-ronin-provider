@@ -690,6 +690,13 @@ class SkynetRESTProvider extends CustomSkynetProvider {
 
 }
 
+/**
+ * createsSkynetRESTProvider creates a {@link SkynetRESTProvider} given the X_API_KEY
+ *
+ * @param {string} X_API_KEY The API key
+ * @param {?string} [url] The url, if not given, defaults to {@link URL_RONIN_SKYNET_REST}
+ * @returns {SkynetRESTProvider}
+ */
 function createSkynetRESTProvider(X_API_KEY: string, url?: string): SkynetRESTProvider {
   const connection = { url: url || URL_RONIN_SKYNET_REST, headers: { "X-API-KEY": X_API_KEY } };
   const result = new SkynetRESTProvider(connection);

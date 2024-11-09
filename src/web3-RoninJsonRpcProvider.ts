@@ -24,11 +24,22 @@ export type FormattedFeeHistory = {
 export class RoninJsonRpcProvider extends JsonRpcProvider {
   readonly #FIFTEEN: BigNumber;
 
+  /**
+   * Creates an instance of RoninJsonRpcProvider.
+   *
+   * @constructor
+   * @param {?(ethers.utils.ConnectionInfo | string)} [url] The URL to use, headers, etc
+   * @param {?ethers.providers.Networkish} [network]
+   * @throws {@link EEmptyHeaders} when headers are present, but empty
+   * @throws {@link EEmptyUrl} when URL is empty
+   * @throws {@link ENoApiKey} when X-API-KEY is absent
+   * @throws {@link ENoHeaders} when headers are absent
+   */
   constructor(url?: ethers.utils.ConnectionInfo | string, network?: ethers.providers.Networkish) {
     super(url, network);
     this.#FIFTEEN = BigNumber.from("1500000000");
   }
-  
+
   async getFeeData() {
     const { block, gasPrice } = await resolveProperties({
       block: this.getBlock("latest"),
@@ -74,7 +85,6 @@ export class RoninJsonRpcProvider extends JsonRpcProvider {
     return blocks;
   }
 
-  
   /**
    * getFeeHistory gets the history for blocks from the pending block to the past historicalBlocks.
    * By default, this would be the past 4 blocks, if historicalBlocks is left at the default.
@@ -101,7 +111,7 @@ export class RoninJsonRpcProvider extends JsonRpcProvider {
     // @ts-ignore
     const firstPercentialPriorityFees = feeHistory.map(b => b.priorityFeePerGas[0]!);
     const sum = firstPercentialPriorityFees.reduce((a, v) => a + v);
-    const result = Math.round(sum/firstPercentialPriorityFees.length);
+    const result = Math.round(sum / firstPercentialPriorityFees.length);
     return result;
   }
 
