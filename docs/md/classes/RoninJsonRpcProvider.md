@@ -35,7 +35,7 @@ hardfork when sending transactions for Ronin.
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:12](https://github.com/chuacw/web3-ronin-provider/blob/5334d3e4a39d6911ce4028a880b09b3429564837/src/web3-RoninJsonRpcProvider.ts#L12)
+[src/web3-RoninJsonRpcProvider.ts:27](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-RoninJsonRpcProvider.ts#L27)
 
 ## Properties
 
@@ -1061,6 +1061,28 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:129
 
 ***
 
+### formatFeeHistory()
+
+> **formatFeeHistory**(`result`, `historicalBlocks`, `includePending`): (`object` \| `object`)[]
+
+#### Parameters
+
+• **result**: [`HistoricalFee`](../type-aliases/HistoricalFee.md)
+
+• **historicalBlocks**: `number` = `4`
+
+• **includePending**: `boolean` = `false`
+
+#### Returns
+
+(`object` \| `object`)[]
+
+#### Defined in
+
+[src/web3-RoninJsonRpcProvider.ts:52](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-RoninJsonRpcProvider.ts#L52)
+
+***
+
 ### getAvatar()
 
 > **getAvatar**(`nameOrAddress`): `Promise`\<`null` \| `string`\>
@@ -1241,7 +1263,49 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:137
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:17](https://github.com/chuacw/web3-ronin-provider/blob/5334d3e4a39d6911ce4028a880b09b3429564837/src/web3-RoninJsonRpcProvider.ts#L17)
+[src/web3-RoninJsonRpcProvider.ts:32](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-RoninJsonRpcProvider.ts#L32)
+
+***
+
+### getFeeEstimate()
+
+> **getFeeEstimate**(): `Promise`\<`number`\>
+
+getFeeEstimate estimates the fee for the next transaction
+
+#### Returns
+
+`Promise`\<`number`\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninJsonRpcProvider.ts:99](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-RoninJsonRpcProvider.ts#L99)
+
+***
+
+### getFeeHistory()
+
+> **getFeeHistory**(`historicalBlocks`?): `Promise`\<[`FormattedFeeHistory`](../type-aliases/FormattedFeeHistory.md)[]\>
+
+getFeeHistory gets the history for blocks from the pending block to the past historicalBlocks.
+By default, this would be the past 4 blocks, if historicalBlocks is left at the default.
+This is an implementation of EIP 1559.
+
+#### Parameters
+
+• **historicalBlocks?**: `number` = `4`
+
+#### Returns
+
+`Promise`\<[`FormattedFeeHistory`](../type-aliases/FormattedFeeHistory.md)[]\>
+
+#### Async
+
+#### Defined in
+
+[src/web3-RoninJsonRpcProvider.ts:87](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-RoninJsonRpcProvider.ts#L87)
 
 ***
 

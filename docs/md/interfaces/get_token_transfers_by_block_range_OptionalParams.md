@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-token-transfers.ts:7](https://github.com/chuacw/web3-ronin-provider/blob/5334d3e4a39d6911ce4028a880b09b3429564837/src/web3-ronin-types-token-transfers.ts#L7)
+[src/web3-ronin-types-token-transfers.ts:7](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-ronin-types-token-transfers.ts#L7)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-token-transfers.ts:6](https://github.com/chuacw/web3-ronin-provider/blob/5334d3e4a39d6911ce4028a880b09b3429564837/src/web3-ronin-types-token-transfers.ts#L6)
+[src/web3-ronin-types-token-transfers.ts:6](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-ronin-types-token-transfers.ts#L6)
 
 ***
 
@@ -34,4 +34,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-token-transfers.ts:5](https://github.com/chuacw/web3-ronin-provider/blob/5334d3e4a39d6911ce4028a880b09b3429564837/src/web3-ronin-types-token-transfers.ts#L5)
+[src/web3-ronin-types-token-transfers.ts:5](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-ronin-types-token-transfers.ts#L5)

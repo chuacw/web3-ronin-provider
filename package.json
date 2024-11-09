@@ -4,8 +4,8 @@
   "types": "./dist/index.d.ts",
   "main": "index.js",
   "scripts": {
-    "gen-markdown": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
-    "gen-html": "typedoc --cleanOutputDir true --out docs/html src",
+    "gen-md": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
+    "gen-html": "typedoc --cleanOutputDir true --out docs/html src ",
     "prepublishOnly": "tsc -b",
     "test": "jest"
   },
@@ -37,7 +37,8 @@
     "axios-http2-adapter": "^1.0.2",
     "delphirtl": "^1.1.21",
     "ethers": "5.7",
-    "http2-wrapper": "^2.2.1"
+    "http2-wrapper": "^2.2.1",
+    "web3-ronin-provider": "file:"
   },
   "files": [
     "dist/**/*",
@@ -50,7 +51,7 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typedoc": "^0.26.10",
+    "typedoc": "^0.26.11",
     "typedoc-plugin-markdown": "^4.2.9",
     "typescript": "^5.6.3"
   }

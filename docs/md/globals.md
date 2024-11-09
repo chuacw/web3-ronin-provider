@@ -278,12 +278,14 @@ Renames and re-exports [SkynetWeb3Provider](classes/SkynetWeb3Provider.md)
 ## Type Aliases
 
 - [ConnectionInfo](type-aliases/ConnectionInfo.md)
+- [FormattedFeeHistory](type-aliases/FormattedFeeHistory.md)
 - [get\_details\_of\_multiple\_collections\_Item](type-aliases/get_details_of_multiple_collections_Item.md)
 - [get\_latest\_block\_number\_Response](type-aliases/get_latest_block_number_Response.md)
 - [get\_summary\_for\_multiple\_NFTs\_Query\_Id](type-aliases/get_summary_for_multiple_NFTs_Query_Id.md)
 - [get\_summary\_for\_multiple\_NFTs\_Result\_Item](type-aliases/get_summary_for_multiple_NFTs_Result_Item.md)
 - [get\_the\_latest\_block\_number\_Response](type-aliases/get_the_latest_block_number_Response.md)
 - [get\_total\_RON\_supply\_Result\_Item](type-aliases/get_total_RON_supply_Result_Item.md)
+- [HistoricalFee](type-aliases/HistoricalFee.md)
 - [OptionalParams](type-aliases/OptionalParams.md)
 - [query\_RON\_supply\_Query](type-aliases/query_RON_supply_Query.md)
 - [search\_for\_matched\_NFTs\_Query](type-aliases/search_for_matched_NFTs_Query.md)
@@ -309,6 +311,7 @@ Renames and re-exports [SkynetWeb3Provider](classes/SkynetWeb3Provider.md)
 
 ## Functions
 
+- [createRoninJsonRpcProvider](functions/createRoninJsonRpcProvider.md)
 - [createSkynetProvider](functions/createSkynetProvider.md)
 - [createSkynetRESTProvider](functions/createSkynetRESTProvider.md)
 - [cursorParam](functions/cursorParam.md)
