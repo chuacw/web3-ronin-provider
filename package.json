@@ -4,8 +4,8 @@
   "types": "./dist/index.d.ts",
   "main": "index.js",
   "scripts": {
-    "gen-md": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
-    "gen-html": "typedoc --cleanOutputDir true --out docs/html src ",
+    "gen-md": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src --hideGenerator",
+    "gen-html": "typedoc --cleanOutputDir true --out docs/html src --hideGenerator",
     "prepublishOnly": "tsc -b",
     "test": "jest"
   },
@@ -13,7 +13,8 @@
     ".": "./dist/index.js",
     "./web3-ronin-consts": "./dist/web3-ronin-consts.js",
     "./web3-RoninJsonRpcProvider": "./dist/web3-RoninJsonRpcProvider.js",
-    "./web3-RoninSkynetProvider": "./dist/web3-RoninSkynetProvider.js"
+    "./web3-RoninSkynetProvider": "./dist/web3-RoninSkynetProvider.js",
+    "./web3-RoninSkynetRESTProvider": "./dist/web3-RoninSkynetRESTProvider.js"
   },
   "keywords": [
     "Ronin",

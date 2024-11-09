@@ -28,4 +28,4 @@
 
 ## Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:13](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-RoninJsonRpcProvider.ts#L13)
+[src/web3-RoninJsonRpcProvider.ts:13](https://github.com/chuacw/web3-ronin-provider/blob/7646ce38176c1dab59363eef0869f2efa34d498b/src/web3-RoninJsonRpcProvider.ts#L13)

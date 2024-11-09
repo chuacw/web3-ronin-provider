@@ -34,7 +34,7 @@ An error indicating the error code and message
 
 #### Defined in
 
-[src/web3-ronin-types-errors.ts:58](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-ronin-types-errors.ts#L58)
+[src/web3-ronin-types-errors.ts:58](https://github.com/chuacw/web3-ronin-provider/blob/7646ce38176c1dab59363eef0869f2efa34d498b/src/web3-ronin-types-errors.ts#L58)
 
 ## Properties
 
@@ -46,7 +46,7 @@ The error code
 
 #### Defined in
 
-[src/web3-ronin-types-errors.ts:57](https://github.com/chuacw/web3-ronin-provider/blob/3fc214e27766815592deb24c85c0a23477593bed/src/web3-ronin-types-errors.ts#L57)
+[src/web3-ronin-types-errors.ts:57](https://github.com/chuacw/web3-ronin-provider/blob/7646ce38176c1dab59363eef0869f2efa34d498b/src/web3-ronin-types-errors.ts#L57)
 
 ***
 
