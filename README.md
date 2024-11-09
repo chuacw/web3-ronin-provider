@@ -2,9 +2,9 @@
 This package provides 3 providers for interacting with the Ronin blockchain.  
 
 The 3 Web3 providers are:  
-* Skynet REST provider
-* Ronin JSON RPC provider
-* Skynet Web3 provider
+* [Skynet REST provider](https://chuacw.github.io/web3-ronin-provider/html/classes/SkynetRESTProvider.html)
+* [Ronin JSON RPC provider](https://chuacw.github.io/web3-ronin-provider/html/classes/RoninJsonRpcProvider.html)
+* [Skynet Web3 provider](https://chuacw.github.io/web3-ronin-provider/html/classes/SkynetWeb3Provider.html)
 
 ## Skynet REST provider
 A REST provider for Skynet.

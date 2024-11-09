@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-nft.ts:38](https://github.com/chuacw/web3-ronin-provider/blob/dab3da736520006c9aeb4dab1fb5f7a56228c341/src/web3-ronin-types-nft.ts#L38)
+[src/web3-ronin-types-nft.ts:38](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-ronin-types-nft.ts#L38)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-nft.ts:39](https://github.com/chuacw/web3-ronin-provider/blob/dab3da736520006c9aeb4dab1fb5f7a56228c341/src/web3-ronin-types-nft.ts#L39)
+[src/web3-ronin-types-nft.ts:39](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-ronin-types-nft.ts#L39)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-nft.ts:40](https://github.com/chuacw/web3-ronin-provider/blob/dab3da736520006c9aeb4dab1fb5f7a56228c341/src/web3-ronin-types-nft.ts#L40)
+[src/web3-ronin-types-nft.ts:40](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-ronin-types-nft.ts#L40)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-nft.ts:41](https://github.com/chuacw/web3-ronin-provider/blob/dab3da736520006c9aeb4dab1fb5f7a56228c341/src/web3-ronin-types-nft.ts#L41)
+[src/web3-ronin-types-nft.ts:41](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-ronin-types-nft.ts#L41)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[src/web3-ronin-types-nft.ts:42](https://github.com/chuacw/web3-ronin-provider/blob/dab3da736520006c9aeb4dab1fb5f7a56228c341/src/web3-ronin-types-nft.ts#L42)
+[src/web3-ronin-types-nft.ts:42](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-ronin-types-nft.ts#L42)
 
 ***
 
@@ -64,4 +64,4 @@
 
 #### Defined in
 
-[src/web3-ronin-types-nft.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/dab3da736520006c9aeb4dab1fb5f7a56228c341/src/web3-ronin-types-nft.ts#L43)
+[src/web3-ronin-types-nft.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-ronin-types-nft.ts#L43)
