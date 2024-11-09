@@ -55,7 +55,7 @@ The URL to use, headers, etc
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:38](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-RoninJsonRpcProvider.ts#L38)
+[src/web3-RoninJsonRpcProvider.ts:38](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-RoninJsonRpcProvider.ts#L38)
 
 ## Properties
 
@@ -1099,7 +1099,7 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:129
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:63](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-RoninJsonRpcProvider.ts#L63)
+[src/web3-RoninJsonRpcProvider.ts:63](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-RoninJsonRpcProvider.ts#L63)
 
 ***
 
@@ -1283,7 +1283,7 @@ node\_modules/@ethersproject/providers/lib/base-provider.d.ts:137
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-RoninJsonRpcProvider.ts#L43)
+[src/web3-RoninJsonRpcProvider.ts:43](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-RoninJsonRpcProvider.ts#L43)
 
 ***
 
@@ -1301,7 +1301,7 @@ getFeeEstimate estimates the fee for the next transaction
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:109](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-RoninJsonRpcProvider.ts#L109)
+[src/web3-RoninJsonRpcProvider.ts:109](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-RoninJsonRpcProvider.ts#L109)
 
 ***
 
@@ -1325,7 +1325,7 @@ This is an implementation of EIP 1559.
 
 #### Defined in
 
-[src/web3-RoninJsonRpcProvider.ts:97](https://github.com/chuacw/web3-ronin-provider/blob/8f8ec8edfaa82f0741161cc9ab238177f2999ade/src/web3-RoninJsonRpcProvider.ts#L97)
+[src/web3-RoninJsonRpcProvider.ts:97](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-RoninJsonRpcProvider.ts#L97)
 
 ***
 

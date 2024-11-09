@@ -11,7 +11,7 @@ The 3 Web3 providers are:
 * [Skynet Web3 provider](https://chuacw.github.io/web3-ronin-provider/html/classes/SkynetWeb3Provider.html)
 
 ## Skynet REST provider
-A REST provider for Skynet.
+A [REST provider for Skynet](https://chuacw.github.io/web3-ronin-provider/html/classes/SkynetRESTProvider.html).
 
 Use it like so:
 ```
@@ -21,7 +21,7 @@ Use it like so:
 ```
 
 ## Ronin JSON RPC provider
-A JSON RPC Provider for Ronin.  
+A [JSON RPC Provider for Ronin](https://chuacw.github.io/web3-ronin-provider/html/classes/RoninJsonRpcProvider.html).  
 
 Use this like so:
 ```
@@ -40,7 +40,7 @@ or like this:
 ```
 
 ## Ronin Skynet Web3 Provider
-A Skynet Web3 Provider for Ronin.  
+A [Skynet Web3 Provider for Ronin](https://chuacw.github.io/web3-ronin-provider/html/classes/SkynetWeb3Provider.html).  
 
 #### Creating an instance of the Skynet Web3 Provider
 ---
