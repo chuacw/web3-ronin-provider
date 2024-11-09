@@ -70,4 +70,4 @@ For further documentation, see the
 * [HTML documents](https://chuacw.github.io/web3-ronin-provider/html/index.html).
 
 ## Examples
-There's an [examples](./examples/) directory showing how to use the Skynet Web3 provider.
+There's an [examples](https://github.com/chuacw/web3-ronin-provider/tree/main/examples) directory showing how to use the Skynet Web3 provider.

@@ -30,7 +30,7 @@ Address for AXIE collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L16)
+[src/web3-ronin-consts-tokens.ts:16](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L16)
 
 ***
 
@@ -44,7 +44,7 @@ Address for AXIE ACCESSORY collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:87](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L87)
+[src/web3-ronin-consts-tokens.ts:87](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L87)
 
 ***
 
@@ -58,7 +58,7 @@ Alias for AXS
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:132](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L132)
+[src/web3-ronin-consts-tokens.ts:132](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L132)
 
 ***
 
@@ -72,7 +72,7 @@ Address for AXIE LAND collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:114](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L114)
+[src/web3-ronin-consts-tokens.ts:114](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L114)
 
 ***
 
@@ -86,7 +86,7 @@ Address for AXIE LAND ITEM collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:69](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L69)
+[src/web3-ronin-consts-tokens.ts:69](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L69)
 
 ***
 
@@ -100,7 +100,7 @@ Address for AXS (Axie Infinity Shard)
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:123](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L123)
+[src/web3-ronin-consts-tokens.ts:123](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L123)
 
 ***
 
@@ -114,7 +114,7 @@ Address for FIGHT LEAGUE CHIPS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:51](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L51)
+[src/web3-ronin-consts-tokens.ts:51](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L51)
 
 ***
 
@@ -128,7 +128,7 @@ Address for KAIDRO JOURNAL collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:42](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L42)
+[src/web3-ronin-consts-tokens.ts:42](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L42)
 
 ***
 
@@ -142,7 +142,7 @@ Address for RAGNAROK MONSTERS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L78)
+[src/web3-ronin-consts-tokens.ts:78](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L78)
 
 ***
 
@@ -156,7 +156,7 @@ Address for Ronin Name Service
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:96](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L96)
+[src/web3-ronin-consts-tokens.ts:96](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L96)
 
 ***
 
@@ -170,7 +170,7 @@ Address for RUNIVERSE ITEM collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:60](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L60)
+[src/web3-ronin-consts-tokens.ts:60](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L60)
 
 ***
 
@@ -184,7 +184,7 @@ Address for WILD FOREST SKINS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:105](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L105)
+[src/web3-ronin-consts-tokens.ts:105](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L105)
 
 ***
 
@@ -198,7 +198,7 @@ Address for WILD FOREST UNITS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:24](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L24)
+[src/web3-ronin-consts-tokens.ts:24](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L24)
 
 ***
 
@@ -212,4 +212,4 @@ Address for WILDFORESTUNITS collection
 
 #### Defined in
 
-[src/web3-ronin-consts-tokens.ts:33](https://github.com/chuacw/web3-ronin-provider/blob/4a5337409914c1435eb29cf10385b5e91a5e50ae/src/web3-ronin-consts-tokens.ts#L33)
+[src/web3-ronin-consts-tokens.ts:33](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-consts-tokens.ts#L33)
