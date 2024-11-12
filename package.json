@@ -38,8 +38,7 @@
     "axios-http2-adapter": "^1.0.2",
     "delphirtl": "^1.1.21",
     "ethers": "5.7",
-    "http2-wrapper": "^2.2.1",
-    "web3-ronin-provider": "file:"
+    "http2-wrapper": "^2.2.1"
   },
   "files": [
     "dist/**/*",
@@ -53,4 +52,7 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typedoc": "^0.26.11",
-    "typedoc-plugin-markdown": "^4.2.9
+    "typedoc-plugin-markdown": "^4.2.9",
+    "typescript": "^5.6.3"
+  }
+}
