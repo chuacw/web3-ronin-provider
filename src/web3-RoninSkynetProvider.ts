@@ -920,10 +920,10 @@ export class Param {
   }
 
   /**
-   * Updates this instance to include the given cursor
+   * Updates this instance to include the given cursor and return it
    *
    * @param {string} cursor
-   * @returns {Param}
+   * @returns {Param} this instance
    */
   cursorParam(cursor: string): Param {
     this.cursor = cursor;
@@ -931,10 +931,10 @@ export class Param {
   }
 
   /**
-   * Updates this instance to include the given limit
+   * Updates this instance to include the given limit and return the instance
    *
    * @param {number} limit
-   * @returns {Param}
+   * @returns {Param} this instance
    */
   limitParam(limit: number): Param {
     this.limit = limit;
@@ -942,10 +942,10 @@ export class Param {
   }
 
   /**
-   * Updates this instance to include the given order
+   * Updates this instance to include the given order and return this instance
    *
    * @param {ORDER} order
-   * @returns {Param}
+   * @returns {Param} this instance
    */
   orderParam(order: ORDER): Param {
     this.order = order;

@@ -28,4 +28,4 @@ The searched block must be within this timestamp
 
 ## Defined in
 
-[src/web3-ronin-types-blocks.ts:102](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-ronin-types-blocks.ts#L102)
+[src/web3-ronin-types-blocks.ts:102](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-ronin-types-blocks.ts#L102)

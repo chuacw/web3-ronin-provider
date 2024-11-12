@@ -20,4 +20,4 @@ Creates a Param with the given limit
 
 ## Defined in
 
-[src/web3-RoninSkynetProvider.ts:981](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L981)
+[src/web3-RoninSkynetProvider.ts:981](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L981)

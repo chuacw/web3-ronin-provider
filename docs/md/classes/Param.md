@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:919](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L919)
+[src/web3-RoninSkynetProvider.ts:919](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L919)
 
 ## Properties
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:917](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L917)
+[src/web3-RoninSkynetProvider.ts:917](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L917)
 
 ***
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:916](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L916)
+[src/web3-RoninSkynetProvider.ts:916](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L916)
 
 ***
 
@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:918](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L918)
+[src/web3-RoninSkynetProvider.ts:918](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L918)
 
 ## Methods
 
@@ -56,7 +56,7 @@
 
 > **cursorParam**(`cursor`): [`Param`](Param.md)
 
-Updates this instance to include the given cursor
+Updates this instance to include the given cursor and return it
 
 #### Parameters
 
@@ -66,9 +66,11 @@ Updates this instance to include the given cursor
 
 [`Param`](Param.md)
 
+this instance
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:928](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L928)
+[src/web3-RoninSkynetProvider.ts:928](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L928)
 
 ***
 
@@ -76,7 +78,7 @@ Updates this instance to include the given cursor
 
 > **limitParam**(`limit`): [`Param`](Param.md)
 
-Updates this instance to include the given limit
+Updates this instance to include the given limit and return the instance
 
 #### Parameters
 
@@ -86,9 +88,11 @@ Updates this instance to include the given limit
 
 [`Param`](Param.md)
 
+this instance
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:939](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L939)
+[src/web3-RoninSkynetProvider.ts:939](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L939)
 
 ***
 
@@ -96,7 +100,7 @@ Updates this instance to include the given limit
 
 > **orderParam**(`order`): [`Param`](Param.md)
 
-Updates this instance to include the given order
+Updates this instance to include the given order and return this instance
 
 #### Parameters
 
@@ -106,6 +110,8 @@ Updates this instance to include the given order
 
 [`Param`](Param.md)
 
+this instance
+
 #### Defined in
 
-[src/web3-RoninSkynetProvider.ts:950](https://github.com/chuacw/web3-ronin-provider/blob/74865f4cc367fda569b2ea12b7ca079db4fcf0a2/src/web3-RoninSkynetProvider.ts#L950)
+[src/web3-RoninSkynetProvider.ts:950](https://github.com/chuacw/web3-ronin-provider/blob/e9318161fb5ce839bfa5a7cd824e9be03b129c7e/src/web3-RoninSkynetProvider.ts#L950)
